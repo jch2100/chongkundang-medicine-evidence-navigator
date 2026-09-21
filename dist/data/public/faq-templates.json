@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1.0",
+  "policy": "각 제품의 답변은 공식 데이터 상태에 맞춰 생성하며, 확인되지 않은 값을 추정하지 않는다.",
+  "items": [
+    {"id":"purpose","question":"이 제품은 어떤 질환·환자군에 사용되나요?","answerKey":"efficacy"},
+    {"id":"ingredient","question":"주성분과 제형·함량은 무엇인가요?","answerKey":"ingredient"},
+    {"id":"safety","question":"부작용과 주의사항은 무엇인가요?","answerKey":"safety"},
+    {"id":"dosing","question":"용법·용량은 어떻게 확인하나요?","answerKey":"dosing"},
+    {"id":"changes","question":"최근 허가 변경이 있나요?","answerKey":"changes"},
+    {"id":"research","question":"관련 최신 연구는 있나요?","answerKey":"research"}
+  ]
+}
