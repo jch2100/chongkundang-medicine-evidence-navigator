@@ -1,0 +1,47 @@
+name: 공식 데이터 교정 요청
+description: 공식 원문에 근거한 제품·변경 이력·문헌 데이터 교정을 요청합니다.
+title: "[데이터 교정] "
+labels: [data-correction]
+body:
+  - type: input
+    id: product
+    attributes:
+      label: 제품명
+      placeholder: 예) 타크로벨
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: 교정 유형
+      options:
+        - 제품-원문 매핑
+        - 성분·제형·함량
+        - 적응증·허가사항
+        - 허가 변경 이력
+        - PubMed 문헌
+        - 링크 오류
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 공식 근거 링크
+      description: 식약처, 종근당, DART, PubMed 등 원문 링크를 입력해 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 발견 내용과 수정 제안
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 확인
+      options:
+        - label: 비공식 블로그·검색 요약이 아닌 원문을 확인했습니다.
+          required: true
+        - label: 환자 식별정보나 비공개 자료를 포함하지 않았습니다.
+          required: true

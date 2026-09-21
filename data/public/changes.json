@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "0.1.0",
+  "period": {"from": "2021-09-21", "to": "2026-09-21"},
+  "policy": "변경 전후의 문구를 재작성하지 않고, 공식 게시물의 확인 경로와 원문 링크만 제공한다.",
+  "changes": [
+    {"id":"tacrobell-change-2025-08","productId":"tacrobell","date":"2025-08-21","type":"의약품 허가 변경","title":"타크로벨 관련 허가 변경 게시물 확인 경로","summary":"종근당 제품소식의 허가 변경 게시 목록에서 확인되는 항목입니다. 변경 전·후 및 적용일은 원문 게시물의 변경대비표를 기준으로 확인하세요.","source":"https://www.ckdpharm.com/product/newsList.do","status":"source-indexed"},
+    {"id":"tacrobell-change-2025-02","productId":"tacrobell","date":"2025-02-11","type":"의약품 허가 변경","title":"타크로벨 관련 허가 변경 게시물 확인 경로","summary":"최근 5년 범위의 공식 제품소식 확인 항목입니다. 본 MVP는 변경 내용을 요약해 단정하지 않고 원문으로 연결합니다.","source":"https://www.ckdpharm.com/product/newsList.do","status":"source-indexed"}
+  ]
+}

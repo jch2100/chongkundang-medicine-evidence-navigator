@@ -1,0 +1,4 @@
+{"runId":"RUN-2026-09-21-mvp-001","entity":"product:pexuclue","stage":"source-mapping","status":"failed","reason":"종근당 현재 제품 페이지 1:1 매핑 미확인","nextAction":"공식 제품 검색 결과 및 허가권자/공동판매 관계 재확인"}
+{"runId":"RUN-2026-09-21-mvp-001","entity":"product:godex","stage":"source-mapping","status":"failed","reason":"종근당 현재 제품 페이지 1:1 매핑 미확인","nextAction":"종근당 제품소식 및 식약처 의약품안전나라에서 제품 단위 매칭"}
+{"runId":"RUN-2026-09-21-mvp-001","entity":"product:tacrolimus","stage":"entity-resolution","status":"failed","reason":"DART 제품명이 개별 품목이 아닌 성분/계열 표기로 보임","nextAction":"개별 품목 코드와 DART 매출 집계 범위 확인"}
+{"runId":"RUN-2026-09-21-mvp-001","entity":"product:kerendia","stage":"source-mapping","status":"failed","reason":"종근당 현재 제품 페이지 1:1 매핑 미확인","nextAction":"공동판매 여부와 공식 허가 원문 확인"}

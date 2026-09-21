@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="종근당 ETC 주요 의약품의 공식 근거와 최근 변경 이력을 빠르게 확인하는 공개 파일럿">
+  <meta name="theme-color" content="#0d2438">
+  <title>종근당 의약품 근거 탐색 허브</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <p class="eyebrow">PUBLIC PILOT · HCP / MR REFERENCE</p>
+        <h1>종근당 의약품 근거 탐색 허브</h1>
+        <p class="subtitle">공식 원문을 빠르게 찾고, 확인이 필요한 부분은 명확히 남기는 공개 파일럿입니다.</p>
+      </div>
+      <div class="header-actions">
+        <span class="data-badge" id="dataDate">데이터 로딩 중</span>
+        <button class="ghost-button" id="toggleLoop" type="button">검증 현황</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="hero-grid" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="section-kicker">FIELD QUESTION → OFFICIAL SOURCE</p>
+        <h2 id="hero-title">의약품명보다<br><span>질문을 먼저</span> 찾습니다.</h2>
+        <p>제품명, 성분명, 질환명으로 검색하면 핵심 정보가 먼저 펼쳐집니다. 공식 원문은 검증과 업데이트를 위한 근거로 연결합니다. 이 화면은 진단이나 처방을 대신하지 않습니다.</p>
+      </div>
+      <div class="coverage-card" aria-label="데이터 범위">
+        <div class="coverage-top"><span>파일럿 범위</span><strong>ETC 주요 20개</strong></div>
+        <div class="coverage-track"><span id="publishedTrack"></span></div>
+        <div class="coverage-bottom"><span id="coverageText">공식 매핑 확인 중</span><span>최근 5년 변경</span></div>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-label="의약품 검색">
+      <div class="search-row">
+        <label class="search-box" for="searchInput">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="의약품명, 성분명, 질환명으로 검색" aria-describedby="searchHint">
+          <kbd>⌘ K</kbd>
+        </label>
+        <button class="primary-button" id="searchButton" type="button">검색</button>
+      </div>
+      <p id="searchHint" class="search-hint">핵심 정보는 상세 화면에 직접 표시하고, 원문 링크는 정확성 확인과 업데이트에 사용합니다.</p>
+      <div class="filter-row" id="categoryFilters" role="toolbar" aria-label="분류 필터">
+        <button class="filter-chip active" data-filter="all" type="button">전체</button>
+        <button class="filter-chip" data-filter="순환기계용약" type="button">순환기</button>
+        <button class="filter-chip" data-filter="근골격계용약" type="button">근골격계</button>
+        <button class="filter-chip" data-filter="면역억제제" type="button">면역억제</button>
+        <button class="filter-chip" data-filter="내분비계용약" type="button">내분비</button>
+        <button class="filter-chip" data-filter="변경 이력" type="button">최근 변경</button>
+        <button class="filter-chip" data-filter="공동판매" type="button">공동판매</button>
+      </div>
+    </section>
+
+    <section class="workspace-grid">
+      <aside class="result-column" aria-label="검색 결과">
+        <div class="result-heading"><div><p class="section-kicker">PRODUCT INDEX</p><h2>제품 목록</h2></div><span id="resultCount">0개</span></div>
+        <div id="resultList" class="result-list" aria-live="polite"></div>
+      </aside>
+
+      <article id="detailPanel" class="detail-column" aria-live="polite">
+        <div class="empty-detail">
+          <div class="empty-mark">↗</div>
+          <p class="section-kicker">SELECT A PRODUCT</p>
+          <h2>제품을 선택하면<br>현장 확인 화면이 열립니다.</h2>
+          <p>질문 포인트와 공식 원문 링크를 한 화면에서 확인할 수 있습니다.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="loopPanel" class="loop-panel" hidden aria-label="검증 현황">
+      <div class="loop-header"><div><p class="section-kicker">LOOP ENGINEERING</p><h2>데이터 운영 현황</h2></div><button class="close-button" id="closeLoop" type="button" aria-label="검증 현황 닫기">×</button></div>
+      <div class="loop-metrics" id="loopMetrics"></div>
+      <div class="loop-body">
+        <div><h3>이번 실행에서 확인한 것</h3><p id="runSummary">실행 로그를 불러오는 중입니다.</p></div>
+        <div><h3>검토 필요 항목</h3><div id="failureList" class="failure-list"></div></div>
+      </div>
+      <p class="loop-note">공개 데이터는 사람 검토가 끝난 항목만 게시합니다. 오류 발견 시 GitHub Issue 또는 데이터 교정 템플릿을 사용하세요.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>종근당 의약품 근거 탐색 허브</strong><span>공식 원문 링크 중심의 공개 파일럿</span></div>
+    <div><a href="https://www.ckdpharm.com/" target="_blank" rel="noreferrer">종근당 공식 홈페이지 ↗</a><a href="https://dart.fss.or.kr/" target="_blank" rel="noreferrer">DART ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noreferrer">PubMed ↗</a></div>
+  </footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
