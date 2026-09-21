@@ -70,6 +70,7 @@ button { cursor: pointer; }
 .result-fact { display: grid; grid-template-columns: 36px 1fr; gap: .4rem; margin-top: .42rem; color: var(--muted); font-size: .7rem; line-height: 1.35; }
 .result-fact span { color: var(--teal); font-weight: 800; }
 .result-fact strong { overflow: hidden; color: var(--navy); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.result-research { margin-top: .45rem; color: var(--teal); font-size: .68rem; font-weight: 700; }
 .mini-status { display: inline-flex; align-items: center; gap: .28rem; margin-top: .55rem; color: var(--muted); font-size: .68rem; }
 .mini-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
 .mini-status.review::before { background: var(--amber); }
@@ -133,6 +134,9 @@ button { cursor: pointer; }
 .change-head { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .71rem; }
 .change-item h4, .literature-item h4 { margin: .28rem 0; color: var(--navy); font-size: .87rem; }
 .change-item p, .literature-item p { margin: 0; color: var(--muted); font-size: .78rem; }
+.literature-tags { display: flex; flex-wrap: wrap; gap: .32rem; margin: .38rem 0 .5rem; }
+.literature-tags span { padding: .2rem .42rem; border-radius: 999px; background: var(--teal-soft); color: #08716a; font-size: .65rem; font-weight: 700; }
+.literature-limit { display: block; margin-top: .45rem; color: var(--muted); font-size: .7rem; line-height: 1.45; }
 .inline-link { color: var(--teal); font-weight: 800; }
 .loop-panel { margin: -32px 0 64px; padding: 1.5rem 1.7rem; }
 .close-button { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--muted); font-size: 1.4rem; }

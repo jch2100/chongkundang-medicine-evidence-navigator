@@ -3,7 +3,7 @@ const state = { products: [], changes: [], literature: [], faqTemplates: [], run
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 const safeUrl = (value) => /^https?:\/\//i.test(value || '') ? value : '#';
-const formatMoney = (value) => value ? `${Number(value).toLocaleString('ko-KR')}백만원` : '확인 필요';
+const formatMoney = (value) => value ? `${Number(value).toLocaleString('ko-KR')}백만원` : '추가 편입 품목';
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -20,6 +20,8 @@ function filteredProducts() {
     const filterMatch = state.filter === 'all'
       || (state.filter === '변경 이력' && hasChange)
       || (state.filter === '공동판매' && product.ownershipTag === '공동판매')
+      || (state.filter === 'ETC' && (product.scope || 'ETC') === 'ETC')
+      || (state.filter === 'OTC' && product.scope === 'OTC')
       || product.ckdCategory === state.filter;
     return queryMatch && filterMatch;
   });
@@ -32,10 +34,11 @@ function renderResults() {
   if (!products.length) { list.innerHTML = '<div class="no-results">조건에 맞는 제품이 없습니다.<br>검색어 또는 분류를 바꿔보세요.</div>'; return; }
   list.innerHTML = products.map((product) => `
     <button class="result-card ${state.selected === product.id ? 'selected' : ''}" data-product-id="${escapeHtml(product.id)}" type="button">
-      <div class="result-top"><span class="result-name">${escapeHtml(product.name)}</span><span class="rank">#${product.dartRank}</span></div>
+      <div class="result-top"><span class="result-name">${escapeHtml(product.name)}</span><span class="rank">${product.dartRank ? `#${product.dartRank}` : escapeHtml(product.scope || '추가')}</span></div>
       <div class="result-meta">${escapeHtml(product.dartCategory)} · ${formatMoney(product.dartSales)}</div>
       <div class="result-fact"><span>성분</span><strong>${escapeHtml(state.core?.[product.id]?.ingredient || product.ingredient || '확인 필요')}</strong></div>
       <div class="result-fact"><span>효능</span><strong>${escapeHtml(state.core?.[product.id]?.efficacy || product.dartCategory)}</strong></div>
+      <div class="result-research">관련 연구 ${state.literature.filter((item) => item.productId === product.id && item.status === 'published').length}건 · ${escapeHtml(product.scope || 'ETC')}</div>
       <span class="mini-status ${product.status === 'review' ? 'review' : ''}">${product.status === 'review' ? '공식 매핑 검토 필요' : '공식 원문 매핑'}</span>
     </button>`).join('');
   list.querySelectorAll('[data-product-id]').forEach((button) => button.addEventListener('click', () => selectProduct(button.dataset.productId)));
@@ -76,9 +79,9 @@ function renderDetail(product) {
   const core = state.core[product.id] || {};
   const faqItems = state.faqTemplates.map((template) => ({ ...template, answer: buildFaqAnswer(template.answerKey, product, core, changes, state.literature) }));
   const pubmedUrl = `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(product.searchTerms || product.name)}`;
-  const sourceItems = [sourceLink('DART 2025 사업보고서 · 주요 제품 및 서비스', '매출 근거', product.sources.dart)];
+  const sourceItems = [sourceLink(`DART 2025 사업보고서 · ${product.dartRank ? '주요 제품 및 서비스' : '참고 원문'}`, '매출 근거', product.sources.dart)];
   if (product.sources.ckd) sourceItems.push(sourceLink(`${product.displayName || product.name} · 종근당 공식 제품 페이지`, '제품 원문', product.sources.ckd));
-  if (core.source) sourceItems.push(sourceLink('식약처 의약품안전나라 · 품목 상세', '허가 원문', core.source));
+  if (core.source) sourceItems.push(sourceLink(core.sourceLabel || '식약처 의약품안전나라 · 품목 상세', '허가 원문', core.source));
   sourceItems.push(sourceLink('의약품안전나라 · 식약처 공식 검색', '허가 원문', product.sources.mfds));
   sourceItems.push(sourceLink('PubMed · 관련 연구 검색', '연구 원문', pubmedUrl));
   if (product.sources.ckdNews) sourceItems.push(sourceLink('종근당 제품소식 · 허가 변경 게시판', '변경 원문', product.sources.ckdNews));
@@ -87,7 +90,7 @@ function renderDetail(product) {
     <div class="detail-hero">
       <p class="section-kicker">PRODUCT EVIDENCE CARD</p>
       <h2>${escapeHtml(product.name)}</h2>
-      <p>${escapeHtml(product.dartCategory)} · DART ${product.dartRank}위 · ${formatMoney(product.dartSales)}</p>
+      <p>${escapeHtml(product.dartCategory)} · ${product.dartRank ? `DART ${product.dartRank}위` : `${escapeHtml(product.scope || 'ETC')} 추가 편입`} · ${formatMoney(product.dartSales)}</p>
       <div class="tag-row"><span class="tag ${product.status === 'review' ? 'status-review' : 'status-ok'}">${product.status === 'review' ? '공식 매핑 검토 필요' : '공식 원문 확인 가능'}</span>${product.ownershipTag ? `<span class="tag">${escapeHtml(product.ownershipTag)}</span>` : ''}<span class="tag">최근 5년 변경 기준</span></div>
     </div>
     <div class="detail-body">
@@ -111,7 +114,7 @@ function renderDetail(product) {
       <section class="detail-section"><div class="faq-heading"><div><p class="section-kicker">FIELD FAQ</p><h3>현장 질문과 공식 기준 답변</h3></div><span>답변 기준: ${core.status === 'confirmed' ? '품목 원문 확인' : '검토 중'}</span></div><p class="section-description">질문만 남기지 않고, 현재 확인된 공식 근거와 확인 한계를 함께 답합니다.</p><div class="faq-list">${faqItems.map((item) => `<div class="faq-item"><div class="faq-question"><span>Q</span><strong>${escapeHtml(item.question)}</strong></div><p><b>A.</b> ${escapeHtml(item.answer)}</p></div>`).join('')}</div></section>
       <section class="detail-section"><h3>허가·제품 확인 원문</h3><p class="section-description">아래 링크를 기준으로 확인하고, 비공식 해석은 별도 판단 영역으로 분리합니다.</p><div class="source-list">${sourceItems.join('')}</div></section>
       <section class="detail-section"><h3>최근 5년 허가 변경 이력</h3><p class="section-description">변경 전후의 세부 내용은 원문 변경대비표에서 확인하세요. 이 화면은 확인 경로와 게시 상태를 기록합니다.</p>${changes.length ? changes.map((change) => `<div class="change-item"><div class="change-head"><span>${escapeHtml(change.date)}</span><span>${escapeHtml(change.type)}</span></div><h4>${escapeHtml(change.title)}</h4><p>${escapeHtml(change.summary)} <a class="inline-link" href="${escapeHtml(safeUrl(change.source))}" target="_blank" rel="noreferrer">원문 보기 ↗</a></p></div>`).join('') : '<div class="notice"><strong>현재 게시된 이력 없음</strong>최근 5년 변경이 없다는 뜻이 아니라, 본 MVP 데이터셋에서 사람 검토를 마친 항목이 아직 없다는 뜻입니다.</div>'}</section>
-      <section class="detail-section"><h3>관련 최신 연구</h3><p class="section-description">PubMed 검색 결과를 그대로 근거로 사용하지 않고, 논문별 검토 후 제목·질환·HCP 요약·원문 링크를 공개합니다.</p>${literature.length ? literature.map((item) => `<div class="literature-item"><div class="change-head"><span>${escapeHtml(item.publicationDate)}</span><span>PMID ${escapeHtml(item.pmid)}</span></div><h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.hcpSummary)} <a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">원문 보기 ↗</a></p></div>`).join('') : `<div class="notice"><strong>검토 완료 논문 0건</strong>아직 사람이 확인해 공개한 논문은 없습니다. 아래 PubMed 검색으로 최신 연구를 찾은 뒤, 문헌 검토 큐에 등록할 수 있습니다.<br><br><a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></div>`}</section>
+      <section class="detail-section"><h3>관련 최신 연구</h3><p class="section-description">PubMed 검색 결과를 그대로 근거로 사용하지 않고, 논문별 검토 후 제목·질환·키워드·HCP 요약·원문 링크를 공개합니다.</p>${literature.length ? literature.map((item) => `<div class="literature-item"><div class="change-head"><span>${escapeHtml(item.publicationDate)}</span><span>PMID ${escapeHtml(item.pmid)}</span></div><h4>${escapeHtml(item.title)}</h4><div class="literature-tags">${(item.diseases || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}${(item.hashtags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div><p>${escapeHtml(item.hcpSummary)}</p><small class="literature-limit">한계: ${escapeHtml(item.limitations || '원문 초록과 연구설계를 함께 확인하세요.')}</small><br><a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">PubMed 원문 보기 ↗</a></div>`).join('') : `<div class="notice"><strong>검토 완료 논문 0건</strong>아직 사람이 확인해 공개한 논문은 없습니다. 아래 PubMed 검색으로 최신 연구를 찾은 뒤, 문헌 검토 큐에 등록할 수 있습니다.<br><br><a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></div>`}</section>
     </div>
   </div>`;
 }
@@ -149,8 +152,8 @@ function setupEvents() {
 async function init() {
   setupEvents();
   try {
-    const [products, changes, literature, core, faq, run] = await Promise.all([loadJson('./data/public/products.json'), loadJson('./data/public/changes.json'), loadJson('./data/public/literature.json'), loadJson('./data/public/official-core.json'), loadJson('./data/public/faq-templates.json'), loadJson('./qa/runs/latest.json')]);
-    state.products = products.products; state.changes = changes.changes; state.literature = literature.items; state.core = core.items; state.faqTemplates = faq.items; state.run = run;
+    const [products, additions, changes, literature, core, additionalCore, faq, run] = await Promise.all([loadJson('./data/public/products.json'), loadJson('./data/public/additional-products.json'), loadJson('./data/public/changes.json'), loadJson('./data/public/literature.json'), loadJson('./data/public/official-core.json'), loadJson('./data/public/additional-core.json'), loadJson('./data/public/faq-templates.json'), loadJson('./qa/runs/latest.json')]);
+    state.products = [...products.products, ...additions.products]; state.changes = changes.changes; state.literature = literature.items; state.core = { ...core.items, ...additionalCore.items }; state.faqTemplates = faq.items; state.run = run;
     renderLoop(); renderResults();
     const hashId = new URLSearchParams(location.hash.replace('#', '')).get('product');
     selectProduct(state.products.some((item) => item.id === hashId) ? hashId : state.products[0].id, Boolean(hashId));
