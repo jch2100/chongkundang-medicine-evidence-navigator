@@ -15,15 +15,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate JSON and scope rules
+
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/validate-data.mjs
-      - name: Check public links
+
+      # 데이터 검증은 차단 게이트다. 실패하면 배포도 막힌다(pages.yml 에서 동일 검사 수행).
+      - name: Validate JSON and data rules
+        run: node scripts/validate-data.mjs
+
+      # 외부 링크 검사는 참고용이다.
+      # 식약처·심평원·종근당 사이트는 GitHub 러너(해외 IP)에서 302 리다이렉트, 500, 타임아웃을
+      # 돌려주기 때문에 차단 게이트로 쓰면 데이터가 멀쩡해도 항상 빨간불이 된다.
+      # 항상 실패하는 검사는 아무도 보지 않게 되므로, 리포트만 남기고 통과시킨다.
+      # 링크 형식(https 여부)은 validate-data.mjs 가 이미 강제한다.
+      - name: Check public links (report only)
+        continue-on-error: true
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress './index.html' './data/public/*.json' './README.md'
-          fail: true
+          args: >-
+            --verbose --no-progress
+            --accept 200,206,301,302,303,307,308
+            --max-retries 1 --timeout 20
+            './index.html' './data/public/*.json' './README.md'
+          fail: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
