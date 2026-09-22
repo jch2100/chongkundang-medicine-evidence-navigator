@@ -178,6 +178,54 @@ for (const key of itemKeys) {
   if (!billingKeys.has(key)) errors.push(`item:${key} has no billing record — 급여 여부를 표시할 수 없습니다`);
 }
 
+// ---------------------------------------------------------------- 상병코드 층 (indications.json)
+// docs/KCD_MAPPING.md — 불완전코드를 청구 코드처럼 제시하면 틀린 안내가 된다.
+
+const indications = readJson('data/public/indications.json', { required: false });
+if (indications) {
+  const REVIEW_STATUS = new Set(['candidate', 'reviewed']);
+  const seenBrands = new Set();
+  for (const entry of indications.items || []) {
+    const id = entry.brandId || '(unknown)';
+    if (!entry.brandId || !productIds.has(entry.brandId)) errors.push(`indications:${id} 알 수 없는 brandId`);
+    if (seenBrands.has(entry.brandId)) errors.push(`indications:${id} brandId 중복`);
+    seenBrands.add(entry.brandId);
+    if (!isHttps(entry.labelSourceUrl)) errors.push(`indications:${id} labelSourceUrl 은 https 여야 합니다`);
+    if (!Array.isArray(entry.indicationLabels) || !entry.indicationLabels.length) errors.push(`indications:${id} indicationLabels 가 비어 있습니다`);
+    if (!REVIEW_STATUS.has(entry.reviewStatus)) errors.push(`indications:${id} reviewStatus 값이 잘못되었습니다`);
+    if (entry.reviewStatus === 'reviewed' && (!entry.mappedBy || !isDate(entry.mappedOn))) {
+      errors.push(`indications:${id} reviewed 상태는 mappedBy 와 mappedOn 이 필요합니다`);
+    }
+    // 급여 인정 상병은 고시 확인 없이 채우지 않는다.
+    if (entry.reimbursementScope) {
+      if (!entry.noticeRef) errors.push(`indications:${id} reimbursementScope 에는 noticeRef 가 필요합니다`);
+      if (!isDate(entry.reimbursementCheckedOn)) errors.push(`indications:${id} 급여 정보에는 확인일(reimbursementCheckedOn)이 필요합니다`);
+      if (!['primary', 'secondary'].includes(entry.reimbursementSourceType)) {
+        errors.push(`indications:${id} reimbursementSourceType 은 primary 또는 secondary 여야 합니다`);
+      }
+      if (entry.noticeUrl && !isHttps(entry.noticeUrl)) errors.push(`indications:${id} noticeUrl 은 https 여야 합니다`);
+      for (const code of entry.reimbursementCodes || []) {
+        if (!/^[A-Z]\d{2,5}$/.test(code)) errors.push(`indications:${id} 급여 상병코드 형식 오류: ${code}`);
+      }
+    }
+    // 급여 근거 없이 상세 문구만 남으면 출처 없는 급여 안내가 된다.
+    if (!entry.reimbursementScope && (entry.reimbursementDetails || entry.reimbursementCodes)) {
+      errors.push(`indications:${id} reimbursementScope 없이 급여 상세만 존재합니다`);
+    }
+    for (const block of entry.blocks || []) {
+      if (!block.codes || !block.codes.length) errors.push(`indications:${id}/${block.block} 완전코드가 없습니다`);
+      for (const code of block.codes || []) {
+        if (!/^[A-Z]\d{2,5}$/.test(code.code || '')) errors.push(`indications:${id}/${block.block} 상병코드 형식 오류: ${code.code}`);
+        if (!code.nameKo) errors.push(`indications:${id}/${block.block} ${code.code} 한글명 누락`);
+      }
+      // 블록 자신이 불완전코드인데 코드 목록에 그대로 들어가면 청구 불가 코드를 제시하게 된다.
+      if (block.blockComplete === false && (block.codes || []).some((c) => c.code === block.block)) {
+        errors.push(`indications:${id}/${block.block} 불완전코드가 제시 목록에 포함되었습니다`);
+      }
+    }
+  }
+}
+
 // ---------------------------------------------------------------- 최신성 (경고)
 
 const staleDays = (dateText) => Math.floor((Date.now() - Date.parse(`${dateText}T00:00:00Z`)) / 86400000);

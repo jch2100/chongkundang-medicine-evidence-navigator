@@ -4,6 +4,9 @@
 
 const RX_DISCLAIMER = '코드와 금액은 참고용입니다. 실제 청구는 심평원 고시 원문과 의료진 판단을 따릅니다.';
 const NOT_LISTED_LABEL = '급여목록 미등재 (비급여 여부는 별도 확인)';
+const KCD_DISCLAIMER = '상병코드는 허가 적응증에 대응하는 참고 매핑입니다. 실제 청구 상병은 환자 상태와 심평원 고시 기준에 따라 의료진이 판단합니다.';
+/* 코드가 이보다 많으면 블록을 모두 접은 채로 연다 (사이폴은 300개 가까이 된다). */
+const KCD_AUTO_OPEN_LIMIT = 20;
 
 const state = {
   products: [],
@@ -18,9 +21,14 @@ const state = {
   billingSource: null,
   itemsSource: null,
   usingFixtures: [],
+  indications: null,
+  indicationsPromise: null,
+  indicationsFailed: false,
+  kcdQuery: '',
   query: '',
   category: 'all',
   flags: new Set(),
+  categoryMoreOpen: false,
   showCancelled: false,
   selected: null
 };
@@ -308,6 +316,7 @@ function rxSection(product) {
     `).join('')}
     ${cancelledCount ? `<button class="link-button" type="button" id="toggleCancelled">${state.showCancelled ? '허가취소 품목 숨기기' : `허가취소 품목 ${cancelledCount}건 보기`}</button>` : ''}
     <p class="rx-source">${escapeHtml(state.billingSource ? state.billingSource.noticeName : '약제 급여 목록 및 급여 상한금액표')} · ${escapeHtml(state.itemsSource ? state.itemsSource.standardCode : '약가마스터 의약품표준코드')}</p>
+    ${hasReimbursement(product) ? '<p class="rx-crosslink"><a class="inline-link" href="#reimb">이 브랜드의 급여 기준 보기 ↓</a></p>' : ''}
     <p class="rx-disclaimer">${escapeHtml(RX_DISCLAIMER)}</p>
   </section>`;
 }
@@ -341,6 +350,161 @@ function buildFaqAnswer(answerKey, product, core, changes) {
       : '사람이 확인해 공개한 논문은 아직 없습니다. PubMed 검색 링크에서 후보 논문을 찾은 뒤 검토합니다.';
   }
   return '공식 근거 확인 필요';
+}
+
+/* ---------- 상병코드(KCD) · 급여 기준 ----------
+   200KB가 넘어 초기 로드에 넣지 않는다. 상세를 처음 열 때 한 번만 받아 캐시한다. */
+
+function loadIndications() {
+  if (state.indications || state.indicationsFailed) return null;
+  if (state.indicationsPromise) return state.indicationsPromise;
+  state.indicationsPromise = loadJson('./data/public/indications.json')
+    .then((data) => {
+      state.indications = new Map((data.items || []).map((item) => [item.brandId, item]));
+      state.indicationsMeta = { source: data.source || null, generatedOn: data.generatedOn || null };
+      return state.indications;
+    })
+    .catch(() => {
+      state.indicationsFailed = true;
+      return null;
+    })
+    .finally(() => { state.indicationsPromise = null; });
+  return state.indicationsPromise;
+}
+
+/* 성별구분·하한연령·상한연령은 상병마스터 원본 값이다.
+   sexLabel 은 생성 단계에서 해석한 값이며(X=여성, Y=남성), 원본값은 title 에 남긴다. */
+function codeBadges(code) {
+  const badges = [];
+  if (code.sex) {
+    const label = code.sexLabel ? `${escapeHtml(code.sexLabel)} 한정` : '성별 제한';
+    badges.push(`<span class="kcd-badge" title="상병마스터 성별구분 값: ${escapeHtml(code.sex)}">${label}</span>`);
+  }
+  if (code.ageMin) badges.push(`<span class="kcd-badge">하한연령 ${escapeHtml(code.ageMin)}세</span>`);
+  if (code.ageMax) badges.push(`<span class="kcd-badge">상한연령 ${escapeHtml(code.ageMax)}세</span>`);
+  return badges.join('');
+}
+
+function codeMatchesKcdQuery(code, query) {
+  if (!query) return true;
+  return code.code.toLowerCase().includes(query) || (code.nameKo || '').toLowerCase().includes(query);
+}
+
+function kcdBlockHtml(block, query, autoOpen) {
+  const codes = (block.codes || []).filter((code) => codeMatchesKcdQuery(code, query));
+  if (query && !codes.length) return '';
+  const open = query ? true : autoOpen;
+  return `<details class="kcd-block"${open ? ' open' : ''}>
+      <summary>
+        <span class="kcd-block-code">${escapeHtml(block.block)}</span>
+        <span class="kcd-block-name">${escapeHtml(block.blockName || '')}</span>
+        <span class="kcd-block-meta">
+          ${block.restricted ? '<span class="kcd-flag restricted">허가 범위로 축소</span>' : ''}
+          ${block.blockComplete
+            ? '<span class="kcd-flag complete">완전코드</span>'
+            : '<span class="kcd-flag header">분류 헤더 · 단독 청구 불가</span>'}
+          <span class="kcd-count">${codes.length}${query ? `/${(block.codes || []).length}` : ''}개</span>
+        </span>
+        ${block.restricted && block.note ? `<span class="kcd-block-restrict">${escapeHtml(block.note)}</span>` : ''}
+      </summary>
+      ${block.indicationLabel ? `<p class="kcd-block-label">적응증 표제어: ${escapeHtml(block.indicationLabel)}</p>` : ''}
+      ${block.note && !block.restricted ? `<p class="kcd-block-note">${escapeHtml(block.note)}</p>` : ''}
+      <ul class="kcd-code-list">
+        ${codes.map((code) => `<li>
+          ${copyButton(code.code, '상병코드')}
+          <span class="kcd-name">${escapeHtml(code.nameKo || '')}</span>
+          ${codeBadges(code)}
+        </li>`).join('')}
+      </ul>
+    </details>`;
+}
+
+function hasReimbursement(product) {
+  const entry = state.indications && state.indications.get(product.id);
+  return Boolean(entry && entry.reimbursementScope);
+}
+
+/* 급여 기준 패널.
+   reimbursementScope 가 null 이면 이 영역을 통째로 그리지 않는다.
+   "급여 정보 없음" 같은 문구도 남기지 않는다 — 빈 값이 '제한 없음'으로 읽히면 안 된다. */
+function reimbursementPanel(entry) {
+  if (!entry || !entry.reimbursementScope) return '';
+  const secondary = entry.reimbursementSourceType === 'secondary';
+  const codes = entry.reimbursementCodes || [];
+  return `<div class="reimb-panel" id="reimb">
+    <div class="reimb-head">
+      <h4>급여 기준</h4>
+      <span class="reimb-source ${secondary ? 'secondary' : 'primary'}">${secondary ? '2차 자료 · 고시 원문 확인 필요' : '고시 원문 확인'}</span>
+    </div>
+    <p class="reimb-scope">${escapeHtml(entry.reimbursementScope)}</p>
+    ${codes.length ? `<div class="reimb-codes">
+      <span class="reimb-codes-title">급여 인정 상병 (분류)</span>
+      <div class="reimb-code-chips">${codes.map((code) => `<span class="reimb-code">${escapeHtml(code)}</span>`).join('')}</div>
+      <p class="reimb-codes-note">급여 인정 <strong>범위</strong>를 나타내는 분류입니다. 하위 세분류를 포함하며 <strong>청구 코드가 아닙니다.</strong> 청구용 완전코드는 아래 상병코드 후보 목록에서 확인하세요.</p>
+    </div>` : ''}
+    ${(entry.reimbursementDetails || []).length ? `<ul class="reimb-details">${entry.reimbursementDetails.map((line) => `<li>${escapeHtml(line)}</li>`).join('')}</ul>` : ''}
+    <p class="reimb-basis">
+      ${entry.noticeRef ? `<span>근거: ${escapeHtml(entry.noticeRef)}</span>` : ''}
+      ${entry.reimbursementCheckedOn ? `<span>확인일 ${escapeHtml(entry.reimbursementCheckedOn)}</span>` : ''}
+      ${entry.noticeUrl ? `<a class="inline-link" href="${escapeHtml(safeUrl(entry.noticeUrl))}" target="_blank" rel="noreferrer">고시·기준 원문 ↗</a>` : ''}
+    </p>
+    ${secondary ? '<p class="reimb-warn">이 내용은 고시 원문이 아니라 2차 자료로 확인했습니다. 청구 전 고시 원문을 대조하세요.</p>' : ''}
+    <p class="reimb-warn">급여 기준은 수시로 개정됩니다. 확인일 이후 변경 여부를 확인하세요.</p>
+  </div>`;
+}
+
+function kcdSection(product) {
+  const head = `<div class="rx-head"><h3>상병코드(KCD) 후보</h3><span class="rx-basis wait">사람 검토 전</span></div>`;
+
+  if (state.indicationsFailed) {
+    return `<section class="detail-section" id="kcd">${head}
+      <p class="notice">상병코드 데이터를 불러오지 못했습니다.</p></section>`;
+  }
+  if (!state.indications) {
+    return `<section class="detail-section" id="kcd">${head}
+      <p class="kcd-loading">상병코드 매핑을 불러오는 중입니다…</p></section>`;
+  }
+
+  const entry = state.indications.get(product.id);
+  if (!entry) {
+    return `<section class="detail-section" id="kcd">${head}
+      <p class="notice">이 브랜드의 상병코드 후보는 아직 매핑되지 않았습니다. 확정 전 값을 추정하지 않습니다.</p>
+      <p class="rx-disclaimer">${escapeHtml(KCD_DISCLAIMER)}</p></section>`;
+  }
+
+  const blocks = entry.blocks || [];
+  const total = blocks.reduce((sum, block) => sum + (block.codes || []).length, 0);
+  const query = state.kcdQuery.trim().toLowerCase();
+  const shown = blocks.reduce((sum, block) => sum + (block.codes || []).filter((code) => codeMatchesKcdQuery(code, query)).length, 0);
+  const autoOpen = total <= KCD_AUTO_OPEN_LIMIT;
+  const body = blocks.map((block) => kcdBlockHtml(block, query, autoOpen)).join('');
+
+  return `<section class="detail-section kcd-section" id="kcd">
+    ${head}
+    <p class="kcd-intro">검토자·검토일이 아직 없습니다(<code>reviewStatus: candidate</code>).</p>
+
+    ${reimbursementPanel(entry)}
+
+    ${entry.note ? `<div class="notice">${escapeHtml(entry.note)}</div>` : ''}
+
+    <div class="kcd-indication">
+      <h4 class="kcd-subhead">허가 적응증 기준 상병코드 후보</h4>
+      <p class="kcd-intro">식약처 허가 효능·효과 표제어를 근거로 선정한 <strong>블록 후보</strong>입니다.${entry.reimbursementScope ? ' <strong>급여 인정 범위와 다릅니다.</strong> 위 급여 기준을 함께 확인하세요.' : ''}</p>
+    ${(entry.indicationLabels || []).length ? `<div class="kcd-labels"><span class="kcd-labels-title">허가 적응증 표제어</span><div class="tag-list">${entry.indicationLabels.map((label) => `<span>${escapeHtml(label)}</span>`).join('')}</div></div>` : ''}
+    <div class="kcd-toolbar">
+      <label class="kcd-search" for="kcdSearch">
+        <span class="visually-hidden">상병코드 또는 상병명으로 좁히기</span>
+        <input id="kcdSearch" type="search" autocomplete="off" placeholder="코드·상병명으로 좁히기" value="${escapeHtml(state.kcdQuery)}">
+      </label>
+      <span class="kcd-total">${query ? `${shown} / ${total}` : `${total}`}개 완전코드 · 블록 ${blocks.length}개</span>
+    </div>
+    ${total > KCD_AUTO_OPEN_LIMIT && !query ? '<p class="kcd-hint">코드가 많아 블록을 접어 두었습니다. 블록을 열거나 위에서 검색하세요.</p>' : ''}
+    <div class="kcd-blocks">${body || '<p class="no-results">일치하는 상병코드가 없습니다.</p>'}</div>
+    ${entry.labelSourceUrl ? `<p class="kcd-source"><a class="inline-link" href="${escapeHtml(safeUrl(entry.labelSourceUrl))}" target="_blank" rel="noreferrer">식약처 허가사항 원문 보기 ↗</a></p>` : ''}
+    </div>
+    <p class="kcd-legend">복사 버튼은 단독 청구가 가능한 완전코드에만 있습니다. 블록(분류 헤더)은 복사 대상이 아닙니다. 성별·연령 배지는 심평원 상병마스터에 제한 값이 있는 코드입니다.</p>
+    <p class="rx-disclaimer">${escapeHtml(KCD_DISCLAIMER)}</p>
+  </section>`;
 }
 
 /* ---------- 상세 ---------- */
@@ -384,6 +548,8 @@ function renderDetail(product) {
 
     <nav class="detail-nav" aria-label="상세 목차">
       <a href="#rx">처방·청구</a>
+      <a href="#kcd">상병코드</a>
+      ${hasReimbursement(product) ? '<a href="#reimb">급여 기준</a>' : ''}
       <a href="#core">핵심 정보</a>
       <a href="#faq">현장 FAQ</a>
       <a href="#changes">변경 이력</a>
@@ -393,6 +559,8 @@ function renderDetail(product) {
 
     <div class="detail-body">
       ${rxSection(product)}
+
+      ${kcdSection(product)}
 
       ${product.status === 'review' ? '<p class="notice">공개 데이터셋에서 DART 제품명과 종근당 공식 제품 페이지의 1:1 매핑을 확인하지 못했습니다. 성분·적응증·변경사항을 추정하지 않고 원문 검색 링크만 제공합니다.</p>' : ''}
 
@@ -450,6 +618,38 @@ function renderDetail(product) {
       if (target) target.scrollIntoView({ block: 'start' });
     });
   }
+
+  const kcdSearch = $('#kcdSearch');
+  if (kcdSearch) {
+    kcdSearch.addEventListener('input', (event) => {
+      state.kcdQuery = event.target.value;
+      renderKcdOnly(product);
+    });
+  }
+
+  /* 상병코드는 상세를 처음 열 때 받아온다. 도착하면 해당 섹션만 다시 그린다. */
+  const pending = loadIndications();
+  if (pending) pending.then(() => { if (state.selected === product.id) renderKcdOnly(product); });
+}
+
+/* 상세 전체를 다시 그리면 스크롤 위치와 열린 블록이 초기화되므로 섹션만 교체한다. */
+function renderKcdOnly(product) {
+  const current = $('#kcd');
+  if (!current) return;
+  const active = document.activeElement === $('#kcdSearch');
+  const caret = active ? $('#kcdSearch').selectionStart : null;
+  current.outerHTML = kcdSection(product);
+  const input = $('#kcdSearch');
+  if (input) {
+    input.addEventListener('input', (event) => {
+      state.kcdQuery = event.target.value;
+      renderKcdOnly(product);
+    });
+    if (active) {
+      input.focus();
+      if (caret !== null) input.setSelectionRange(caret, caret);
+    }
+  }
 }
 
 /* ---------- 선택 ---------- */
@@ -459,6 +659,7 @@ function selectProduct(id, { updateHash = true, scroll = true } = {}) {
   if (!product) return;
   state.selected = id;
   state.showCancelled = false;
+  state.kcdQuery = '';
   if (updateHash) history.replaceState(null, '', `#product=${encodeURIComponent(id)}`);
   renderResults();
   renderDetail(product);
@@ -511,14 +712,52 @@ function showToast(message) {
 
 /* ---------- 필터 / 이벤트 ---------- */
 
+/* 분류는 14개까지 늘어난다. 제품 수가 많은 순으로 앞쪽 5개만 상시 노출하고
+   나머지는 '+N개'로 접는다. 선택 중인 분류는 접힌 쪽이어도 앞으로 끌어올린다. */
+const CATEGORY_VISIBLE = 5;
+
 function renderCategoryFilters() {
-  const categories = [...new Set(state.products.map((product) => product.ckdCategory).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ko'));
-  $('#categoryFilters').innerHTML = [['all', '전체'], ...categories.map((name) => [name, name])]
-    .map(([value, label]) => `<button class="filter-chip${state.category === value ? ' active' : ''}" type="button" aria-pressed="${state.category === value}" data-category="${escapeHtml(value)}">${escapeHtml(label)}</button>`)
-    .join('');
+  const counts = new Map();
+  state.products.forEach((product) => {
+    if (product.ckdCategory) counts.set(product.ckdCategory, (counts.get(product.ckdCategory) || 0) + 1);
+  });
+  const ordered = [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))
+    .map(([name]) => name);
+
+  let primary = ordered.slice(0, CATEGORY_VISIBLE);
+  let secondary = ordered.slice(CATEGORY_VISIBLE);
+  if (secondary.includes(state.category)) {
+    primary = [state.category, ...primary.slice(0, CATEGORY_VISIBLE - 1)];
+    secondary = ordered.filter((name) => !primary.includes(name));
+  }
+
+  const chip = (value, label) => `<button class="filter-chip${state.category === value ? ' active' : ''}" type="button" aria-pressed="${state.category === value}" data-category="${escapeHtml(value)}">${escapeHtml(label)}</button>`;
+
+  $('#categoryFilters').innerHTML = [
+    chip('all', '전체'),
+    ...primary.map((name) => chip(name, name)),
+    secondary.length
+      ? `<details class="filter-more"${state.categoryMoreOpen ? ' open' : ''}>
+           <summary class="filter-chip" aria-label="분류 ${secondary.length}개 더 보기">+${secondary.length}</summary>
+           <div class="filter-more-panel">${secondary.map((name) => chip(name, name)).join('')}</div>
+         </details>`
+      : ''
+  ].join('');
+
+  const more = $('#categoryFilters .filter-more');
+  if (more) {
+    more.addEventListener('toggle', () => {
+      state.categoryMoreOpen = more.open;
+      /* 모바일 칩 줄은 overflow-x: auto 라 절대배치 패널이 잘린다. 열릴 때만 흐름 배치로 바꾼다. */
+      document.body.classList.toggle('filter-more-open', more.open);
+    });
+  }
+  document.body.classList.toggle('filter-more-open', Boolean(more && more.open));
   $('#categoryFilters').querySelectorAll('[data-category]').forEach((button) => {
     button.addEventListener('click', () => {
       state.category = button.dataset.category;
+      state.categoryMoreOpen = false;
       if (isMobile()) document.body.classList.remove('detail-open');
       renderCategoryFilters();
       renderResults();
@@ -575,7 +814,7 @@ function setupEvents() {
 
   /* 목차 앵커는 해시를 바꾸지 않고 스크롤만 한다 (#product= 해시 보존). */
   document.addEventListener('click', (event) => {
-    const link = event.target.closest('.detail-nav a');
+    const link = event.target.closest('.detail-nav a, .rx-crosslink a');
     if (!link) return;
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;

@@ -75,6 +75,18 @@ h1, h2, h3, h4 { letter-spacing: -.02em; }
 .filter-chip:hover { border-color: var(--teal); color: var(--teal); }
 .filter-chip.active { border-color: var(--teal); background: var(--teal); color: var(--white); font-weight: 700; }
 
+/* 분류가 14개까지 늘어나 두 줄을 먹던 문제 — 나머지는 '+N'으로 접는다. */
+.filter-more { position: relative; flex: 0 0 auto; }
+.filter-more > summary { list-style: none; display: inline-block; }
+.filter-more > summary::-webkit-details-marker { display: none; }
+.filter-more[open] > summary { border-color: var(--teal); color: var(--teal); }
+.filter-more-panel {
+  position: absolute; z-index: 25; top: calc(100% + .3rem); left: 0;
+  display: flex; flex-wrap: wrap; gap: .32rem; width: max-content; max-width: min(380px, 80vw);
+  padding: .5rem; border: 1px solid var(--line); border-radius: .5rem;
+  background: var(--white); box-shadow: 0 10px 24px rgba(13,36,56,.14);
+}
+
 /* ---------- 레이아웃 ---------- */
 .workspace-grid { display: grid; grid-template-columns: 300px 1fr; gap: 1.1rem; padding-top: 1.1rem; align-items: start; }
 .result-column { min-width: 0; }
@@ -180,6 +192,87 @@ h1, h2, h3, h4 { letter-spacing: -.02em; }
 .rx-source { margin: .8rem 0 0; color: var(--muted); font-size: .7rem; word-break: break-all; }
 .rx-disclaimer { margin: .5rem 0 0; padding: .6rem .75rem; border-radius: .35rem; background: var(--line-soft); color: var(--ink); font-size: .76rem; font-weight: 600; }
 
+/* 급여 기준 — 허가 적응증과 반드시 시각적으로 분리한다.
+   글리아티린처럼 허가(뇌혈관 결손 2차 증상)와 급여(치매 상병)가 다른 품목에서
+   둘이 섞여 보이는 것이 이 화면에서 가장 위험한 오해다. */
+.reimb-panel {
+  margin-top: .8rem; padding: .9rem 1rem;
+  border: 2px solid #b9d4d0; border-radius: .6rem; background: #f2faf9;
+  scroll-margin-top: 160px;
+}
+.reimb-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .4rem; }
+.reimb-head h4 { margin: 0; color: var(--navy); font-size: 1rem; }
+.reimb-source { padding: .18rem .5rem; border-radius: .3rem; font-size: .7rem; font-weight: 700; }
+.reimb-source.primary { background: var(--teal-soft); color: #075c56; }
+.reimb-source.secondary { background: var(--amber-soft); color: var(--amber); }
+.reimb-scope { margin: .6rem 0 0; color: var(--ink); font-size: .88rem; font-weight: 700; line-height: 1.5; }
+
+.reimb-codes { margin-top: .8rem; padding: .65rem .75rem; border: 1px dashed #a9c6c2; border-radius: .45rem; background: var(--white); }
+.reimb-codes-title { display: block; color: var(--muted); font-size: .7rem; font-weight: 700; }
+.reimb-code-chips { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .35rem; }
+/* 복사 버튼과 헷갈리지 않도록 버튼이 아닌 점선 태그로 그린다. */
+.reimb-code {
+  padding: .2rem .45rem; border: 1px dashed var(--muted); border-radius: .3rem;
+  background: var(--paper); color: var(--navy);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem; font-weight: 700;
+}
+.reimb-codes-note { margin: .45rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.5; }
+
+.reimb-details { margin: .7rem 0 0; padding-left: 1.05rem; color: var(--ink); font-size: .79rem; }
+.reimb-details li { margin-bottom: .25rem; }
+.reimb-basis { display: flex; flex-wrap: wrap; gap: .1rem .7rem; margin: .7rem 0 0; color: var(--muted); font-size: .72rem; }
+.reimb-warn { margin: .4rem 0 0; color: var(--amber); font-size: .72rem; font-weight: 600; }
+.rx-crosslink { margin: .7rem 0 0; font-size: .78rem; }
+
+/* 상병코드(KCD) */
+.kcd-subhead { margin: 1.2rem 0 0; padding-top: .9rem; border-top: 1px solid var(--line); color: var(--navy); font-size: .95rem; }
+.kcd-intro { margin: .7rem 0 0; color: var(--muted); font-size: .77rem; }
+.kcd-intro code { padding: .05rem .25rem; border-radius: .25rem; background: var(--line-soft); font-size: .72rem; }
+.kcd-loading { margin: .7rem 0 0; padding: .8rem; border: 1px dashed var(--line); border-radius: .45rem; color: var(--muted); font-size: .78rem; text-align: center; }
+.kcd-labels { margin-top: .7rem; }
+.kcd-labels-title { display: block; color: var(--muted); font-size: .7rem; font-weight: 700; }
+.kcd-labels .tag-list { margin-top: .25rem; }
+
+.kcd-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; margin-top: .8rem; }
+.kcd-search { flex: 1 1 240px; min-width: 0; }
+.kcd-search input {
+  width: 100%; padding: .45rem .65rem; border: 1px solid var(--line); border-radius: .45rem;
+  background: var(--white); outline: 0;
+}
+.kcd-search input:focus-visible { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(11,111,104,.15); }
+.kcd-total { color: var(--muted); font-size: .74rem; font-weight: 700; white-space: nowrap; }
+.kcd-hint { margin: .4rem 0 0; color: var(--muted); font-size: .72rem; }
+
+.kcd-blocks { display: grid; gap: .35rem; margin-top: .6rem; }
+.kcd-block { border: 1px solid var(--line); border-radius: .45rem; background: var(--white); }
+.kcd-block > summary {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem;
+  padding: .55rem .7rem; cursor: pointer;
+}
+/* summary 를 flex 로 두면 기본 마커가 사라져 펼칠 수 있다는 단서가 없어진다. */
+.kcd-block > summary { list-style: none; }
+.kcd-block > summary::-webkit-details-marker { display: none; }
+.kcd-block > summary::before { content: "▸"; flex: 0 0 auto; color: var(--teal); font-size: .8rem; }
+.kcd-block[open] > summary::before { content: "▾"; }
+.kcd-block[open] > summary { border-bottom: 1px solid var(--line-soft); }
+.kcd-block-code { color: var(--navy); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 700; font-size: .84rem; }
+.kcd-block-name { color: var(--ink); font-size: .82rem; font-weight: 700; }
+.kcd-block-meta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .3rem; margin-left: auto; }
+.kcd-flag { padding: .12rem .4rem; border-radius: .25rem; font-size: .67rem; font-weight: 700; white-space: nowrap; }
+.kcd-flag.header { background: var(--amber-soft); color: var(--amber); }
+.kcd-flag.complete { background: var(--teal-soft); color: #075c56; }
+.kcd-flag.restricted { background: #eae6f5; color: #513f85; }
+/* 축소된 블록의 사유는 접혀 있어도 보여야 하므로 summary 안에 둔다. */
+.kcd-block-restrict { flex: 1 0 100%; margin-top: .25rem; color: var(--muted); font-size: .73rem; font-weight: 400; }
+.kcd-count { color: var(--muted); font-size: .7rem; white-space: nowrap; }
+.kcd-block-label, .kcd-block-note { margin: .5rem .7rem 0; color: var(--muted); font-size: .74rem; }
+.kcd-code-list { display: grid; gap: .3rem; margin: .5rem 0; padding: 0 .7rem .6rem; list-style: none; }
+.kcd-code-list li { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.kcd-name { color: var(--ink); font-size: .79rem; }
+.kcd-badge { padding: .1rem .38rem; border-radius: .25rem; background: var(--amber-soft); color: var(--amber); font-size: .66rem; font-weight: 700; white-space: nowrap; }
+.kcd-source { margin: .7rem 0 0; font-size: .78rem; }
+.kcd-legend { margin: .5rem 0 0; color: var(--muted); font-size: .71rem; }
+
 /* 핵심 정보 */
 .core-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; margin: .8rem 0 0; }
 .core-grid > div { padding: .65rem .75rem; border-radius: .45rem; background: var(--paper); }
@@ -249,6 +342,8 @@ h1, h2, h3, h4 { letter-spacing: -.02em; }
   body.detail-open .result-column { display: none; }
   body:not(.detail-open) .detail-column { display: none; }
   .filter-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .15rem; scrollbar-width: thin; }
+  body.filter-more-open .filter-chips { overflow: visible; flex-wrap: wrap; }
+  body.filter-more-open .filter-more-panel { position: static; max-width: 72vw; margin-top: .3rem; box-shadow: none; }
   .core-grid { grid-template-columns: 1fr; }
   .ops-metrics { grid-template-columns: repeat(2, 1fr); }
   .detail-hero, .detail-nav, .detail-body { padding-left: .9rem; padding-right: .9rem; }

@@ -85,33 +85,92 @@ E780  불완전   순수 고콜레스테롤혈증
 
 ---
 
-## 5. 데이터 형식 (`data/public/indications.json`)
+## 5. 데이터 형식
+
+입력은 사람이 작성하고, 출력은 스크립트가 생성한다.
+
+```text
+data/mapping/kcd-blocks.json   ← 사람이 작성 (블록 선정·급여 기준·사유)
+        ↓ scripts/build-indications.mjs
+data/public/indications.json   ← 생성물 (완전코드 전개 결과)
+```
+
+### 입력 — `data/mapping/kcd-blocks.json`
 
 ```jsonc
 {
-  "schemaVersion": "0.2.0",
-  "source": { "diseaseMaster": "건강보험심사평가원_상병마스터_20250930.csv" },
-  "items": [
-    {
-      "brandId": "dilatrend",
-      "itemKey": "199800085::(주)종근당",
-      "labelIndicationText": "본태성 고혈압",          // 허가사항 원문 문구
-      "labelSourceUrl": "https://nedrug.mfds.go.kr/...",
-      "kcdCandidates": [
-        { "code": "I109", "nameKo": "기타 및 상세불명의 원발성 고혈압", "complete": true },
-        { "code": "I101", "nameKo": "악성 고혈압", "complete": true }
-      ],
-      "kcdBlockLabel": "I10 본태성(원발성) 고혈압",     // 화면의 분류 헤더 (복사 불가)
-      "reimbursementScope": null,                     // 고시상 상병 제한. 확인 전에는 null
-      "noticeRef": null,
-      "mappedBy": null,
-      "mappedOn": null
-    }
-  ]
+  "brandId": "tacrobell",
+  "sourceItemSeq": "201700873",
+  "indicationLabels": ["신이식 거부반응 방지", "간이식 거부반응 방지"],
+  "blocks": [
+    { "block": "Z940", "for": "신장이식상태" },
+    { "block": "T86",  "for": "이식편 실패 및 거부",
+      "only": ["T861", "T864"],        // 블록 전체가 아니라 이 코드만
+      "note": "허가가 신·간 이식이므로 골수(T860)·심장(T862) 거부는 제외" }
+  ],
+  "reimbursement": {                    // 확인된 경우에만 작성
+    "scope": "급여는 치매 상병에 한정됩니다. …",
+    "codes": ["F00", "F01", "F023"],    // 급여 인정 '범위'. 청구 코드가 아니다
+    "details": ["…"],
+    "noticeRef": "보건복지부 고시 — …",
+    "noticeUrl": "https://…",
+    "sourceType": "primary | secondary",
+    "checkedOn": "2026-09-23"
+  },
+  "note": "…"
 }
 ```
 
-`reimbursementScope`가 `null`인 동안에는 화면에 급여 관련 문구를 **표시하지 않는다.** 빈 값을 "제한 없음"으로 읽히게 두지 않는다.
+`only`는 허가 적응증이 블록 전체가 아닐 때 쓴다. 쓰지 않으면 블록 아래 모든 완전코드가 들어가 **허가 범위를 넘는 코드가 딸려온다.**
+
+### 출력 — `data/public/indications.json`
+
+```jsonc
+{
+  "brandId": "tacrobell",
+  "sourceItemSeq": "201700873",
+  "labelSourceUrl": "https://nedrug.mfds.go.kr/…",
+  "indicationLabels": ["신이식 거부반응 방지", "…"],
+  "blocks": [
+    {
+      "block": "T86",
+      "blockName": "이식된 기관 및 조직의 실패 및 거부",
+      "blockComplete": false,        // false = 불완전코드. 분류 헤더로만 쓴다
+      "restricted": true,            // only 로 좁힌 블록
+      "indicationLabel": "이식편 실패 및 거부",
+      "note": "…",
+      "codes": [
+        { "code": "T861", "nameKo": "신장이식 실패 및 거부",
+          "sex": null, "sexLabel": null, "ageMin": null, "ageMax": null }
+      ]
+    }
+  ],
+  "reimbursementScope": null,        // 이하 급여 필드군. 미확인이면 전부 null
+  "reimbursementDetails": null,
+  "reimbursementCodes": null,
+  "noticeRef": null,
+  "noticeUrl": null,
+  "reimbursementCheckedOn": null,
+  "reimbursementSourceType": null,
+  "reviewStatus": "candidate",
+  "mappedBy": null,
+  "mappedOn": null
+}
+```
+
+`reimbursementScope`가 `null`인 동안에는 화면에 급여 관련 영역을 **그리지 않는다.** 빈 값을 "제한 없음"으로 읽히게 두지 않는다.
+
+### 성별·연령 제한
+
+상병마스터의 `성별구분`은 염색체 관례를 따른다.
+
+| 값 | 의미 | 근거 코드 |
+|---|---|---|
+| `X` | 여성 | D251 자궁근종, O000 복강임신, M8100 폐경후골다공증 |
+| `Y` | 남성 | C61 전립선 악성신생물, N40 전립선증식증 |
+| (빈값) | 제한 없음 | — |
+
+생성물에는 원본값 `sex`와 해석값 `sexLabel`을 함께 담는다.
 
 ---
 
