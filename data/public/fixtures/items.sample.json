@@ -1,0 +1,122 @@
+{
+  "_comment": "프론트엔드 개발용 픽스처. 실제 생성 파일은 data/public/items.json. 값은 심평원 약가마스터 20260831에서 확인한 실제 값이다.",
+  "schemaVersion": "0.2.0",
+  "generatedOn": "2026-09-22",
+  "source": {
+    "standardCode": "건강보험심사평가원_약가마스터_의약품표준코드_20260831.csv",
+    "ingredient": "건강보험심사평가원_약가마스터_의약품주성분_20251031.csv"
+  },
+  "items": [
+    {
+      "itemKey": "199800085::(주)종근당",
+      "itemSeq": "199800085",
+      "brandId": "dilatrend",
+      "itemName": "딜라트렌정6.25mg(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "6.25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1998-04-09",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125003ATB",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "정제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433003708",
+      "packages": [
+        { "kdCode": "8806433003715", "quantity": 10, "dosageForm": "정", "packageType": "PTP" },
+        { "kdCode": "8806433003722", "quantity": 100, "dosageForm": "정", "packageType": "PTP" }
+      ]
+    },
+    {
+      "itemKey": "199800086::(주)종근당",
+      "itemSeq": "199800086",
+      "brandId": "dilatrend",
+      "itemName": "딜라트렌정12.5mg(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "12.5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1998-04-09",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125001ATB",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "정제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433003807",
+      "packages": [
+        { "kdCode": "8806433003814", "quantity": 10, "dosageForm": "정", "packageType": "PTP" }
+      ]
+    },
+    {
+      "itemKey": "200710759::(주)종근당",
+      "itemSeq": "200710759",
+      "brandId": "januvia",
+      "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "128.9밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": null,
+      "ingredientNameEn": "sitagliptin phosphate hydrate (as sitagliptin)",
+      "dosageForm": "정제",
+      "route": "내복",
+      "classNo": "396",
+      "representativeCode": "8806433095505",
+      "packages": [
+        { "kdCode": "8806433095505", "quantity": 0, "dosageForm": null, "packageType": null }
+      ]
+    },
+    {
+      "itemKey": "200710759::한국엠에스디(주)",
+      "itemSeq": "200710759",
+      "brandId": "januvia",
+      "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "100밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": null,
+      "ingredientNameEn": "sitagliptin phosphate hydrate (as sitagliptin)",
+      "dosageForm": "정제",
+      "route": "내복",
+      "classNo": "396",
+      "representativeCode": "8806555003204",
+      "packages": [
+        { "kdCode": "8806555003204", "quantity": 0, "dosageForm": null, "packageType": null }
+      ]
+    },
+    {
+      "itemKey": "201905405::알보젠코리아(주)",
+      "itemSeq": "201905405",
+      "brandId": "qsymia",
+      "itemName": "큐시미아캡슐7.5mg/46mg",
+      "company": "알보젠코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "46밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-07-19",
+      "cancelDate": null,
+      "atcCode": "A08AA51",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": "캡슐제",
+      "route": "내복",
+      "classNo": null,
+      "representativeCode": "8806526066108",
+      "packages": [
+        { "kdCode": "8806526066108", "quantity": 0, "dosageForm": null, "packageType": null }
+      ]
+    }
+  ]
+}

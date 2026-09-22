@@ -1,0 +1,4054 @@
+{
+  "schemaVersion": "0.2.0",
+  "generatedOn": "2026-09-22",
+  "source": {
+    "standardCode": "건강보험심사평가원_약가마스터_의약품표준코드_20260831.csv",
+    "ingredient": "건강보험심사평가원_약가마스터_의약품주성분_20251031.csv"
+  },
+  "items": [
+    {
+      "itemKey": "200200379::(주)셀트리온제약",
+      "itemSeq": "200200379",
+      "brandId": "godex",
+      "brandNameRaw": "고덱스",
+      "itemName": "고덱스캅(수출용)",
+      "company": "(주)셀트리온제약",
+      "isCkd": false,
+      "strengthLabel": "150밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2002-07-24",
+      "cancelDate": "2010-10-06",
+      "atcCode": "A05BA",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806939007606",
+      "packages": [
+        {
+          "kdCode": "8806939007606",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "200200379::한서제약(주)",
+      "itemSeq": "200200379",
+      "brandId": "godex",
+      "brandNameRaw": "고덱스",
+      "itemName": "고덱스캅(수출용)(수출명:GODEXCap.)(중국수출명:Hepatheracapsule)",
+      "company": "한서제약(주)",
+      "isCkd": false,
+      "strengthLabel": "150밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2002-07-24",
+      "cancelDate": "2010-10-06",
+      "atcCode": "A05BA",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806580000506",
+      "packages": [
+        {
+          "kdCode": "8806580000506",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806580000513",
+          "quantity": 2500,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200000601::(주)셀트리온제약",
+      "itemSeq": "200000601",
+      "brandId": "godex",
+      "brandNameRaw": "고덱스",
+      "itemName": "고덱스캡슐",
+      "company": "(주)셀트리온제약",
+      "isCkd": false,
+      "strengthLabel": "25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2000-01-05",
+      "cancelDate": null,
+      "atcCode": "A05BA",
+      "ingredientCode": "427800ACH",
+      "ingredientNameEn": "riboflavin",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "391",
+      "representativeCode": "8806939000805",
+      "packages": [
+        {
+          "kdCode": "8806939000805",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806939000867",
+          "quantity": 1,
+          "dosageForm": "캡슐",
+          "packageType": "기타"
+        },
+        {
+          "kdCode": "8806939000843",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806939000812",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806939000829",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806939000874",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806939000850",
+          "quantity": 210,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806939000836",
+          "quantity": 300,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200000601::한서제약(주)",
+      "itemSeq": "200000601",
+      "brandId": "godex",
+      "brandNameRaw": "고덱스",
+      "itemName": "고덱스캡슐",
+      "company": "한서제약(주)",
+      "isCkd": false,
+      "strengthLabel": "150밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2000-01-05",
+      "cancelDate": null,
+      "atcCode": "A05BA",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806580000605",
+      "packages": [
+        {
+          "kdCode": "8806580000605",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806580000612",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806580000636",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806580000629",
+          "quantity": 300,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201905694::(주)종근당",
+      "itemSeq": "201905694",
+      "brandId": "gliatilin",
+      "brandNameRaw": "글리아티린",
+      "itemName": "종근당글리아티린시럽(콜린알포세레이트)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "10밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-08-13",
+      "cancelDate": null,
+      "atcCode": "N07AX02",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806433084004",
+      "packages": [
+        {
+          "kdCode": "8806433084004",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433084011",
+          "quantity": 1,
+          "dosageForm": "시럽",
+          "packageType": "포"
+        },
+        {
+          "kdCode": "8806433084028",
+          "quantity": 30,
+          "dosageForm": "시럽",
+          "packageType": "포"
+        },
+        {
+          "kdCode": "8806433084035",
+          "quantity": 90,
+          "dosageForm": "시럽",
+          "packageType": "포"
+        }
+      ]
+    },
+    {
+      "itemKey": "200600026::(주)종근당",
+      "itemSeq": "200600026",
+      "brandId": "gliatilin",
+      "brandNameRaw": "글리아티린",
+      "itemName": "종근당글리아티린연질캡슐(콜린알포세레이트)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "400밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2006-03-13",
+      "cancelDate": null,
+      "atcCode": "N07AX02",
+      "ingredientCode": "138101ACS",
+      "ingredientNameEn": "choline alfoscerate",
+      "dosageForm": "연질캡슐제",
+      "route": "내복",
+      "classNo": "119",
+      "representativeCode": "8806433017903",
+      "packages": [
+        {
+          "kdCode": "8806433017903",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433017910",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433017934",
+          "quantity": 15,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433017927",
+          "quantity": 90,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433017941",
+          "quantity": 90,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201406176::(주)종근당",
+      "itemSeq": "201406176",
+      "brandId": "gliatilin",
+      "brandNameRaw": "글리아티린",
+      "itemName": "종근당글리아티린정(콜린알포세레이트)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "400밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-12-31",
+      "cancelDate": null,
+      "atcCode": "N07AX02",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806433072001",
+      "packages": [
+        {
+          "kdCode": "8806433072001",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433072018",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433072032",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433072025",
+          "quantity": 90,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433072049",
+          "quantity": 90,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201601705::(주)종근당",
+      "itemSeq": "201601705",
+      "brandId": "gliatilin",
+      "brandNameRaw": "글리아티린",
+      "itemName": "종근당글리아티린주(콜린알포세레이트)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "4밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2016-03-31",
+      "cancelDate": "2026-06-05",
+      "atcCode": "N07AX02",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806433074104",
+      "packages": [
+        {
+          "kdCode": "8806433074104",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433074111",
+          "quantity": 1,
+          "dosageForm": "앰플",
+          "packageType": "앰플"
+        },
+        {
+          "kdCode": "8806433074128",
+          "quantity": 50,
+          "dosageForm": "앰플",
+          "packageType": "앰플"
+        }
+      ]
+    },
+    {
+      "itemKey": "202002674::(주)종근당",
+      "itemSeq": "202002674",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알정16밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "16밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-04-16",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125007ATR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방형정제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433085407",
+      "packages": [
+        {
+          "kdCode": "8806433085407",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433085438",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433085414",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433085421",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202202662::(주)종근당",
+      "itemSeq": "202202662",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알정32밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "32밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2022-06-28",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125006ATR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방형정제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433090203",
+      "packages": [
+        {
+          "kdCode": "8806433090203",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433090210",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433090227",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202202661::(주)종근당",
+      "itemSeq": "202202661",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알정64밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "64밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2022-06-28",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125004ATR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방형정제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433090104",
+      "packages": [
+        {
+          "kdCode": "8806433090104",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433090111",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433090128",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202002673::(주)종근당",
+      "itemSeq": "202002673",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알정8밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "8밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-04-16",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125008ATR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방형정제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433085308",
+      "packages": [
+        {
+          "kdCode": "8806433085308",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433085339",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433085315",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433085322",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201206935::(주)종근당",
+      "itemSeq": "201206935",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알캡슐16밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "16밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2012-09-25",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125007ACR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433064105",
+      "packages": [
+        {
+          "kdCode": "8806433064105",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433064136",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433064129",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433064112",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201206936::(주)종근당",
+      "itemSeq": "201206936",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알캡슐32밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "32밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2012-09-25",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125006ACR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433064204",
+      "packages": [
+        {
+          "kdCode": "8806433064204",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433064235",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433064228",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433064211",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201001744::(주)종근당",
+      "itemSeq": "201001744",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알캡슐64밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "64밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2010-02-26",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125004ACR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433059200",
+      "packages": [
+        {
+          "kdCode": "8806433059200",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433059231",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433059217",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433059224",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201206934::(주)종근당",
+      "itemSeq": "201206934",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌에스알캡슐8밀리그램(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "8밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2012-09-25",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125008ACR",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433064006",
+      "packages": [
+        {
+          "kdCode": "8806433064006",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433064037",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433064020",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433064013",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "199800086::(주)종근당",
+      "itemSeq": "199800086",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌정12.5mg(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "12.5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1998-04-09",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125001ATB",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433003807",
+      "packages": [
+        {
+          "kdCode": "8806433003807",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433003814",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433003821",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "199400114::(주)종근당",
+      "itemSeq": "199400114",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌정25mg(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1994-08-04",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125002ATB",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433003906",
+      "packages": [
+        {
+          "kdCode": "8806433003906",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433003913",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433003920",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201104026::(주)종근당",
+      "itemSeq": "201104026",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌정3.125mg(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "3.125밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2011-06-29",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125005ATB",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433060909",
+      "packages": [
+        {
+          "kdCode": "8806433060909",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433060923",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433060916",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "199800085::(주)종근당",
+      "itemSeq": "199800085",
+      "brandId": "dilatrend",
+      "brandNameRaw": "딜라트렌",
+      "itemName": "딜라트렌정6.25mg(카르베딜롤)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "6.25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1998-04-09",
+      "cancelDate": null,
+      "atcCode": "C07AG02",
+      "ingredientCode": "125003ATB",
+      "ingredientNameEn": "carvedilol",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433003708",
+      "packages": [
+        {
+          "kdCode": "8806433003708",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433003715",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433003722",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200709391::(주)종근당",
+      "itemSeq": "200709391",
+      "brandId": "lipilou",
+      "brandNameRaw": "리피로우",
+      "itemName": "리피로우정10밀리그램(무수아토르바스타틴칼슘)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-08-09",
+      "cancelDate": "2008-02-26",
+      "atcCode": null,
+      "ingredientCode": "111501ATB",
+      "ingredientNameEn": "atorvastatin calcium (as atorvastatin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433006501",
+      "packages": [
+        {
+          "kdCode": "8806433006501",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "200802327::(주)종근당",
+      "itemSeq": "200802327",
+      "brandId": "lipilou",
+      "brandNameRaw": "리피로우",
+      "itemName": "리피로우정10mg(무수아토르바스타틴칼슘)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2008-02-29",
+      "cancelDate": null,
+      "atcCode": "C10AA05",
+      "ingredientCode": "111501ATB",
+      "ingredientNameEn": "atorvastatin calcium (as atorvastatin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433046101",
+      "packages": [
+        {
+          "kdCode": "8806433046101",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433046149",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433046118",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433046125",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433046132",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200709390::(주)종근당",
+      "itemSeq": "200709390",
+      "brandId": "lipilou",
+      "brandNameRaw": "리피로우",
+      "itemName": "리피로우정20밀리그램(무수아토르바스타틴칼슘)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "20밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-08-09",
+      "cancelDate": null,
+      "atcCode": "C10AA05",
+      "ingredientCode": "111502ATB",
+      "ingredientNameEn": "atorvastatin calcium (as atorvastatin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433006600",
+      "packages": [
+        {
+          "kdCode": "8806433006600",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433006648",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433006617",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433006624",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433006631",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200709389::(주)종근당",
+      "itemSeq": "200709389",
+      "brandId": "lipilou",
+      "brandNameRaw": "리피로우",
+      "itemName": "리피로우정40밀리그램(아토르바스타틴칼슘삼수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-08-09",
+      "cancelDate": null,
+      "atcCode": "C10AA05",
+      "ingredientCode": "111503ATB",
+      "ingredientNameEn": "atorvastatin calcium (as atorvastatin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433006709",
+      "packages": [
+        {
+          "kdCode": "8806433006709",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433006723",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433006716",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433006730",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202400512::(주)종근당",
+      "itemSeq": "202400512",
+      "brandId": "lipilou",
+      "brandNameRaw": "리피로우",
+      "itemName": "리피로우정5밀리그램(아토르바스타틴칼슘삼수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2024-03-11",
+      "cancelDate": null,
+      "atcCode": "C10AA05",
+      "ingredientCode": "111505ATB",
+      "ingredientNameEn": "atorvastatin calcium (as atorvastatin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433094805",
+      "packages": [
+        {
+          "kdCode": "8806433094805",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433094812",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433094829",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200803246::(주)종근당",
+      "itemSeq": "200803246",
+      "brandId": "lipilou",
+      "brandNameRaw": "리피로우",
+      "itemName": "리피로우정80밀리그램(아토르바스타틴칼슘삼수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2008-03-24",
+      "cancelDate": null,
+      "atcCode": "C10AA05",
+      "ingredientCode": "111504ATB",
+      "ingredientNameEn": "atorvastatin calcium (as atorvastatin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433046408",
+      "packages": [
+        {
+          "kdCode": "8806433046408",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433046415",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433046422",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202006982::(주)종근당",
+      "itemSeq": "202006982",
+      "brandId": "lipilouzet",
+      "brandNameRaw": "리피로우젯",
+      "itemName": "리피로우젯정10/10밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-10-13",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "633800ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433086305",
+      "packages": [
+        {
+          "kdCode": "8806433086305",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086329",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433086336",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433086312",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433086343",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202006983::(주)종근당",
+      "itemSeq": "202006983",
+      "brandId": "lipilouzet",
+      "brandNameRaw": "리피로우젯",
+      "itemName": "리피로우젯정10/20밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "20밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-10-13",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "633900ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433086404",
+      "packages": [
+        {
+          "kdCode": "8806433086404",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086428",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433086435",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433086411",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433086442",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202006984::(주)종근당",
+      "itemSeq": "202006984",
+      "brandId": "lipilouzet",
+      "brandNameRaw": "리피로우젯",
+      "itemName": "리피로우젯정10/40밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-10-13",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "634800ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433086503",
+      "packages": [
+        {
+          "kdCode": "8806433086503",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086527",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433086534",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433086510",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433086541",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202403092::(주)종근당",
+      "itemSeq": "202403092",
+      "brandId": "lipilouzet",
+      "brandNameRaw": "리피로우젯",
+      "itemName": "리피로우젯정10/5밀리그램(에제티미브,아토르바스타틴)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2024-12-27",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "721300ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806433097806",
+      "packages": [
+        {
+          "kdCode": "8806433097806",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433097813",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433097820",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201005121::(주)종근당",
+      "itemSeq": "201005121",
+      "brandId": "myrept",
+      "brandNameRaw": "마이렙트",
+      "itemName": "마이렙트정500밀리그램(미코페놀레이트모페틸)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "500밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2010-08-23",
+      "cancelDate": null,
+      "atcCode": "L04AA06",
+      "ingredientCode": "197802ATB",
+      "ingredientNameEn": "mycophenolate mofetil",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433057909",
+      "packages": [
+        {
+          "kdCode": "8806433057909",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433057923",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433057930",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433057916",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200805418::(주)종근당",
+      "itemSeq": "200805418",
+      "brandId": "myrept",
+      "brandNameRaw": "마이렙트",
+      "itemName": "마이렙트캡슐250밀리그램(미코페놀레이트모페틸)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "250밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2008-05-13",
+      "cancelDate": null,
+      "atcCode": "L04AA06",
+      "ingredientCode": "197801ACH",
+      "ingredientNameEn": "mycophenolate mofetil",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433047702",
+      "packages": [
+        {
+          "kdCode": "8806433047702",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433047726",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433047733",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433047719",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201401967::(주)종근당",
+      "itemSeq": "201401967",
+      "brandId": "myrept",
+      "brandNameRaw": "마이렙트",
+      "itemName": "마이렙트현탁용분말1g/5ml(미코페놀레이트모페틸)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "175밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-04-23",
+      "cancelDate": null,
+      "atcCode": "L04AA06",
+      "ingredientCode": "197830ASS",
+      "ingredientNameEn": "mycophenolate mofetil",
+      "dosageForm": "현탁액제,현탁액용정제,현탁액용산제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433067502",
+      "packages": [
+        {
+          "kdCode": "8806433067502",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433067519",
+          "quantity": 1,
+          "dosageForm": "산제",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "199900119::(주)종근당",
+      "itemSeq": "199900119",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴-엔내복액(사이클로스포린)(수출명:데나스포내복액사이클로랄내복액)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "50밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "1999-08-11",
+      "cancelDate": null,
+      "atcCode": "L04AD01",
+      "ingredientCode": "194730ALQ",
+      "ingredientNameEn": "microemulsion cyclosporine",
+      "dosageForm": "액제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433010904",
+      "packages": [
+        {
+          "kdCode": "8806433010904",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433010911",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433010928",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "199600158::(주)종근당",
+      "itemSeq": "199600158",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴-엔연질캡슐100밀리그램(사이클로스포린)(수출명:데나스포연질캡슐100밀리그램)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "100밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1996-08-27",
+      "cancelDate": null,
+      "atcCode": "L04AD01",
+      "ingredientCode": "194701ACS",
+      "ingredientNameEn": "microemulsion cyclosporine",
+      "dosageForm": "연질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433011000",
+      "packages": [
+        {
+          "kdCode": "8806433011000",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433011017",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433011024",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "199600151::(주)종근당",
+      "itemSeq": "199600151",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴-엔연질캡슐25밀리그램(사이클로스포린)(수출명:데나스포연질캡슐25밀리그램)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1996-08-27",
+      "cancelDate": null,
+      "atcCode": "L04AD01",
+      "ingredientCode": "194702ACS",
+      "ingredientNameEn": "microemulsion cyclosporine",
+      "dosageForm": "연질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433011109",
+      "packages": [
+        {
+          "kdCode": "8806433011109",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433011116",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433011123",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200500131::(주)종근당",
+      "itemSeq": "200500131",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴-엔연질캡슐50밀리그램(사이클로스포린)(수출용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "50밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2005-06-24",
+      "cancelDate": null,
+      "atcCode": "L04AD01",
+      "ingredientCode": "194703ACS",
+      "ingredientNameEn": "microemulsion cyclosporine",
+      "dosageForm": "연질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433011208",
+      "packages": [
+        {
+          "kdCode": "8806433011208",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433011215",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "199300216::(주)종근당",
+      "itemSeq": "199300216",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴내복액(사이클로스포린)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": null,
+      "rxClass": "전문의약품",
+      "approvalDate": "1993-11-25",
+      "cancelDate": "2015-08-04",
+      "atcCode": "L04AD01",
+      "ingredientCode": "139201ALQ",
+      "ingredientNameEn": "cyclosporine",
+      "dosageForm": "액제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433010805",
+      "packages": [
+        {
+          "kdCode": "8806433010805",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "199300222::(주)종근당",
+      "itemSeq": "199300222",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴주(사이클로스포린)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "250밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1993-11-25",
+      "cancelDate": null,
+      "atcCode": "L04AD01",
+      "ingredientCode": "139230BIJ",
+      "ingredientNameEn": "cyclosporine",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "142",
+      "representativeCode": "8806433011307",
+      "packages": [
+        {
+          "kdCode": "8806433011307",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433011314",
+          "quantity": 1,
+          "dosageForm": "앰플",
+          "packageType": "앰플"
+        },
+        {
+          "kdCode": "8806433011321",
+          "quantity": 10,
+          "dosageForm": "앰플",
+          "packageType": "앰플"
+        }
+      ]
+    },
+    {
+      "itemKey": "199400119::(주)종근당",
+      "itemSeq": "199400119",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴캅셀(사이클로스포린에이)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "100밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1994-12-30",
+      "cancelDate": "2015-08-04",
+      "atcCode": "L04AD01",
+      "ingredientCode": "139201ACS",
+      "ingredientNameEn": "cyclosporine",
+      "dosageForm": "연질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433011406",
+      "packages": [
+        {
+          "kdCode": "8806433011406",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "199400118::(주)종근당",
+      "itemSeq": "199400118",
+      "brandId": "cypol",
+      "brandNameRaw": "사이폴",
+      "itemName": "사이폴캅셀25밀리그람(싸이클로스포린에이)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1994-12-30",
+      "cancelDate": "2007-12-31",
+      "atcCode": null,
+      "ingredientCode": "139204ACH",
+      "ingredientNameEn": "cyclosporine",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433011505",
+      "packages": [
+        {
+          "kdCode": "8806433011505",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "201500367::한국엠에스디(주)",
+      "itemSeq": "201500367",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/10밀리그램",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806555018901",
+      "packages": [
+        {
+          "kdCode": "8806555018901",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555018918",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "Foil"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500367::한국오가논 주식회사",
+      "itemSeq": "201500367",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/10밀리그램",
+      "company": "한국오가논 주식회사",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "633800ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8800731004108",
+      "packages": [
+        {
+          "kdCode": "8800731004108",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800731004115",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500364::한국엠에스디(주)",
+      "itemSeq": "201500364",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/20밀리그램",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806555018604",
+      "packages": [
+        {
+          "kdCode": "8806555018604",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555018611",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "Foil"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500364::한국오가논 주식회사",
+      "itemSeq": "201500364",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/20밀리그램",
+      "company": "한국오가논 주식회사",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "633900ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8800731003804",
+      "packages": [
+        {
+          "kdCode": "8800731003804",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800731003811",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500365::한국엠에스디(주)",
+      "itemSeq": "201500365",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/40밀리그램",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "634500ATB",
+      "ingredientNameEn": "Ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806555018703",
+      "packages": [
+        {
+          "kdCode": "8806555018703",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555018710",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "Foil"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500365::한국오가논 주식회사",
+      "itemSeq": "201500365",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/40밀리그램",
+      "company": "한국오가논 주식회사",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "634800ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8800731003903",
+      "packages": [
+        {
+          "kdCode": "8800731003903",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800731003910",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500366::한국엠에스디(주)",
+      "itemSeq": "201500366",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/80밀리그램",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "634600ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8806555018802",
+      "packages": [
+        {
+          "kdCode": "8806555018802",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555018819",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "Foil"
+        }
+      ]
+    },
+    {
+      "itemKey": "201500366::한국오가논 주식회사",
+      "itemSeq": "201500366",
+      "brandId": "atozet",
+      "brandNameRaw": "아토젯",
+      "itemName": "아토젯정10/80밀리그램",
+      "company": "한국오가논 주식회사",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-01-23",
+      "cancelDate": null,
+      "atcCode": "C10BA05",
+      "ingredientCode": "634600ATB",
+      "ingredientNameEn": "ezetimibe",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "218",
+      "representativeCode": "8800731004009",
+      "packages": [
+        {
+          "kdCode": "8800731004009",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800731004016",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201903599::암젠코리아 유한회사",
+      "itemSeq": "201903599",
+      "brandId": "evenity",
+      "brandNameRaw": "이베니티",
+      "itemName": "이베니티주프리필드시린지(로모소주맙유전자재조합)",
+      "company": "암젠코리아 유한회사",
+      "isCkd": false,
+      "strengthLabel": "1.17밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-05-31",
+      "cancelDate": null,
+      "atcCode": "M05BX06",
+      "ingredientCode": "680701BIJ",
+      "ingredientNameEn": "romosozumab",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "399",
+      "representativeCode": "8800523001100",
+      "packages": [
+        {
+          "kdCode": "8800523001100",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800523001117",
+          "quantity": 1,
+          "dosageForm": "주사",
+          "packageType": "프리필드시린지"
+        },
+        {
+          "kdCode": "8800523001131",
+          "quantity": 1,
+          "dosageForm": "주사",
+          "packageType": "프리필드시린지"
+        },
+        {
+          "kdCode": "8800523001124",
+          "quantity": 2,
+          "dosageForm": "주사",
+          "packageType": "프리필드시린지"
+        },
+        {
+          "kdCode": "8800523001148",
+          "quantity": 2,
+          "dosageForm": "주사",
+          "packageType": "프리필드시린지"
+        }
+      ]
+    },
+    {
+      "itemKey": "200710759::(주)종근당",
+      "itemSeq": "200710759",
+      "brandId": "januvia",
+      "brandNameRaw": "자누비아",
+      "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "128.9밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": "501103ATB",
+      "ingredientNameEn": "sitagliptin phosphate hydrate (as sitagliptin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "396",
+      "representativeCode": "8806433095505",
+      "packages": [
+        {
+          "kdCode": "8806433095505",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433095512",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200710759::한국엠에스디(주)",
+      "itemSeq": "200710759",
+      "brandId": "januvia",
+      "brandNameRaw": "자누비아",
+      "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "100밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806555003204",
+      "packages": [
+        {
+          "kdCode": "8806555003204",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555003211",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200710760::(주)종근당",
+      "itemSeq": "200710760",
+      "brandId": "januvia",
+      "brandNameRaw": "자누비아",
+      "itemName": "자누비아정25밀리그램(시타글립틴인산염수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "32.22밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": "501101ATB",
+      "ingredientNameEn": "sitagliptin phosphate hydrate (as sitagliptin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "396",
+      "representativeCode": "8806433095604",
+      "packages": [
+        {
+          "kdCode": "8806433095604",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433095611",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200710760::한국엠에스디(주)",
+      "itemSeq": "200710760",
+      "brandId": "januvia",
+      "brandNameRaw": "자누비아",
+      "itemName": "자누비아정25밀리그램(시타글립틴인산염수화물)",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806555003006",
+      "packages": [
+        {
+          "kdCode": "8806555003006",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555003013",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200710758::(주)종근당",
+      "itemSeq": "200710758",
+      "brandId": "januvia",
+      "brandNameRaw": "자누비아",
+      "itemName": "자누비아정50밀리그램(시타글립틴인산염수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "64.44밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": "501102ATB",
+      "ingredientNameEn": "sitagliptin phosphate hydrate (as sitagliptin)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "396",
+      "representativeCode": "8806433095406",
+      "packages": [
+        {
+          "kdCode": "8806433095406",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433095413",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200710758::한국엠에스디(주)",
+      "itemSeq": "200710758",
+      "brandId": "januvia",
+      "brandNameRaw": "자누비아",
+      "itemName": "자누비아정50밀리그램(시타글립틴인산염수화물)",
+      "company": "한국엠에스디(주)",
+      "isCkd": false,
+      "strengthLabel": "50밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2007-09-21",
+      "cancelDate": null,
+      "atcCode": "A10BH01",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806555003105",
+      "packages": [
+        {
+          "kdCode": "8806555003105",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806555003112",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201905408::알보젠코리아(주)",
+      "itemSeq": "201905408",
+      "brandId": "qsymia",
+      "brandNameRaw": "큐시미아",
+      "itemName": "큐시미아캡슐11.25mg/69mg",
+      "company": "알보젠코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "69밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-07-31",
+      "cancelDate": null,
+      "atcCode": "A08AA51",
+      "ingredientCode": "682500ACH",
+      "ingredientNameEn": "topiramate",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "123",
+      "representativeCode": "8806526065903",
+      "packages": [
+        {
+          "kdCode": "8806526065903",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806526065927",
+          "quantity": 28,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806526065910",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201905407::알보젠코리아(주)",
+      "itemSeq": "201905407",
+      "brandId": "qsymia",
+      "brandNameRaw": "큐시미아",
+      "itemName": "큐시미아캡슐15mg/92mg",
+      "company": "알보젠코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "92밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-07-31",
+      "cancelDate": null,
+      "atcCode": "A08AA51",
+      "ingredientCode": "682400ACH",
+      "ingredientNameEn": "topiramate",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "123",
+      "representativeCode": "8806526065804",
+      "packages": [
+        {
+          "kdCode": "8806526065804",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806526065828",
+          "quantity": 28,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806526065811",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201905406::알보젠코리아(주)",
+      "itemSeq": "201905406",
+      "brandId": "qsymia",
+      "brandNameRaw": "큐시미아",
+      "itemName": "큐시미아캡슐3.75mg/23mg",
+      "company": "알보젠코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "23밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-07-31",
+      "cancelDate": null,
+      "atcCode": "A08AA51",
+      "ingredientCode": "682300ACH",
+      "ingredientNameEn": "topiramate",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "123",
+      "representativeCode": "8806526066009",
+      "packages": [
+        {
+          "kdCode": "8806526066009",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806526066023",
+          "quantity": 28,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806526066016",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201905405::알보젠코리아(주)",
+      "itemSeq": "201905405",
+      "brandId": "qsymia",
+      "brandNameRaw": "큐시미아",
+      "itemName": "큐시미아캡슐7.5mg/46mg",
+      "company": "알보젠코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "46밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-07-31",
+      "cancelDate": null,
+      "atcCode": "A08AA51",
+      "ingredientCode": "682200ACH",
+      "ingredientNameEn": "topiramate",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "123",
+      "representativeCode": "8806526066108",
+      "packages": [
+        {
+          "kdCode": "8806526066108",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806526066122",
+          "quantity": 28,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806526066115",
+          "quantity": 30,
+          "dosageForm": "캡슐",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201700873::(주)종근당",
+      "itemSeq": "201700873",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨서방캡슐0.5밀리그램(타크로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.51밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2017-02-17",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234205ACR",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433077006",
+      "packages": [
+        {
+          "kdCode": "8806433077006",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433077013",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201700875::(주)종근당",
+      "itemSeq": "201700875",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨서방캡슐1밀리그램(타크로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "1.02밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2017-02-17",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234206ACR",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433076900",
+      "packages": [
+        {
+          "kdCode": "8806433076900",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433076917",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201700874::(주)종근당",
+      "itemSeq": "201700874",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨서방캡슐5밀리그램(타크로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5.1밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2017-02-17",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234207ACR",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "서방캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433078201",
+      "packages": [
+        {
+          "kdCode": "8806433078201",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078218",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201507465::(주)종근당",
+      "itemSeq": "201507465",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨정0.25밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.255밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-10-30",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234204ATB",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433073008",
+      "packages": [
+        {
+          "kdCode": "8806433073008",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433073015",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201507464::(주)종근당",
+      "itemSeq": "201507464",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨정0.5밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.51밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-10-30",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234201ATB",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433072803",
+      "packages": [
+        {
+          "kdCode": "8806433072803",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433072810",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201506874::(주)종근당",
+      "itemSeq": "201506874",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨정1밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "1.02밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-09-30",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234203ATB",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433072506",
+      "packages": [
+        {
+          "kdCode": "8806433072506",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433072513",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201506873::(주)종근당",
+      "itemSeq": "201506873",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨정2밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "2.04밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-09-30",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234208ATB",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433072407",
+      "packages": [
+        {
+          "kdCode": "8806433072407",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433072414",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200803380::(주)종근당",
+      "itemSeq": "200803380",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨주5밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2008-03-27",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234230BIJ",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "142",
+      "representativeCode": "8806433046309",
+      "packages": [
+        {
+          "kdCode": "8806433046309",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433046316",
+          "quantity": 1,
+          "dosageForm": "앰플",
+          "packageType": "앰플"
+        },
+        {
+          "kdCode": "8806433046323",
+          "quantity": 10,
+          "dosageForm": "앰플",
+          "packageType": "앰플"
+        }
+      ]
+    },
+    {
+      "itemKey": "200500161::(주)종근당",
+      "itemSeq": "200500161",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨캡슐0.25밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2005-08-23",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234204ACH",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433036805",
+      "packages": [
+        {
+          "kdCode": "8806433036805",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433036812",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433036829",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200500132::(주)종근당",
+      "itemSeq": "200500132",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨캡슐0.5밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2005-06-28",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234201ACH",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433036904",
+      "packages": [
+        {
+          "kdCode": "8806433036904",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433036911",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433036928",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200400102::(주)종근당",
+      "itemSeq": "200400102",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨캡슐1밀리그램(타크로리무스수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "1밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2004-07-27",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": "234203ACH",
+      "ingredientNameEn": "tacrolimus hydrate (as tacrolimus)",
+      "dosageForm": "경질캡슐제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433037000",
+      "packages": [
+        {
+          "kdCode": "8806433037000",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433037017",
+          "quantity": 10,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433037031",
+          "quantity": 50,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433037024",
+          "quantity": 100,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201301619::(주)종근당",
+      "itemSeq": "201301619",
+      "brandId": "tacrobell",
+      "brandNameRaw": "타크로벨",
+      "itemName": "타크로벨캡슐5밀리그램(타크로리무스수화물)(수출용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2013-01-18",
+      "cancelDate": null,
+      "atcCode": "L04AD02",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806433067205",
+      "packages": [
+        {
+          "kdCode": "8806433067205",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433067212",
+          "quantity": 20,
+          "dosageForm": "캡슐",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202502268::(주)종근당",
+      "itemSeq": "202502268",
+      "brandId": "telminuvo",
+      "brandNameRaw": "텔미누보",
+      "itemName": "텔미누보정20/1.25밀리그램(텔미사르탄,에스암로디핀베실산염이수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "20밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2025-08-29",
+      "cancelDate": null,
+      "atcCode": "C09DB",
+      "ingredientCode": "745700ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433101008",
+      "packages": [
+        {
+          "kdCode": "8806433101008",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433101022",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433101015",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202401637::(주)종근당",
+      "itemSeq": "202401637",
+      "brandId": "telminuvo",
+      "brandNameRaw": "텔미누보",
+      "itemName": "텔미누보정20/2.5밀리그램(텔미사르탄에스암로디핀베실산염이수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "20밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2024-07-04",
+      "cancelDate": null,
+      "atcCode": "C09DB",
+      "ingredientCode": "736200ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433095307",
+      "packages": [
+        {
+          "kdCode": "8806433095307",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433095321",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433095314",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201302981::(주)종근당",
+      "itemSeq": "201302981",
+      "brandId": "telminuvo",
+      "brandNameRaw": "텔미누보",
+      "itemName": "텔미누보정40/2.5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2013-01-31",
+      "cancelDate": null,
+      "atcCode": "C09DB04",
+      "ingredientCode": "521200ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433065201",
+      "packages": [
+        {
+          "kdCode": "8806433065201",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433065249",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433065225",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433065218",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433065232",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201302982::(주)종근당",
+      "itemSeq": "201302982",
+      "brandId": "telminuvo",
+      "brandNameRaw": "텔미누보",
+      "itemName": "텔미누보정40/5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2013-01-31",
+      "cancelDate": null,
+      "atcCode": "C09DB04",
+      "ingredientCode": "521300ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433065300",
+      "packages": [
+        {
+          "kdCode": "8806433065300",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433065348",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433065324",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433065317",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433065331",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201302980::(주)종근당",
+      "itemSeq": "201302980",
+      "brandId": "telminuvo",
+      "brandNameRaw": "텔미누보",
+      "itemName": "텔미누보정80/2.5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2013-01-31",
+      "cancelDate": null,
+      "atcCode": "C09DB04",
+      "ingredientCode": "521400ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433065409",
+      "packages": [
+        {
+          "kdCode": "8806433065409",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433065430",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433065423",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433065416",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433065447",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201507273::(주)종근당",
+      "itemSeq": "201507273",
+      "brandId": "telminuvo",
+      "brandNameRaw": "텔미누보",
+      "itemName": "텔미누보정80/5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-10-22",
+      "cancelDate": null,
+      "atcCode": "C09DB04",
+      "ingredientCode": "644800ATB",
+      "ingredientNameEn": "S-amlodipine besylate (as S-amlodipine)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433072902",
+      "packages": [
+        {
+          "kdCode": "8806433072902",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433072926",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433072919",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433072933",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201802238::(주)종근당",
+      "itemSeq": "201802238",
+      "brandId": null,
+      "brandNameRaw": "텔미누보에스",
+      "itemName": "텔미누보에스정40/5/10밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-05-30",
+      "cancelDate": "2018-10-16",
+      "atcCode": "C10BX",
+      "ingredientCode": "671400ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433080808",
+      "packages": [
+        {
+          "kdCode": "8806433080808",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433080815",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201802240::(주)종근당",
+      "itemSeq": "201802240",
+      "brandId": null,
+      "brandNameRaw": "텔미누보에스",
+      "itemName": "텔미누보에스정80/10/20밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-05-30",
+      "cancelDate": "2018-10-16",
+      "atcCode": "C10BX",
+      "ingredientCode": "671700ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433081003",
+      "packages": [
+        {
+          "kdCode": "8806433081003",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433081010",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201802239::(주)종근당",
+      "itemSeq": "201802239",
+      "brandId": null,
+      "brandNameRaw": "텔미누보에스",
+      "itemName": "텔미누보에스정80/5/10밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-05-30",
+      "cancelDate": "2018-10-16",
+      "atcCode": "C10BX",
+      "ingredientCode": "671500ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433080907",
+      "packages": [
+        {
+          "kdCode": "8806433080907",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433080914",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202502826::(주)종근당",
+      "itemSeq": "202502826",
+      "brandId": "telminuvo-plus",
+      "brandNameRaw": "텔미누보플러스",
+      "itemName": "텔미누보플러스정40/2.5/12.5밀리그램(텔미사르탄,에스암로디핀,클로르탈리돈)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2025-10-31",
+      "cancelDate": null,
+      "atcCode": "C09DX",
+      "ingredientCode": "756100ATB",
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433101909",
+      "packages": [
+        {
+          "kdCode": "8806433101909",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433101916",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202502825::(주)종근당",
+      "itemSeq": "202502825",
+      "brandId": "telminuvo-plus",
+      "brandNameRaw": "텔미누보플러스",
+      "itemName": "텔미누보플러스정80/2.5/12.5밀리그램(텔미사르탄,에스암로디핀,클로르탈리돈)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2025-10-31",
+      "cancelDate": null,
+      "atcCode": "C09DX",
+      "ingredientCode": "756200ATB",
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433101800",
+      "packages": [
+        {
+          "kdCode": "8806433101800",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433101817",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202502824::(주)종근당",
+      "itemSeq": "202502824",
+      "brandId": "telminuvo-plus",
+      "brandNameRaw": "텔미누보플러스",
+      "itemName": "텔미누보플러스정80/2.5/25밀리그램(텔미사르탄,에스암로디핀,클로르탈리돈)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2025-10-31",
+      "cancelDate": null,
+      "atcCode": "C09DX",
+      "ingredientCode": "756300ATB",
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433101701",
+      "packages": [
+        {
+          "kdCode": "8806433101701",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433101718",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202006064::(주)종근당",
+      "itemSeq": "202006064",
+      "brandId": "telmitren",
+      "brandNameRaw": "텔미트렌",
+      "itemName": "텔미트렌정20밀리그램(텔미사르탄)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "20밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-08-28",
+      "cancelDate": null,
+      "atcCode": "C09CA07",
+      "ingredientCode": "378803ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433086008",
+      "packages": [
+        {
+          "kdCode": "8806433086008",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086022",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433086015",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433086039",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201107223::(주)종근당",
+      "itemSeq": "201107223",
+      "brandId": "telmitren",
+      "brandNameRaw": "텔미트렌",
+      "itemName": "텔미트렌정40밀리그램(텔미사르탄)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2011-09-27",
+      "cancelDate": null,
+      "atcCode": "C09CA07",
+      "ingredientCode": "378801ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433061401",
+      "packages": [
+        {
+          "kdCode": "8806433061401",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433061432",
+          "quantity": 5,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061425",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433061418",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433061449",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061463",
+          "quantity": 34,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061470",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061456",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201107222::(주)종근당",
+      "itemSeq": "201107222",
+      "brandId": "telmitren",
+      "brandNameRaw": "텔미트렌",
+      "itemName": "텔미트렌정80밀리그램(텔미사르탄)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2011-09-27",
+      "cancelDate": null,
+      "atcCode": "C09CA07",
+      "ingredientCode": "378802ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433061500",
+      "packages": [
+        {
+          "kdCode": "8806433061500",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433061524",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433061517",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433061531",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061555",
+          "quantity": 34,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061562",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806433061548",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202101798::(주)종근당",
+      "itemSeq": "202101798",
+      "brandId": "telmitren-s",
+      "brandNameRaw": "텔미트렌에스",
+      "itemName": "텔미트렌에스정40/10밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2021-02-23",
+      "cancelDate": null,
+      "atcCode": "C10BX20",
+      "ingredientCode": "629900ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433087104",
+      "packages": [
+        {
+          "kdCode": "8806433087104",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433087111",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202101797::(주)종근당",
+      "itemSeq": "202101797",
+      "brandId": "telmitren-s",
+      "brandNameRaw": "텔미트렌에스",
+      "itemName": "텔미트렌에스정40/5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2021-02-23",
+      "cancelDate": null,
+      "atcCode": "C10BX20",
+      "ingredientCode": "631600ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433087005",
+      "packages": [
+        {
+          "kdCode": "8806433087005",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433087012",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202101796::(주)종근당",
+      "itemSeq": "202101796",
+      "brandId": "telmitren-s",
+      "brandNameRaw": "텔미트렌에스",
+      "itemName": "텔미트렌에스정80/10밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2021-02-23",
+      "cancelDate": null,
+      "atcCode": "C10BX20",
+      "ingredientCode": "630100ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433086909",
+      "packages": [
+        {
+          "kdCode": "8806433086909",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086916",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202101795::(주)종근당",
+      "itemSeq": "202101795",
+      "brandId": "telmitren-s",
+      "brandNameRaw": "텔미트렌에스",
+      "itemName": "텔미트렌에스정80/20밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2021-02-23",
+      "cancelDate": null,
+      "atcCode": "C10BX20",
+      "ingredientCode": "630200ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "219",
+      "representativeCode": "8806433086800",
+      "packages": [
+        {
+          "kdCode": "8806433086800",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086817",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201000865::(주)종근당",
+      "itemSeq": "201000865",
+      "brandId": "telmitren-plus",
+      "brandNameRaw": "텔미트렌플러스",
+      "itemName": "텔미트렌플러스정40/12.5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2010-01-26",
+      "cancelDate": null,
+      "atcCode": "C09DA07",
+      "ingredientCode": "443200ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433056605",
+      "packages": [
+        {
+          "kdCode": "8806433056605",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433056629",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433056612",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433056636",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201000861::(주)종근당",
+      "itemSeq": "201000861",
+      "brandId": "telmitren-plus",
+      "brandNameRaw": "텔미트렌플러스",
+      "itemName": "텔미트렌플러스정80/12.5밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2010-01-26",
+      "cancelDate": null,
+      "atcCode": "C09DA07",
+      "ingredientCode": "443300ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433056902",
+      "packages": [
+        {
+          "kdCode": "8806433056902",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433056926",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433056919",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433056933",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201004700::(주)종근당",
+      "itemSeq": "201004700",
+      "brandId": "telmitren-plus",
+      "brandNameRaw": "텔미트렌플러스",
+      "itemName": "텔미트렌플러스정80/25밀리그램",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "80밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2010-07-27",
+      "cancelDate": null,
+      "atcCode": "C09DA07",
+      "ingredientCode": "502600ATB",
+      "ingredientNameEn": "telmisartan",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "214",
+      "representativeCode": "8806433057701",
+      "packages": [
+        {
+          "kdCode": "8806433057701",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433057725",
+          "quantity": 10,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433057718",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433057732",
+          "quantity": 30,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202203319::(주)대웅제약",
+      "itemSeq": "202203319",
+      "brandId": "pexuclue",
+      "brandNameRaw": "펙수클루",
+      "itemName": "펙수클루정10밀리그램(펙수프라잔염산염)",
+      "company": "(주)대웅제약",
+      "isCkd": false,
+      "strengthLabel": "10밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2022-08-18",
+      "cancelDate": null,
+      "atcCode": "A02BC10",
+      "ingredientCode": "704702ATB",
+      "ingredientNameEn": "fexuprazan hydrochloride",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "232",
+      "representativeCode": "8806416077405",
+      "packages": [
+        {
+          "kdCode": "8806416077405",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806416077412",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806416077429",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806416077436",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806416077443",
+          "quantity": 300,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202501159::(주)대웅제약",
+      "itemSeq": "202501159",
+      "brandId": "pexuclue",
+      "brandNameRaw": "펙수클루",
+      "itemName": "펙수클루정20밀리그램(펙수프라잔염산염)",
+      "company": "(주)대웅제약",
+      "isCkd": false,
+      "strengthLabel": "20밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2025-05-12",
+      "cancelDate": null,
+      "atcCode": "A02BC10",
+      "ingredientCode": "704703ATB",
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": "내복",
+      "classNo": "232",
+      "representativeCode": "8806416083406",
+      "packages": [
+        {
+          "kdCode": "8806416083406",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806416083413",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806416083420",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806416083444",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806416083437",
+          "quantity": 300,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "202108192::(주)대웅제약",
+      "itemSeq": "202108192",
+      "brandId": "pexuclue",
+      "brandNameRaw": "펙수클루",
+      "itemName": "펙수클루정40밀리그램(펙수프라잔염산염)",
+      "company": "(주)대웅제약",
+      "isCkd": false,
+      "strengthLabel": "40밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2021-12-30",
+      "cancelDate": null,
+      "atcCode": "A02BC10",
+      "ingredientCode": "704701ATB",
+      "ingredientNameEn": "fexuprazan hydrochloride",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "232",
+      "representativeCode": "8806416076309",
+      "packages": [
+        {
+          "kdCode": "8806416076309",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806416076361",
+          "quantity": 7,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806416076378",
+          "quantity": 14,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806416076316",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806416076323",
+          "quantity": 28,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806416076347",
+          "quantity": 56,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806416076354",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806416076330",
+          "quantity": 300,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201404452::(주)글락소스미스클라인",
+      "itemSeq": "201404452",
+      "brandId": "prolia",
+      "brandNameRaw": "프롤리아",
+      "itemName": "프롤리아프리필드시린지(데노수맙)",
+      "company": "(주)글락소스미스클라인",
+      "isCkd": false,
+      "strengthLabel": "60밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-09-29",
+      "cancelDate": null,
+      "atcCode": "M05BX04",
+      "ingredientCode": "629001BIJ",
+      "ingredientNameEn": "denosumab",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "399",
+      "representativeCode": "8806500029907",
+      "packages": [
+        {
+          "kdCode": "8806500029907",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "201404452::암젠코리아 유한회사",
+      "itemSeq": "201404452",
+      "brandId": "prolia",
+      "brandNameRaw": "프롤리아",
+      "itemName": "프롤리아프리필드시린지(데노수맙)",
+      "company": "암젠코리아 유한회사",
+      "isCkd": false,
+      "strengthLabel": "1밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-09-29",
+      "cancelDate": null,
+      "atcCode": "M05BX04",
+      "ingredientCode": "629001BIJ",
+      "ingredientNameEn": "denosumab",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "399",
+      "representativeCode": "8800523000400",
+      "packages": [
+        {
+          "kdCode": "8800523000400",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800523000417",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "프리필드시린지"
+        }
+      ]
+    }
+  ]
+}

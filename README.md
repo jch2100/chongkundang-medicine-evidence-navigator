@@ -34,6 +34,30 @@ python -m http.server 8765
 node .\scripts\validate-data.mjs
 ```
 
+인증키 확인 (공공데이터포털 OpenAPI):
+
+```powershell
+node .\scripts\check-api-key.mjs
+```
+
+코드 백본 재생성 (심평원 원본 파일 필요):
+
+```powershell
+node .\scripts\build-items.mjs --write
+```
+
+## 배포
+
+GitHub Pages로 배포합니다. `main` 브랜치에 푸시하면 `.github/workflows/pages.yml`이 다음 순서로 동작합니다.
+
+1. `node scripts/validate-data.mjs` — **검증 실패 시 배포하지 않습니다.**
+2. 공개 대상만 `_site/`로 수집 (`index.html`, `app.js`, `styles.css`, `favicon.svg`, `data/public/*.json`, `qa/runs/latest.json`)
+3. GitHub Pages 배포
+
+원본 CSV·XLSX(`data/source/`), 스크립트, 설계 문서는 배포 대상이 아닙니다.
+
+저장소 설정에서 **Settings → Pages → Source를 `GitHub Actions`** 로 지정해야 동작합니다.
+
 ## 출처 원칙
 
 - [DART 2025 사업보고서 주요 제품 및 서비스](https://dart.fss.or.kr/report/viewer.do?rcpNo=20260318001376&dcmNo=11142292&eleId=11&offset=114659&length=28069&dtd=dart4.xsd)

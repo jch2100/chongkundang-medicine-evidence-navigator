@@ -4,3 +4,6 @@ node_modules/
 pilot-private/
 *.tmp
 *.log
+
+# 공공데이터 원본 파일 (수십 MB, 재다운로드 가능 · 저장소에 넣지 않는다)
+data/source/

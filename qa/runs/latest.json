@@ -1,17 +1,635 @@
 {
-  "runId": "RUN-2026-09-21-mvp-001",
-  "runDate": "2026-09-21",
+  "runId": "RUN-2026-09-22-codebackbone-001",
+  "runDate": "2026-09-22",
   "status": "partial-success",
-  "summary": "DART 2025 주요 제품 표 기반 ETC 20개에 종근당 공식 페이지로 확인한 ETC 10개와 OTC 10개를 추가해 총 40개로 확장했습니다. 기존 20개 중 공식 매핑 16개와 추가 20개를 공개 상태로 유지하고, 매핑이 불완전한 4개는 검토 큐에 남겼습니다. 종근당 공식 제품 페이지에서 확인된 최근 5년 허가 변경 4건과 PubMed 사람 검토 연구 7건을 공개했습니다.",
+  "summary": "핵심 15개 브랜드 + 분리 브랜드 5개를 약가마스터와 약제급여목록표(2026.9.1. 시행)로 조인해 품목 99건, 포장 311건을 생성했습니다. 급여 등재 71건, 급여목록 미등재 28건입니다. 미등재는 비급여·수출용·취소·미등재가 모두 섞여 있어 단정하지 않습니다.",
   "productsTotal": 40,
   "productsPublished": 36,
   "changesPublished": 4,
   "literaturePublished": 7,
   "failures": [
-    {"product":"펙수클루","reason":"종근당 현재 제품 페이지 1:1 매핑 미확인"},
-    {"product":"고덱스","reason":"종근당 현재 제품 페이지 1:1 매핑 미확인"},
-    {"product":"타크로리무스","reason":"DART 제품명은 성분/계열 표기로 보이며 개별 제품 매핑 필요"},
-    {"product":"케렌디아","reason":"종근당 현재 제품 페이지 1:1 매핑 미확인"}
+    {
+      "product": "펙수클루",
+      "reason": "종근당 현재 제품 페이지 1:1 매핑 미확인"
+    },
+    {
+      "product": "고덱스",
+      "reason": "종근당 현재 제품 페이지 1:1 매핑 미확인"
+    },
+    {
+      "product": "타크로리무스",
+      "reason": "DART 제품명은 성분/계열 표기로 보이며 개별 제품 매핑 필요"
+    },
+    {
+      "product": "케렌디아",
+      "reason": "종근당 현재 제품 페이지 1:1 매핑 미확인"
+    }
   ],
-  "checks": ["JSON parse", "required product fields", "official-core coverage", "official URL format", "duplicate product id", "scope count"]
+  "checks": [
+    "JSON parse",
+    "required product fields",
+    "official-core coverage",
+    "source URL https",
+    "duplicate product id",
+    "itemSeq/ediCode/kdCode 자릿수",
+    "itemKey = 품목기준코드::업체명",
+    "billing.itemKey → items.itemKey",
+    "items.brandId → products.id",
+    "benefitStatus enum",
+    "maxPrice(listed 양의 정수 / not-listed null)",
+    "itemKey·kdCode 중복",
+    "고시 시행일 90일 stale 경고"
+  ],
+  "codeBackbone": {
+    "generatedOn": "2026-09-22",
+    "sources": {
+      "standardCode": "건강보험심사평가원_약가마스터_의약품표준코드_20260831.csv",
+      "ingredient": "건강보험심사평가원_약가마스터_의약품주성분_20251031.csv",
+      "notice": "약제급여목록및급여상한금액표_(2026.9.1.)_공개용(비인가자) 1부.xlsx",
+      "noticeEffectiveDate": "2026-09-01"
+    },
+    "brandsRequested": 15,
+    "brandsSplit": 5,
+    "brandsWithoutProductId": [
+      "텔미누보에스"
+    ],
+    "itemsTotal": 99,
+    "itemsActive": 89,
+    "itemsCancelled": 10,
+    "packagesTotal": 311,
+    "benefitListed": 71,
+    "benefitNotListed": 28,
+    "byBrand": [
+      {
+        "brandId": "godex",
+        "brandNameRaw": "고덱스",
+        "splitFrom": null,
+        "items": 4,
+        "active": 2,
+        "cancelled": 2,
+        "listed": 1,
+        "notListed": 3,
+        "packages": 15,
+        "companies": [
+          "(주)셀트리온제약",
+          "한서제약(주)"
+        ]
+      },
+      {
+        "brandId": "gliatilin",
+        "brandNameRaw": "글리아티린",
+        "splitFrom": null,
+        "items": 4,
+        "active": 3,
+        "cancelled": 1,
+        "listed": 1,
+        "notListed": 3,
+        "packages": 17,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "dilatrend",
+        "brandNameRaw": "딜라트렌",
+        "splitFrom": null,
+        "items": 12,
+        "active": 12,
+        "cancelled": 0,
+        "listed": 12,
+        "notListed": 0,
+        "packages": 42,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "lipilou",
+        "brandNameRaw": "리피로우",
+        "splitFrom": null,
+        "items": 6,
+        "active": 5,
+        "cancelled": 1,
+        "listed": 5,
+        "notListed": 1,
+        "packages": 21,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "lipilouzet",
+        "brandNameRaw": "리피로우젯",
+        "splitFrom": "리피로우",
+        "items": 4,
+        "active": 4,
+        "cancelled": 0,
+        "listed": 4,
+        "notListed": 0,
+        "packages": 18,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "myrept",
+        "brandNameRaw": "마이렙트",
+        "splitFrom": null,
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 10,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "cypol",
+        "brandNameRaw": "사이폴",
+        "splitFrom": null,
+        "items": 8,
+        "active": 5,
+        "cancelled": 3,
+        "listed": 4,
+        "notListed": 4,
+        "packages": 17,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "atozet",
+        "brandNameRaw": "아토젯",
+        "splitFrom": null,
+        "items": 8,
+        "active": 8,
+        "cancelled": 0,
+        "listed": 4,
+        "notListed": 4,
+        "packages": 16,
+        "companies": [
+          "한국엠에스디(주)",
+          "한국오가논 주식회사"
+        ]
+      },
+      {
+        "brandId": "evenity",
+        "brandNameRaw": "이베니티",
+        "splitFrom": null,
+        "items": 1,
+        "active": 1,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 0,
+        "packages": 5,
+        "companies": [
+          "암젠코리아 유한회사"
+        ]
+      },
+      {
+        "brandId": "januvia",
+        "brandNameRaw": "자누비아",
+        "splitFrom": null,
+        "items": 6,
+        "active": 6,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 3,
+        "packages": 12,
+        "companies": [
+          "(주)종근당",
+          "한국엠에스디(주)"
+        ]
+      },
+      {
+        "brandId": "qsymia",
+        "brandNameRaw": "큐시미아",
+        "splitFrom": null,
+        "items": 4,
+        "active": 4,
+        "cancelled": 0,
+        "listed": 0,
+        "notListed": 4,
+        "packages": 12,
+        "companies": [
+          "알보젠코리아(주)"
+        ]
+      },
+      {
+        "brandId": "tacrobell",
+        "brandNameRaw": "타크로벨",
+        "splitFrom": null,
+        "items": 12,
+        "active": 12,
+        "cancelled": 0,
+        "listed": 11,
+        "notListed": 1,
+        "packages": 29,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "telminuvo",
+        "brandNameRaw": "텔미누보",
+        "splitFrom": null,
+        "items": 6,
+        "active": 6,
+        "cancelled": 0,
+        "listed": 6,
+        "notListed": 0,
+        "packages": 25,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": null,
+        "brandNameRaw": "텔미누보에스",
+        "splitFrom": "텔미누보",
+        "items": 3,
+        "active": 0,
+        "cancelled": 3,
+        "listed": 0,
+        "notListed": 3,
+        "packages": 6,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "telminuvo-plus",
+        "brandNameRaw": "텔미누보플러스",
+        "splitFrom": "텔미누보",
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 6,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "telmitren",
+        "brandNameRaw": "텔미트렌",
+        "splitFrom": null,
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 19,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "telmitren-s",
+        "brandNameRaw": "텔미트렌에스",
+        "splitFrom": "텔미트렌",
+        "items": 4,
+        "active": 4,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 1,
+        "packages": 8,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "telmitren-plus",
+        "brandNameRaw": "텔미트렌플러스",
+        "splitFrom": "텔미트렌",
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 12,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "pexuclue",
+        "brandNameRaw": "펙수클루",
+        "splitFrom": null,
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 18,
+        "companies": [
+          "(주)대웅제약"
+        ]
+      },
+      {
+        "brandId": "prolia",
+        "brandNameRaw": "프롤리아",
+        "splitFrom": null,
+        "items": 2,
+        "active": 2,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 1,
+        "packages": 3,
+        "companies": [
+          "(주)글락소스미스클라인",
+          "암젠코리아 유한회사"
+        ]
+      }
+    ],
+    "joinFailures": [
+      {
+        "itemKey": "201404452::(주)글락소스미스클라인",
+        "itemName": "프롤리아프리필드시린지(데노수맙)",
+        "company": "(주)글락소스미스클라인",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200200379::(주)셀트리온제약",
+        "itemName": "고덱스캅(수출용)",
+        "company": "(주)셀트리온제약",
+        "masterEdiCode": null,
+        "cancelDate": "2010-10-06",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200709391::(주)종근당",
+        "itemName": "리피로우정10밀리그램(무수아토르바스타틴칼슘)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2008-02-26",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "199300216::(주)종근당",
+        "itemName": "사이폴내복액(사이클로스포린)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2015-08-04",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200500131::(주)종근당",
+        "itemName": "사이폴-엔연질캡슐50밀리그램(사이클로스포린)(수출용)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "199400119::(주)종근당",
+        "itemName": "사이폴캅셀(사이클로스포린에이)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2015-08-04",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "199400118::(주)종근당",
+        "itemName": "사이폴캅셀25밀리그람(싸이클로스포린에이)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2007-12-31",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201301619::(주)종근당",
+        "itemName": "타크로벨캡슐5밀리그램(타크로리무스수화물)(수출용)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201406176::(주)종근당",
+        "itemName": "종근당글리아티린정(콜린알포세레이트)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201601705::(주)종근당",
+        "itemName": "종근당글리아티린주(콜린알포세레이트)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2026-06-05",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201802238::(주)종근당",
+        "itemName": "텔미누보에스정40/5/10밀리그램",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2018-10-16",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201802239::(주)종근당",
+        "itemName": "텔미누보에스정80/5/10밀리그램",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2018-10-16",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201802240::(주)종근당",
+        "itemName": "텔미누보에스정80/10/20밀리그램",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2018-10-16",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201905694::(주)종근당",
+        "itemName": "종근당글리아티린시럽(콜린알포세레이트)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "202101795::(주)종근당",
+        "itemName": "텔미트렌에스정80/20밀리그램",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201905407::알보젠코리아(주)",
+        "itemName": "큐시미아캡슐15mg/92mg",
+        "company": "알보젠코리아(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201905408::알보젠코리아(주)",
+        "itemName": "큐시미아캡슐11.25mg/69mg",
+        "company": "알보젠코리아(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201905406::알보젠코리아(주)",
+        "itemName": "큐시미아캡슐3.75mg/23mg",
+        "company": "알보젠코리아(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201905405::알보젠코리아(주)",
+        "itemName": "큐시미아캡슐7.5mg/46mg",
+        "company": "알보젠코리아(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200710760::한국엠에스디(주)",
+        "itemName": "자누비아정25밀리그램(시타글립틴인산염수화물)",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200710758::한국엠에스디(주)",
+        "itemName": "자누비아정50밀리그램(시타글립틴인산염수화물)",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200710759::한국엠에스디(주)",
+        "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201500364::한국엠에스디(주)",
+        "itemName": "아토젯정10/20밀리그램",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201500365::한국엠에스디(주)",
+        "itemName": "아토젯정10/40밀리그램",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201500366::한국엠에스디(주)",
+        "itemName": "아토젯정10/80밀리그램",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201500367::한국엠에스디(주)",
+        "itemName": "아토젯정10/10밀리그램",
+        "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200200379::한서제약(주)",
+        "itemName": "고덱스캅(수출용)(수출명:GODEXCap.)(중국수출명:Hepatheracapsule)",
+        "company": "한서제약(주)",
+        "masterEdiCode": null,
+        "cancelDate": "2010-10-06",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200000601::한서제약(주)",
+        "itemName": "고덱스캡슐",
+        "company": "한서제약(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      }
+    ],
+    "noticeOnlyRows": [],
+    "excludedByCompanyRule": [
+      {
+        "brand": "사이폴",
+        "itemName": "사이폴-엔연질캡슐50밀리그램(사이클로스포린)",
+        "company": "(주)다산제약",
+        "itemSeq": "202301675",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "사이폴",
+        "itemName": "사이폴-엔연질캡슐50밀리그램(사이클로스포린)",
+        "company": "(주)다산제약",
+        "itemSeq": "202301675",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "글리아티린",
+        "itemName": "글리아티린연질캡슐(콜린알포세레이트)",
+        "company": "(주)대웅제약",
+        "itemSeq": "200000767",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "글리아티린",
+        "itemName": "글리아티린연질캅셀(콜린알포세레이트)",
+        "company": "(주)대웅제약",
+        "itemSeq": "200000767",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "글리아티린",
+        "itemName": "글리아티린연질캡슐(콜린알포세레이트)",
+        "company": "(주)대웅제약",
+        "itemSeq": "200000767",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "글리아티린",
+        "itemName": "글리아티린주사액(콜린알포세레이트)",
+        "company": "(주)대웅제약",
+        "itemSeq": "200000768",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "글리아티린",
+        "itemName": "글리아티린주사액(콜린알포세레이트)",
+        "company": "(주)대웅제약",
+        "itemSeq": "200000768",
+        "rule": "업체명에 '종근당' 필요"
+      },
+      {
+        "brand": "글리아티린",
+        "itemName": "글리아티린주사액(콜린알포세레이트)",
+        "company": "(주)대웅제약",
+        "itemSeq": "200000768",
+        "rule": "업체명에 '종근당' 필요"
+      }
+    ],
+    "warnings": []
+  }
 }

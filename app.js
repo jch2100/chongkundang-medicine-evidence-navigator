@@ -1,9 +1,34 @@
-const state = { products: [], changes: [], literature: [], faqTemplates: [], run: null, query: '', filter: 'all', selected: null };
+/* 종근당 의약품 근거 탐색 허브 — 화면 로직
+   데이터 계약: docs/DATA_DICTIONARY.md
+   원칙: 데이터에 있는 값만 표시한다. 허가사항·적응증·부작용 문구를 생성하지 않는다. */
+
+const RX_DISCLAIMER = '코드와 금액은 참고용입니다. 실제 청구는 심평원 고시 원문과 의료진 판단을 따릅니다.';
+const NOT_LISTED_LABEL = '급여목록 미등재 (비급여 여부는 별도 확인)';
+
+const state = {
+  products: [],
+  changes: [],
+  literature: [],
+  faqTemplates: [],
+  core: {},
+  run: null,
+  items: [],
+  itemsByBrand: new Map(),
+  billingByKey: new Map(),
+  billingSource: null,
+  itemsSource: null,
+  usingFixtures: [],
+  query: '',
+  category: 'all',
+  flags: new Set(),
+  showCancelled: false,
+  selected: null
+};
 
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
-const safeUrl = (value) => /^https?:\/\//i.test(value || '') ? value : '#';
-const formatMoney = (value) => value ? `${Number(value).toLocaleString('ko-KR')}백만원` : '추가 편입 품목';
+const safeUrl = (value) => (/^https?:\/\//i.test(value || '') ? value : '#');
+const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -11,155 +36,649 @@ async function loadJson(path) {
   return response.json();
 }
 
-function filteredProducts() {
-  const query = state.query.trim().toLowerCase();
-  return state.products.filter((product) => {
-    const searchable = [product.name, product.displayName, product.ingredient, product.dartCategory, product.ckdCategory, product.searchTerms].join(' ').toLowerCase();
-    const queryMatch = !query || searchable.includes(query);
-    const hasChange = state.changes.some((change) => change.productId === product.id);
-    const filterMatch = state.filter === 'all'
-      || (state.filter === '변경 이력' && hasChange)
-      || (state.filter === '공동판매' && product.ownershipTag === '공동판매')
-      || (state.filter === 'ETC' && (product.scope || 'ETC') === 'ETC')
-      || (state.filter === 'OTC' && product.scope === 'OTC')
-      || product.ckdCategory === state.filter;
-    return queryMatch && filterMatch;
+/* 백엔드 산출물(items.json / billing.json)이 나오기 전까지는 픽스처로 폴백한다.
+   items.json 한 번만 탐색해 404 요청 수를 최소화한다. 두 파일은 같이 생성된다. */
+async function loadRxData() {
+  try {
+    const items = await loadJson('./data/public/items.json');
+    const billing = await loadJson('./data/public/billing.json').catch(() => null);
+    return { items, billing };
+  } catch (error) {
+    state.usingFixtures.push('items', 'billing');
+    const [items, billing] = await Promise.all([
+      loadJson('./data/public/fixtures/items.sample.json').catch(() => null),
+      loadJson('./data/public/fixtures/billing.sample.json').catch(() => null)
+    ]);
+    return { items, billing };
+  }
+}
+
+/* ---------- 파생 값 ---------- */
+
+/* 함량 표기는 itemName 기준 (DATA_DICTIONARY §2). 약가마스터 규격은 업체마다 기준이 달라 신뢰하지 않는다. */
+const STRENGTH_UNIT = '(?:mg|밀리그램|㎎|mcg|마이크로그램|㎍|g|그램|mL|ml|밀리리터|IU|단위|%)';
+/* 복합제는 앞 성분에 단위가 생략된다: '텔미트렌에스정40/10밀리그램' → '40/10밀리그램'.
+   단위 앞의 '숫자/숫자…' 묶음을 함께 잡지 않으면 앞 성분 함량이 통째로 잘린다. */
+const STRENGTH_RE = new RegExp(`\\d[\\d.,]*(?:\\s*\\/\\s*\\d[\\d.,]*)*\\s*${STRENGTH_UNIT}(?:\\s*\\/\\s*\\d[\\d.,]*\\s*${STRENGTH_UNIT})*`, 'i');
+
+function strengthCell(item) {
+  const match = STRENGTH_RE.exec(item.itemName || '');
+  if (match) return escapeHtml(match[0].replace(/\s+/g, ''));
+  /* 품목명에 함량 표기가 없을 때만 약가마스터 규격을 쓰고, 출처가 다름을 명시한다. */
+  if (item.strengthLabel) return `${escapeHtml(item.strengthLabel)}<span class="strength-src">약가마스터 규격</span>`;
+  return '<span class="code-empty">—</span>';
+}
+
+function realPackages(item) {
+  return (item.packages || []).filter((pkg) => pkg.kdCode && Number(pkg.quantity) > 0);
+}
+
+function brandItems(brandId, { includeCancelled = state.showCancelled } = {}) {
+  const items = state.itemsByBrand.get(brandId) || [];
+  return includeCancelled ? items : items.filter((item) => !item.cancelDate);
+}
+
+function searchIndex(product) {
+  const items = brandItems(product.id, { includeCancelled: true });
+  return [
+    product.name, product.displayName, product.ingredient, product.dartCategory,
+    product.ckdCategory, product.searchTerms, state.core?.[product.id]?.ingredient,
+    ...items.map((item) => `${item.itemName} ${item.company} ${item.ingredientNameEn || ''} ${item.atcCode || ''}`)
+  ].join(' ').toLowerCase();
+}
+
+/* 코드 역검색: 숫자만 입력했을 때 보험코드·표준코드·품목기준코드를 모두 훑는다. */
+function codeHits(product, digits) {
+  const hits = [];
+  brandItems(product.id, { includeCancelled: true }).forEach((item) => {
+    const billing = state.billingByKey.get(item.itemKey) || {};
+    if (billing.ediCode && billing.ediCode.includes(digits)) hits.push({ kind: '보험코드', code: billing.ediCode, item });
+    if (item.representativeCode && item.representativeCode.includes(digits)) hits.push({ kind: '표준코드', code: item.representativeCode, item });
+    realPackages(item).forEach((pkg) => {
+      if (pkg.kdCode.includes(digits)) hits.push({ kind: '표준코드', code: pkg.kdCode, item });
+    });
+    if (item.itemSeq && item.itemSeq.includes(digits)) hits.push({ kind: '품목기준코드', code: item.itemSeq, item });
   });
+  return hits;
+}
+
+function queryDigits(query) {
+  const digits = query.replace(/[^0-9]/g, '');
+  return /^[0-9\s-]+$/.test(query) && digits.length >= 4 ? digits : null;
+}
+
+function hasChanges(product) {
+  return state.changes.some((change) => change.productId === product.id);
+}
+
+function scopeOf(product) {
+  return product.scope || 'ETC';
+}
+
+function ownershipOf(product) {
+  const items = brandItems(product.id, { includeCancelled: true });
+  const ckd = items.filter((item) => item.isCkd);
+  return {
+    total: items.length,
+    hasCkdItem: ckd.length > 0,
+    companies: [...new Set(items.map((item) => item.company))]
+  };
+}
+
+/* ---------- 목록 ---------- */
+
+function matchedProducts() {
+  const query = state.query.trim().toLowerCase();
+  const digits = queryDigits(state.query.trim());
+  return state.products
+    .map((product) => {
+      const hits = digits ? codeHits(product, digits) : [];
+      const textMatch = !query || searchIndex(product).includes(query);
+      const matched = digits ? hits.length > 0 : textMatch;
+      return { product, hits, matched };
+    })
+    .filter((entry) => {
+      if (!entry.matched) return false;
+      const product = entry.product;
+      if (state.category !== 'all' && product.ckdCategory !== state.category) return false;
+      for (const flag of state.flags) {
+        if (flag === 'ETC' && scopeOf(product) !== 'ETC') return false;
+        if (flag === 'OTC' && scopeOf(product) !== 'OTC') return false;
+        if (flag === '공동판매' && product.ownershipTag !== '공동판매') return false;
+        if (flag === '변경' && !hasChanges(product)) return false;
+        if (flag === '코드' && brandItems(product.id).length === 0) return false;
+      }
+      return true;
+    });
+}
+
+function resultCardHtml({ product, hits }) {
+  const core = state.core[product.id] || {};
+  const ingredient = core.ingredient || product.ingredient;
+  const items = brandItems(product.id);
+  const listed = items.filter((item) => (state.billingByKey.get(item.itemKey) || {}).benefitStatus === 'listed').length;
+  const codeLine = items.length
+    ? `함량·품목 ${items.length}건${listed ? ` · 급여코드 ${listed}건` : ''}`
+    : '처방·청구 데이터 준비 중';
+  const hit = hits[0];
+  return `
+    <button class="result-card${state.selected === product.id ? ' selected' : ''}" data-product-id="${escapeHtml(product.id)}" type="button" aria-pressed="${state.selected === product.id}">
+      <span class="result-name">${escapeHtml(product.name)}</span>
+      <span class="result-sub">${escapeHtml(ingredient || product.dartCategory || '성분 확인 필요')}</span>
+      <span class="result-tags">
+        ${product.ckdCategory ? `<span class="chip">${escapeHtml(product.ckdCategory)}</span>` : ''}
+        <span class="chip">${escapeHtml(scopeOf(product) === 'OTC' ? '일반' : '전문')}</span>
+        ${product.ownershipTag === '공동판매' ? '<span class="chip chip-alt">공동판매</span>' : ''}
+        ${hasChanges(product) ? '<span class="chip chip-alt">변경 이력</span>' : ''}
+      </span>
+      <span class="result-codes${items.length ? '' : ' muted'}">${escapeHtml(codeLine)}</span>
+      ${hit ? `<span class="result-hit">${escapeHtml(hit.kind)} ${escapeHtml(hit.code)} 일치 · ${escapeHtml(hit.item.itemName)}</span>` : ''}
+    </button>`;
 }
 
 function renderResults() {
+  const entries = matchedProducts();
   const list = $('#resultList');
-  const products = filteredProducts();
-  $('#resultCount').textContent = `${products.length}개`;
-  if (!products.length) { list.innerHTML = '<div class="no-results">조건에 맞는 제품이 없습니다.<br>검색어 또는 분류를 바꿔보세요.</div>'; return; }
-  list.innerHTML = products.map((product) => `
-    <button class="result-card ${state.selected === product.id ? 'selected' : ''}" data-product-id="${escapeHtml(product.id)}" type="button">
-      <div class="result-top"><span class="result-name">${escapeHtml(product.name)}</span><span class="rank">${product.dartRank ? `#${product.dartRank}` : escapeHtml(product.scope || '추가')}</span></div>
-      <div class="result-meta">${escapeHtml(product.dartCategory)} · ${formatMoney(product.dartSales)}</div>
-      <div class="result-fact"><span>성분</span><strong>${escapeHtml(state.core?.[product.id]?.ingredient || product.ingredient || '확인 필요')}</strong></div>
-      <div class="result-fact"><span>효능</span><strong>${escapeHtml(state.core?.[product.id]?.efficacy || product.dartCategory)}</strong></div>
-      <div class="result-research">관련 연구 ${state.literature.filter((item) => item.productId === product.id && item.status === 'published').length}건 · ${escapeHtml(product.scope || 'ETC')}</div>
-      <span class="mini-status ${product.status === 'review' ? 'review' : ''}">${product.status === 'review' ? '공식 매핑 검토 필요' : '공식 원문 매핑'}</span>
-    </button>`).join('');
-  list.querySelectorAll('[data-product-id]').forEach((button) => button.addEventListener('click', () => selectProduct(button.dataset.productId)));
+  $('#resultCount').textContent = `${entries.length}개`;
+  $('#resultLive').textContent = `검색 결과 ${entries.length}개`;
+  if (!entries.length) {
+    list.innerHTML = '<p class="no-results">조건에 맞는 제품이 없습니다.<br>제품명·성분명·보험코드(9자리)·표준코드(13자리)를 확인해 주세요.</p>';
+    return;
+  }
+  list.innerHTML = entries.map(resultCardHtml).join('');
+  list.querySelectorAll('[data-product-id]').forEach((button) => {
+    button.addEventListener('click', () => selectProduct(button.dataset.productId));
+  });
 }
 
-function sourceLink(label, type, url) {
-  return `<a class="source-link" href="${escapeHtml(safeUrl(url))}" target="_blank" rel="noreferrer"><span>${escapeHtml(label)}</span><span class="source-type">${escapeHtml(type)} ↗</span></a>`;
+/* ---------- 처방·청구 ---------- */
+
+function copyButton(code, kind) {
+  if (!code) return '<span class="code-empty">—</span>';
+  return `<button class="copy-btn" type="button" data-copy="${escapeHtml(code)}" data-kind="${escapeHtml(kind)}" aria-label="${escapeHtml(kind)} ${escapeHtml(code)} 복사">
+      <span class="code-text">${escapeHtml(code)}</span><span class="copy-tag" aria-hidden="true">복사</span>
+    </button>`;
 }
 
-function buildFaqAnswer(answerKey, product, core, changes, literature) {
+function priceCell(billing, effectiveDate) {
+  if (!billing || billing.benefitStatus !== 'listed' || billing.maxPrice == null) return '<span class="code-empty">—</span>';
+  return `<span class="price">${Number(billing.maxPrice).toLocaleString('ko-KR')}원</span>
+    <span class="price-unit">${escapeHtml(billing.priceUnit || '')}</span>
+    ${effectiveDate ? `<span class="price-date">${escapeHtml(effectiveDate)} 시행</span>` : ''}`;
+}
+
+function benefitCell(billing) {
+  if (!billing) return '<span class="badge badge-wait">급여 정보 미연결</span>';
+  if (billing.benefitStatus === 'listed') return '<span class="badge badge-listed">급여</span>';
+  return `<span class="badge badge-unlisted">${escapeHtml(NOT_LISTED_LABEL)}</span>`;
+}
+
+function packageList(item) {
+  const packages = realPackages(item);
+  if (!packages.length) return '';
+  return `<details class="pack-details">
+      <summary>포장별 표준코드 ${packages.length}종</summary>
+      <ul class="pack-list">
+        ${packages.map((pkg) => `<li><span class="pack-qty">${escapeHtml(String(pkg.quantity))}${escapeHtml(pkg.dosageForm || '')}${pkg.packageType ? ` ${escapeHtml(pkg.packageType)}` : ''}</span>${copyButton(pkg.kdCode, '표준코드')}</li>`).join('')}
+      </ul>
+    </details>`;
+}
+
+function rxRow(item, effectiveDate) {
+  const billing = state.billingByKey.get(item.itemKey);
+  return `<tr role="row"${item.cancelDate ? ' class="row-cancelled"' : ''}>
+      <td role="cell" data-label="품목명">
+        <span class="item-name">${escapeHtml(item.itemName)}</span>
+        ${item.cancelDate ? `<span class="badge badge-cancel">허가취소 ${escapeHtml(item.cancelDate)}</span>` : ''}
+      </td>
+      <td role="cell" data-label="함량">${strengthCell(item)}</td>
+      <td role="cell" data-label="보험코드">${copyButton(billing && billing.ediCode, '보험코드')}</td>
+      <td role="cell" data-label="표준코드">
+        ${copyButton(item.representativeCode, '표준코드')}
+        ${packageList(item)}
+      </td>
+      <td role="cell" data-label="상한금액">${priceCell(billing, effectiveDate)}</td>
+      <td role="cell" data-label="급여구분">${benefitCell(billing)}</td>
+    </tr>`;
+}
+
+function rxTable(items, effectiveDate) {
+  return `<div class="rx-table-wrap">
+    <table class="rx-table" role="table">
+      <thead>
+        <tr role="row">
+          <th role="columnheader" scope="col">품목명</th>
+          <th role="columnheader" scope="col">함량</th>
+          <th role="columnheader" scope="col">보험코드</th>
+          <th role="columnheader" scope="col">표준코드</th>
+          <th role="columnheader" scope="col">상한금액</th>
+          <th role="columnheader" scope="col">급여구분</th>
+        </tr>
+      </thead>
+      <tbody>${items.map((item) => rxRow(item, effectiveDate)).join('')}</tbody>
+    </table>
+  </div>`;
+}
+
+function rxSection(product) {
+  const all = brandItems(product.id, { includeCancelled: true });
+  const items = brandItems(product.id);
+  const cancelledCount = all.length - all.filter((item) => !item.cancelDate).length;
+  const effectiveDate = state.billingSource ? state.billingSource.effectiveDate : null;
+  const ownership = ownershipOf(product);
+
+  if (!all.length) {
+    return `<section class="detail-section" id="rx">
+      <h3>처방·청구</h3>
+      <p class="notice">${product.ownershipTag === '공동판매' ? '공동판매 품목입니다. <strong>허가권자와 판매사가 다릅니다.</strong><br>' : ''}이 브랜드의 품목 코드(보험코드·표준코드)는 아직 데이터에 연결되지 않았습니다. 확정 전 값을 추정하지 않습니다.</p>
+      <p class="rx-disclaimer">${escapeHtml(RX_DISCLAIMER)}</p>
+    </section>`;
+  }
+
+  /* 공동판매·타사 허가 품목은 명의별로 나눠 표시한다 (DATA_DICTIONARY §7). */
+  const groups = [];
+  items.forEach((item) => {
+    let group = groups.find((entry) => entry.company === item.company);
+    if (!group) { group = { company: item.company, isCkd: item.isCkd, items: [] }; groups.push(group); }
+    group.items.push(item);
+  });
+  groups.sort((a, b) => Number(b.isCkd) - Number(a.isCkd));
+
+  const notices = [];
+  if (!ownership.hasCkdItem) {
+    notices.push('이 브랜드에는 <strong>종근당 명의의 품목 코드가 없습니다.</strong> 아래 코드는 허가권자 명의 기준입니다.');
+  } else if (groups.length > 1) {
+    notices.push('허가(품목기준코드)는 공유하고 표준코드는 명의별로 다릅니다. <strong>보험코드가 한쪽에만 부여</strong>될 수 있습니다.');
+  }
+  if (product.ownershipTag === '공동판매') {
+    notices.push('공동판매 품목입니다. <strong>허가권자와 판매사가 다릅니다.</strong>');
+  }
+
+  const showGroupHeads = groups.length > 1 || !groups[0].isCkd;
+
+  return `<section class="detail-section rx-section" id="rx">
+    <div class="rx-head">
+      <h3>처방·청구</h3>
+      ${effectiveDate ? `<span class="rx-basis">고시 시행일 ${escapeHtml(effectiveDate)}</span>` : ''}
+    </div>
+    ${notices.length ? `<div class="notice">${notices.join('<br>')}</div>` : ''}
+    ${groups.map((group) => `
+      ${showGroupHeads ? `<h4 class="rx-group">${escapeHtml(group.company)} <span>${group.isCkd ? '종근당 명의' : '허가권자·타사 명의'}</span></h4>` : ''}
+      ${rxTable(group.items, effectiveDate)}
+    `).join('')}
+    ${cancelledCount ? `<button class="link-button" type="button" id="toggleCancelled">${state.showCancelled ? '허가취소 품목 숨기기' : `허가취소 품목 ${cancelledCount}건 보기`}</button>` : ''}
+    <p class="rx-source">${escapeHtml(state.billingSource ? state.billingSource.noticeName : '약제 급여 목록 및 급여 상한금액표')} · ${escapeHtml(state.itemsSource ? state.itemsSource.standardCode : '약가마스터 의약품표준코드')}</p>
+    <p class="rx-disclaimer">${escapeHtml(RX_DISCLAIMER)}</p>
+  </section>`;
+}
+
+/* ---------- FAQ (기존 템플릿 유지) ---------- */
+
+function buildFaqAnswer(answerKey, product, core, changes) {
   if (answerKey === 'efficacy') {
     return core.status === 'confirmed'
       ? `${core.efficacy}로 식약처 품목정보에 표시되어 있습니다. 실제 적용 환자군과 세부 적응증은 해당 품목의 최신 허가사항을 기준으로 확인합니다.`
       : `현재는 DART 사업보고서의 제품군 표기인 “${product.dartCategory}”만 확인된 상태입니다. 종근당 제품과 식약처 품목의 1:1 매핑이 끝나면 허가된 적응증과 환자군을 확정합니다.`;
   }
   if (answerKey === 'ingredient') {
-    return `${core.ingredient || '공식 품목 매핑 필요'}${product.formStrength ? ` · 화면에 연결된 표시 제품: ${product.formStrength}` : ''}. 제품군·제형에 따라 품목이 달라질 수 있어, 확정 상태가 아닌 값은 검토 중으로 표시했습니다.`;
+    return `${core.ingredient || '공식 품목 매핑 필요'}${product.formStrength ? ` · 화면에 연결된 표시 제품: ${product.formStrength}` : ''}. 제형별 품목이 다를 수 있어, 확정 상태가 아닌 값은 검토 중으로 표시했습니다.`;
   }
   if (answerKey === 'safety') {
-    return '공식 허가 원문의 이상반응·금기·주의사항을 기준으로 확인해야 합니다. 이 화면은 환자별 위험도를 단정하거나 처방을 권고하지 않으며, 의료진 질문에는 최신 품목 원문과 환자 상태를 함께 확인하는 방식으로 답변합니다.';
+    return '공식 허가 원문의 이상반응·금기·주의사항을 기준으로 확인해야 합니다. 이 화면은 환자별 위험도를 단정하거나 처방을 권고하지 않습니다.';
   }
   if (answerKey === 'dosing') {
-    return `${product.formStrength ? `현재 연결된 표시 제품은 ${product.formStrength}입니다. ` : ''}정확한 투여 횟수·간격·용량은 제형과 환자 상태에 따라 달라질 수 있으므로 최신 품목 허가사항의 용법·용량을 기준으로 확인합니다.`;
+    return `${product.formStrength ? `현재 연결된 표시 제품은 ${product.formStrength}입니다. ` : ''}정확한 투여 횟수·간격·용량은 제형과 환자 상태에 따라 달라지므로 최신 품목 허가사항의 용법·용량을 기준으로 확인합니다.`;
   }
   if (answerKey === 'changes') {
-    return changes.length ? `최근 5년 범위에서 본 MVP가 공식 게시물로 기록한 변경 확인 항목은 ${changes.map((item) => item.date).join(', ')}입니다. 변경 전·후의 세부 문구와 적용일은 게시 원문 기준으로 확인합니다.` : '현재 본 MVP에서 사람 검토를 마쳐 공개한 최근 5년 변경 기록은 없습니다. 이는 변경이 없다는 뜻이 아니라, 원문 확인 전 항목을 확정하지 않았다는 뜻입니다.';
+    return changes.length
+      ? `본 MVP가 공식 게시물로 기록한 변경 확인 항목은 ${changes.map((item) => item.date).join(', ')}입니다. 변경 전·후 문구와 적용일은 게시 원문 기준으로 확인합니다.`
+      : '사람 검토를 마쳐 공개한 최근 5년 변경 기록이 없습니다. 변경이 없다는 뜻이 아니라 원문 확인 전 항목을 확정하지 않았다는 뜻입니다.';
   }
   if (answerKey === 'research') {
-    const reviewed = literature.filter((item) => item.productId === product.id && item.status === 'published').length;
-    return reviewed ? `사람 검토를 마친 관련 연구 ${reviewed}건이 등록되어 있습니다.` : '현재 사람 검토를 마쳐 공개한 논문은 없습니다. PubMed 검색 링크에서 후보 논문을 찾은 뒤, 질환 관련성·성분 관련성·HCP 요약을 검토하고 공개합니다.';
+    const reviewed = state.literature.filter((item) => item.productId === product.id && item.status === 'published').length;
+    return reviewed
+      ? `사람 검토를 마친 관련 연구 ${reviewed}건이 등록되어 있습니다.`
+      : '사람이 확인해 공개한 논문은 아직 없습니다. PubMed 검색 링크에서 후보 논문을 찾은 뒤 검토합니다.';
   }
   return '공식 근거 확인 필요';
+}
+
+/* ---------- 상세 ---------- */
+
+function sourceLink(label, type, url) {
+  return `<a class="source-link" href="${escapeHtml(safeUrl(url))}" target="_blank" rel="noreferrer"><span>${escapeHtml(label)}</span><span class="source-type">${escapeHtml(type)} ↗</span></a>`;
 }
 
 function renderDetail(product) {
   const changes = state.changes.filter((change) => change.productId === product.id).sort((a, b) => b.date.localeCompare(a.date));
   const literature = state.literature.filter((item) => item.productId === product.id && item.status === 'published');
   const core = state.core[product.id] || {};
-  const faqItems = state.faqTemplates.map((template) => ({ ...template, answer: buildFaqAnswer(template.answerKey, product, core, changes, state.literature) }));
+  const ownership = ownershipOf(product);
   const pubmedUrl = `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(product.searchTerms || product.name)}`;
-  const sourceItems = [sourceLink(`DART 2025 사업보고서 · ${product.dartRank ? '주요 제품 및 서비스' : '참고 원문'}`, '매출 근거', product.sources.dart)];
-  if (product.sources.ckd) sourceItems.push(sourceLink(`${product.displayName || product.name} · 종근당 공식 제품 페이지`, '제품 원문', product.sources.ckd));
+
+  const sourceItems = [];
+  if (product.sources.ckd) sourceItems.push(sourceLink(`${product.displayName || product.name} · 종근당 제품 페이지`, '제품 원문', product.sources.ckd));
   if (core.source) sourceItems.push(sourceLink(core.sourceLabel || '식약처 의약품안전나라 · 품목 상세', '허가 원문', core.source));
-  sourceItems.push(sourceLink('의약품안전나라 · 식약처 공식 검색', '허가 원문', product.sources.mfds));
+  sourceItems.push(sourceLink('의약품안전나라 · 품목 검색', '허가 원문', product.sources.mfds));
+  if (state.billingSource) sourceItems.push(sourceLink(`${state.billingSource.noticeName} (${state.billingSource.effectiveDate} 시행)`, '급여 원문', state.billingSource.url));
   sourceItems.push(sourceLink('PubMed · 관련 연구 검색', '연구 원문', pubmedUrl));
   if (product.sources.ckdNews) sourceItems.push(sourceLink('종근당 제품소식 · 허가 변경 게시판', '변경 원문', product.sources.ckdNews));
+  if (product.sources.dart) sourceItems.push(sourceLink(`DART 2025 사업보고서${product.dartRank ? ` · 주요 제품 ${product.dartRank}위` : ''}`, '매출 근거', product.sources.dart));
 
-  $('#detailPanel').innerHTML = `<div class="detail-card">
+  const faqItems = state.faqTemplates.map((template) => ({ ...template, answer: buildFaqAnswer(template.answerKey, product, core, changes) }));
+
+  $('#detailPanel').innerHTML = `<article class="detail-card">
     <div class="detail-hero">
-      <p class="section-kicker">PRODUCT EVIDENCE CARD</p>
+      <button class="back-button" type="button" id="backToList">← 목록</button>
       <h2>${escapeHtml(product.name)}</h2>
-      <p>${escapeHtml(product.dartCategory)} · ${product.dartRank ? `DART ${product.dartRank}위` : `${escapeHtml(product.scope || 'ETC')} 추가 편입`} · ${formatMoney(product.dartSales)}</p>
-      <div class="tag-row"><span class="tag ${product.status === 'review' ? 'status-review' : 'status-ok'}">${product.status === 'review' ? '공식 매핑 검토 필요' : '공식 원문 확인 가능'}</span>${product.ownershipTag ? `<span class="tag">${escapeHtml(product.ownershipTag)}</span>` : ''}<span class="tag">최근 5년 변경 기준</span></div>
+      <p class="detail-sub">${escapeHtml(core.ingredient || product.ingredient || '성분 확인 필요')}</p>
+      <div class="tag-row">
+        ${product.ckdCategory ? `<span class="tag">${escapeHtml(product.ckdCategory)}</span>` : ''}
+        <span class="tag">${escapeHtml(scopeOf(product) === 'OTC' ? '일반의약품' : '전문의약품')}</span>
+        ${product.ownershipTag === '공동판매' ? '<span class="tag tag-alt">공동판매</span>' : ''}
+        ${ownership.total && !ownership.hasCkdItem ? '<span class="tag tag-alt">종근당 명의 코드 없음</span>' : ''}
+        ${product.status === 'review' ? '<span class="tag tag-review">공식 매핑 검토 필요</span>' : ''}
+      </div>
+      ${ownership.companies.length ? `<p class="detail-owner">허가권자·업체: ${escapeHtml(ownership.companies.join(' / '))}</p>` : ''}
     </div>
+
+    <nav class="detail-nav" aria-label="상세 목차">
+      <a href="#rx">처방·청구</a>
+      <a href="#core">핵심 정보</a>
+      <a href="#faq">현장 FAQ</a>
+      <a href="#changes">변경 이력</a>
+      <a href="#lit">관련 연구</a>
+      <a href="#sources">원문 출처</a>
+    </nav>
+
     <div class="detail-body">
-      <dl class="fact-grid">
-        <div class="fact"><dt>DART 보고서 용도</dt><dd>${escapeHtml(product.dartCategory)}</dd></div>
-        <div class="fact"><dt>종근당 분류</dt><dd>${escapeHtml(product.ckdCategory || '확인 필요')}</dd></div>
-        <div class="fact"><dt>성분명</dt><dd>${escapeHtml(core.ingredient || product.ingredient || '공식 원문 확인')}</dd></div>
-        <div class="fact"><dt>제형·함량</dt><dd>${escapeHtml(product.formStrength || '공식 원문 확인')}</dd></div>
-      </dl>
-      ${product.status === 'review' ? `<div class="notice" style="margin-top:1rem"><strong>검토 필요</strong>현재 공개 데이터셋에서는 DART 제품명과 종근당 공식 제품 페이지의 1:1 매핑을 확인하지 못했습니다. 성분·적응증·변경사항을 추정하지 않고 원문 검색 링크만 제공합니다.</div>` : ''}
-      <section class="core-info-section" aria-label="핵심 의약품 정보">
-        <div class="core-info-heading"><div><p class="section-kicker">AT A GLANCE</p><h3>핵심 정보</h3></div><span class="core-source-state ${core.status === 'confirmed' ? 'confirmed' : 'candidate'}">${core.status === 'confirmed' ? '품목 원문 확인' : '품목 매핑 검토 중'}</span></div>
-        <div class="core-info-grid">
-          <div class="core-info-card"><span>효능·효과</span><strong>${escapeHtml(core.efficacy || `DART 표기: ${product.dartCategory}`)}</strong><small>${core.status === 'confirmed' ? '식약처 품목정보 또는 종근당 제품 페이지 표기' : '허가 적응증 확정 전 · DART 분류와 구분'}</small></div>
-          <div class="core-info-card"><span>주성분</span><strong>${escapeHtml(core.ingredient || '공식 품목 매핑 필요')}</strong><small>${core.status === 'confirmed' ? '식약처 품목정보 기준' : '동일명·제품군 혼동 방지를 위해 보류'}</small></div>
-          <div class="core-info-card safety-card"><span>안전·이상반응</span><strong>허가 원문 기준 확인</strong><small>이상반응·금기·주의는 최신 식약처 품목 원문의 해당 항목을 기준으로 확인합니다. 환자별 해석은 의료진 판단 영역입니다.</small></div>
-          <div class="core-info-card"><span>용법·용량</span><strong>허가 원문 기준 확인</strong><small>제형·함량별 용법이 다를 수 있어 제품 품목 단위로 확인하도록 설계했습니다.</small></div>
+      ${rxSection(product)}
+
+      ${product.status === 'review' ? '<p class="notice">공개 데이터셋에서 DART 제품명과 종근당 공식 제품 페이지의 1:1 매핑을 확인하지 못했습니다. 성분·적응증·변경사항을 추정하지 않고 원문 검색 링크만 제공합니다.</p>' : ''}
+
+      <section class="detail-section" id="core">
+        <div class="rx-head">
+          <h3>핵심 정보</h3>
+          <span class="rx-basis ${core.status === 'confirmed' ? 'ok' : 'wait'}">${core.status === 'confirmed' ? '품목 원문 확인' : '품목 매핑 검토 중'}</span>
         </div>
-        <p class="core-info-note">핵심값은 화면에 직접 표시하고, 원문 링크는 검증·업데이트를 위한 근거로 남깁니다. 현재 MVP는 공식 매핑이 끝난 값만 확정 표현합니다.</p>
+        <dl class="core-grid">
+          <div><dt>효능·효과</dt><dd>${escapeHtml(core.efficacy || `DART 표기: ${product.dartCategory || '확인 필요'}`)}</dd></div>
+          <div><dt>주성분</dt><dd>${escapeHtml(core.ingredient || product.ingredient || '공식 품목 매핑 필요')}</dd></div>
+          <div><dt>종근당 분류</dt><dd>${escapeHtml(product.ckdCategory || '확인 필요')}</dd></div>
+          <div><dt>제형·함량</dt><dd>${escapeHtml(product.formStrength || '아래 처방·청구 표 참조')}</dd></div>
+        </dl>
+        <p class="section-note">용법·용량, 금기·이상반응은 이 화면에서 단정하지 않습니다. 원문 출처의 허가사항을 확인하세요.</p>
       </section>
-      <section class="detail-section"><div class="faq-heading"><div><p class="section-kicker">FIELD FAQ</p><h3>현장 질문과 공식 기준 답변</h3></div><span>답변 기준: ${core.status === 'confirmed' ? '품목 원문 확인' : '검토 중'}</span></div><p class="section-description">질문만 남기지 않고, 현재 확인된 공식 근거와 확인 한계를 함께 답합니다.</p><div class="faq-list">${faqItems.map((item) => `<div class="faq-item"><div class="faq-question"><span>Q</span><strong>${escapeHtml(item.question)}</strong></div><p><b>A.</b> ${escapeHtml(item.answer)}</p></div>`).join('')}</div></section>
-      <section class="detail-section"><h3>허가·제품 확인 원문</h3><p class="section-description">아래 링크를 기준으로 확인하고, 비공식 해석은 별도 판단 영역으로 분리합니다.</p><div class="source-list">${sourceItems.join('')}</div></section>
-      <section class="detail-section"><h3>최근 5년 허가 변경 이력</h3><p class="section-description">변경 전후의 세부 내용은 원문 변경대비표에서 확인하세요. 이 화면은 확인 경로와 게시 상태를 기록합니다.</p>${changes.length ? changes.map((change) => `<div class="change-item"><div class="change-head"><span>${escapeHtml(change.date)}</span><span>${escapeHtml(change.type)}</span></div><h4>${escapeHtml(change.title)}</h4><p>${escapeHtml(change.summary)} <a class="inline-link" href="${escapeHtml(safeUrl(change.source))}" target="_blank" rel="noreferrer">원문 보기 ↗</a></p></div>`).join('') : '<div class="notice"><strong>현재 게시된 이력 없음</strong>최근 5년 변경이 없다는 뜻이 아니라, 본 MVP 데이터셋에서 사람 검토를 마친 항목이 아직 없다는 뜻입니다.</div>'}</section>
-      <section class="detail-section"><h3>관련 최신 연구</h3><p class="section-description">PubMed 검색 결과를 그대로 근거로 사용하지 않고, 논문별 검토 후 제목·질환·키워드·HCP 요약·원문 링크를 공개합니다.</p>${literature.length ? literature.map((item) => `<div class="literature-item"><div class="change-head"><span>${escapeHtml(item.publicationDate)}</span><span>PMID ${escapeHtml(item.pmid)}</span></div><h4>${escapeHtml(item.title)}</h4><div class="literature-tags">${(item.diseases || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}${(item.hashtags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div><p>${escapeHtml(item.hcpSummary)}</p><small class="literature-limit">한계: ${escapeHtml(item.limitations || '원문 초록과 연구설계를 함께 확인하세요.')}</small><br><a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">PubMed 원문 보기 ↗</a></div>`).join('') : `<div class="notice"><strong>검토 완료 논문 0건</strong>아직 사람이 확인해 공개한 논문은 없습니다. 아래 PubMed 검색으로 최신 연구를 찾은 뒤, 문헌 검토 큐에 등록할 수 있습니다.<br><br><a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></div>`}</section>
+
+      <section class="detail-section" id="faq">
+        <h3>현장 FAQ</h3>
+        <div class="faq-list">
+          ${faqItems.map((item) => `<details class="faq-item"><summary>${escapeHtml(item.question)}</summary><p>${escapeHtml(item.answer)}</p></details>`).join('')}
+        </div>
+      </section>
+
+      <section class="detail-section" id="changes">
+        <h3>최근 5년 허가 변경 이력</h3>
+        ${changes.length
+          ? changes.map((change) => `<div class="record-item"><div class="record-head"><span>${escapeHtml(change.date)}</span><span>${escapeHtml(change.type)}</span></div><h4>${escapeHtml(change.title)}</h4><p>${escapeHtml(change.summary)} <a class="inline-link" href="${escapeHtml(safeUrl(change.source))}" target="_blank" rel="noreferrer">원문 보기 ↗</a></p></div>`).join('')
+          : '<p class="notice">본 데이터셋에서 사람 검토를 마친 변경 기록이 없습니다. 변경이 없다는 뜻은 아닙니다.</p>'}
+      </section>
+
+      <section class="detail-section" id="lit">
+        <h3>관련 최신 연구</h3>
+        ${literature.length
+          ? literature.map((item) => `<div class="record-item"><div class="record-head"><span>${escapeHtml(item.publicationDate)}</span><span>PMID ${escapeHtml(item.pmid)}</span></div><h4>${escapeHtml(item.title)}</h4><div class="tag-list">${[...(item.diseases || []), ...(item.hashtags || [])].map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div><p>${escapeHtml(item.hcpSummary)}</p><p class="record-limit">한계: ${escapeHtml(item.limitations || '원문 초록과 연구설계를 함께 확인하세요.')}</p><a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">PubMed 원문 보기 ↗</a></div>`).join('')
+          : `<p class="notice">검토를 마쳐 공개한 논문이 없습니다. <a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></p>`}
+      </section>
+
+      <section class="detail-section" id="sources">
+        <h3>원문 출처</h3>
+        <div class="source-list">${sourceItems.join('')}</div>
+      </section>
     </div>
-  </div>`;
+  </article>`;
+
+  const backButton = $('#backToList');
+  if (backButton) backButton.addEventListener('click', closeDetail);
+  const cancelToggle = $('#toggleCancelled');
+  if (cancelToggle) {
+    cancelToggle.addEventListener('click', () => {
+      state.showCancelled = !state.showCancelled;
+      renderDetail(product);
+      renderResults();
+      const target = $('#rx');
+      if (target) target.scrollIntoView({ block: 'start' });
+    });
+  }
 }
 
-function selectProduct(id, updateHash = true) {
+/* ---------- 선택 ---------- */
+
+function selectProduct(id, { updateHash = true, scroll = true } = {}) {
   const product = state.products.find((item) => item.id === id);
   if (!product) return;
   state.selected = id;
+  state.showCancelled = false;
   if (updateHash) history.replaceState(null, '', `#product=${encodeURIComponent(id)}`);
-  renderResults(); renderDetail(product);
-  if (window.innerWidth < 901) $('#detailPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  renderResults();
+  renderDetail(product);
+  document.body.classList.add('detail-open');
+  if (scroll && isMobile()) window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
-function renderLoop() {
-  if (!state.run) return;
-  const published = state.products.filter((item) => item.status === 'published').length;
-  const failures = state.run.failures || [];
-  $('#dataDate').textContent = `마지막 검증 ${state.run.runDate}`;
-  $('#publishedTrack').style.width = `${Math.round((published / state.products.length) * 100)}%`;
-  $('#coverageText').textContent = `${published}/${state.products.length}개 공식 매핑 확인 · ${failures.length}개 검토 큐`;
-  $('#loopMetrics').innerHTML = [['제품 레코드', state.products.length], ['공식 매핑', published], ['변경 이력', state.changes.length], ['문헌 공개', state.literature.filter((item) => item.status === 'published').length]].map(([label, value]) => `<div class="loop-metric"><strong>${value}</strong><span>${label}</span></div>`).join('');
-  $('#runSummary').textContent = state.run.summary;
-  $('#failureList').innerHTML = failures.map((failure) => `<div class="failure-item"><strong>${escapeHtml(failure.product)}</strong> · ${escapeHtml(failure.reason)}</div>`).join('') || '<div class="failure-item" style="background:var(--teal-soft);color:#086a62">검토 큐가 비어 있습니다.</div>';
+function closeDetail() {
+  document.body.classList.remove('detail-open');
+  state.selected = null;
+  history.replaceState(null, '', location.pathname + location.search);
+  renderResults();
+  $('#detailPanel').innerHTML = '<div class="empty-detail"><p>왼쪽 목록에서 제품을 선택하면<br>처방·청구 정보와 공식 근거가 열립니다.</p></div>';
+  if (isMobile()) window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+/* ---------- 복사 ---------- */
+
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (error) { /* execCommand 폴백으로 내려간다 */ }
+  try {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.top = '-1000px';
+    document.body.appendChild(area);
+    area.select();
+    const ok = document.execCommand('copy');
+    area.remove();
+    return ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+let toastTimer = null;
+function showToast(message) {
+  const toast = $('#copyToast');
+  toast.textContent = message;
+  toast.classList.add('visible');
+  window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 1800);
+}
+
+/* ---------- 필터 / 이벤트 ---------- */
+
+function renderCategoryFilters() {
+  const categories = [...new Set(state.products.map((product) => product.ckdCategory).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ko'));
+  $('#categoryFilters').innerHTML = [['all', '전체'], ...categories.map((name) => [name, name])]
+    .map(([value, label]) => `<button class="filter-chip${state.category === value ? ' active' : ''}" type="button" aria-pressed="${state.category === value}" data-category="${escapeHtml(value)}">${escapeHtml(label)}</button>`)
+    .join('');
+  $('#categoryFilters').querySelectorAll('[data-category]').forEach((button) => {
+    button.addEventListener('click', () => {
+      state.category = button.dataset.category;
+      if (isMobile()) document.body.classList.remove('detail-open');
+      renderCategoryFilters();
+      renderResults();
+    });
+  });
 }
 
 function setupEvents() {
-  $('#searchInput').addEventListener('input', (event) => { state.query = event.target.value; renderResults(); });
-  $('#searchButton').addEventListener('click', () => { state.query = $('#searchInput').value; renderResults(); });
-  document.addEventListener('keydown', (event) => { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); $('#searchInput').focus(); } });
-  document.querySelectorAll('[data-filter]').forEach((button) => button.addEventListener('click', () => { document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('active')); button.classList.add('active'); state.filter = button.dataset.filter; renderResults(); }));
-  $('#toggleLoop').addEventListener('click', () => { $('#loopPanel').hidden = false; $('#loopPanel').scrollIntoView({ behavior: 'smooth', block: 'center' }); });
-  $('#closeLoop').addEventListener('click', () => { $('#loopPanel').hidden = true; });
+  const input = $('#searchInput');
+  input.addEventListener('input', (event) => {
+    state.query = event.target.value;
+    $('#clearSearch').hidden = !state.query;
+    /* 모바일에서 상세가 열려 있으면 검색 결과가 가려진다. 검색을 시작하면 목록으로 되돌린다. */
+    if (isMobile()) document.body.classList.remove('detail-open');
+    renderResults();
+  });
+  $('#clearSearch').addEventListener('click', () => {
+    state.query = '';
+    input.value = '';
+    $('#clearSearch').hidden = true;
+    input.focus();
+    renderResults();
+  });
+
+  $('#flagFilters').querySelectorAll('[data-flag]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const flag = button.dataset.flag;
+      if (state.flags.has(flag)) state.flags.delete(flag); else state.flags.add(flag);
+      if (flag === 'ETC') state.flags.delete('OTC');
+      if (flag === 'OTC') state.flags.delete('ETC');
+      $('#flagFilters').querySelectorAll('[data-flag]').forEach((item) => {
+        const on = state.flags.has(item.dataset.flag);
+        item.classList.toggle('active', on);
+        item.setAttribute('aria-pressed', String(on));
+      });
+      if (isMobile()) document.body.classList.remove('detail-open');
+      renderResults();
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      input.focus();
+      input.select();
+    }
+    if (event.key === 'Escape' && document.activeElement === input && state.query) {
+      state.query = '';
+      input.value = '';
+      $('#clearSearch').hidden = true;
+      renderResults();
+    }
+  });
+
+  /* 목차 앵커는 해시를 바꾸지 않고 스크롤만 한다 (#product= 해시 보존). */
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('.detail-nav a');
+    if (!link) return;
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  });
+
+  /* 복사 버튼은 상세가 매번 다시 그려지므로 위임으로 처리한다. */
+  document.addEventListener('click', async (event) => {
+    const button = event.target.closest('.copy-btn');
+    if (!button) return;
+    const ok = await copyText(button.dataset.copy);
+    showToast(ok ? `${button.dataset.kind} ${button.dataset.copy} 복사됨` : '복사에 실패했습니다. 코드를 길게 눌러 직접 선택하세요.');
+    button.classList.toggle('copied', ok);
+    window.setTimeout(() => button.classList.remove('copied'), 1200);
+  });
 }
+
+/* ---------- 운영 패널 ---------- */
+
+function renderOps() {
+  if (!state.run) return;
+  const failures = state.run.failures || [];
+  $('#loopMetrics').innerHTML = [
+    ['제품 레코드', state.products.length],
+    ['공식 매핑', state.products.filter((item) => item.status === 'published').length],
+    ['품목 코드', state.items.length],
+    ['변경 이력', state.changes.length]
+  ].map(([label, value]) => `<div class="ops-metric"><strong>${value}</strong><span>${escapeHtml(label)}</span></div>`).join('');
+  $('#runSummary').textContent = state.run.summary;
+  $('#failureList').innerHTML = failures.length
+    ? failures.map((failure) => `<div class="failure-item"><strong>${escapeHtml(failure.product)}</strong> · ${escapeHtml(failure.reason)}</div>`).join('')
+    : '<div class="failure-item ok">검토 큐가 비어 있습니다.</div>';
+}
+
+function renderBasis() {
+  const parts = [];
+  if (state.billingSource) parts.push(`급여 고시 ${state.billingSource.effectiveDate} 시행`);
+  if (state.run) parts.push(`검증 ${state.run.runDate}`);
+  if (state.usingFixtures.length) parts.push('개발용 샘플 데이터 사용 중');
+  $('#dataBasis').textContent = parts.join(' · ') || '데이터 기준일 미확인';
+  $('#dataBasis').classList.toggle('warn', state.usingFixtures.length > 0 || isStale());
+}
+
+function isStale() {
+  if (!state.billingSource || !state.billingSource.effectiveDate) return false;
+  const days = (Date.now() - new Date(state.billingSource.effectiveDate).getTime()) / 86400000;
+  return days > 90;
+}
+
+/* ---------- 초기화 ---------- */
 
 async function init() {
   setupEvents();
   try {
-    const [products, additions, changes, literature, core, additionalCore, faq, run] = await Promise.all([loadJson('./data/public/products.json'), loadJson('./data/public/additional-products.json'), loadJson('./data/public/changes.json'), loadJson('./data/public/literature.json'), loadJson('./data/public/official-core.json'), loadJson('./data/public/additional-core.json'), loadJson('./data/public/faq-templates.json'), loadJson('./qa/runs/latest.json')]);
-    state.products = [...products.products, ...additions.products]; state.changes = changes.changes; state.literature = literature.items; state.core = { ...core.items, ...additionalCore.items }; state.faqTemplates = faq.items; state.run = run;
-    renderLoop(); renderResults();
+    const [products, additions, changes, literature, core, additionalCore, faq, run] = await Promise.all([
+      loadJson('./data/public/products.json'),
+      loadJson('./data/public/additional-products.json'),
+      loadJson('./data/public/changes.json'),
+      loadJson('./data/public/literature.json'),
+      loadJson('./data/public/official-core.json'),
+      loadJson('./data/public/additional-core.json'),
+      loadJson('./data/public/faq-templates.json'),
+      loadJson('./qa/runs/latest.json')
+    ]);
+    state.products = [...products.products, ...additions.products];
+    state.changes = changes.changes;
+    state.literature = literature.items;
+    state.core = { ...core.items, ...additionalCore.items };
+    state.faqTemplates = faq.items;
+    state.run = run;
+
+    const { items, billing } = await loadRxData();
+    if (items) {
+      state.items = items.items || [];
+      state.itemsSource = items.source || null;
+      state.items.forEach((item) => {
+        if (!state.itemsByBrand.has(item.brandId)) state.itemsByBrand.set(item.brandId, []);
+        state.itemsByBrand.get(item.brandId).push(item);
+      });
+    }
+    if (billing) {
+      state.billingSource = billing.source || null;
+      (billing.items || []).forEach((entry) => state.billingByKey.set(entry.itemKey, entry));
+    }
+
+    renderBasis();
+    renderOps();
+    renderCategoryFilters();
+    renderResults();
+
     const hashId = new URLSearchParams(location.hash.replace('#', '')).get('product');
-    selectProduct(state.products.some((item) => item.id === hashId) ? hashId : state.products[0].id, Boolean(hashId));
+    if (hashId && state.products.some((item) => item.id === hashId)) {
+      selectProduct(hashId, { updateHash: false, scroll: false });
+    } else if (!isMobile() && state.products.length) {
+      selectProduct(state.products[0].id, { updateHash: false, scroll: false });
+    }
   } catch (error) {
-    $('#resultList').innerHTML = `<div class="error-message">데이터를 불러오지 못했습니다.<br><small>${escapeHtml(error.message)}</small><br><br>프로젝트 루트에서 로컬 서버로 열어주세요.</div>`;
-    $('#dataDate').textContent = '데이터 오류';
+    $('#resultList').innerHTML = `<p class="no-results">데이터를 불러오지 못했습니다.<br><small>${escapeHtml(error.message)}</small><br><br>프로젝트 루트에서 로컬 서버로 열어주세요.</p>`;
+    $('#dataBasis').textContent = '데이터 오류';
   }
 }
+
 init();

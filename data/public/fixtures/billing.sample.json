@@ -1,0 +1,68 @@
+{
+  "_comment": "프론트엔드 개발용 픽스처. 실제 생성 파일은 data/public/billing.json. 금액은 약제급여목록표 2026.9.1. 시행본에서 확인한 실제 값이다.",
+  "schemaVersion": "0.2.0",
+  "generatedOn": "2026-09-22",
+  "source": {
+    "noticeName": "약제 급여 목록 및 급여 상한금액표",
+    "effectiveDate": "2026-09-01",
+    "file": "약제급여목록및급여상한금액표_(2026.9.1.)_공개용(비인가자) 1부.xlsx",
+    "url": "https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA030014050000"
+  },
+  "items": [
+    {
+      "itemKey": "199800085::(주)종근당",
+      "ediCode": "643300370",
+      "benefitStatus": "listed",
+      "maxPrice": 196,
+      "priceUnit": "1정",
+      "noticeProductName": "딜라트렌정6.25mg(카르베딜롤)_(6.25mg/1정)",
+      "mainIngredientCode": "125003ATB",
+      "classNo": "214",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "199800086::(주)종근당",
+      "ediCode": "643300380",
+      "benefitStatus": "listed",
+      "maxPrice": 345,
+      "priceUnit": "1정",
+      "noticeProductName": "딜라트렌정12.5mg(카르베딜롤)_(12.5mg/1정)",
+      "mainIngredientCode": "125001ATB",
+      "classNo": "214",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "200710759::(주)종근당",
+      "ediCode": "643309550",
+      "benefitStatus": "listed",
+      "maxPrice": 453,
+      "priceUnit": "1정",
+      "noticeProductName": "자누비아정100밀리그램(시타글립틴인산염수화물)_(0.1289g/1정)",
+      "mainIngredientCode": "501103ATB",
+      "classNo": "396",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "200710759::한국엠에스디(주)",
+      "ediCode": null,
+      "benefitStatus": "not-listed",
+      "maxPrice": null,
+      "priceUnit": null,
+      "noticeProductName": null,
+      "mainIngredientCode": null,
+      "classNo": null,
+      "rxClass": null
+    },
+    {
+      "itemKey": "201905405::알보젠코리아(주)",
+      "ediCode": null,
+      "benefitStatus": "not-listed",
+      "maxPrice": null,
+      "priceUnit": null,
+      "noticeProductName": null,
+      "mainIngredientCode": null,
+      "classNo": null,
+      "rxClass": null
+    }
+  ]
+}
