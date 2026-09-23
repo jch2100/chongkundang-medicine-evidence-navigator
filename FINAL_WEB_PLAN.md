@@ -1,6 +1,9 @@
 # FINAL WEB PLAN — 종근당 의약품 근거 탐색 허브
 
-상태: 최종 제작계획 · 구현 전  
+상태: **설계 기록** (현재 상태는 README.md)
+
+> **설계 기록 문서입니다.** 아래 내용은 작성 당시의 계획이며 현재 구현 상태를 나타내지 않습니다. 현재 상태는 [README.md](README.md)를 보세요.
+
 프로젝트명: 종근당 의약품 근거 탐색 허브  
 영문명: Chong Kun Dang Medicine Evidence Navigator  
 GitHub 제안명: `chongkundang-medicine-evidence-navigator`

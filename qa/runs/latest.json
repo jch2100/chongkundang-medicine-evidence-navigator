@@ -1,12 +1,12 @@
 {
-  "runId": "RUN-2026-09-22-codebackbone-001",
-  "runDate": "2026-09-22",
+  "runId": "RUN-2026-09-23-status-001",
+  "runDate": "2026-09-23",
   "status": "partial-success",
-  "summary": "핵심 15개 브랜드 + 분리 브랜드 5개를 약가마스터와 약제급여목록표(2026.9.1. 시행)로 조인해 품목 99건, 포장 311건을 생성했습니다. 급여 등재 71건, 급여목록 미등재 28건입니다. 미등재는 비급여·수출용·취소·미등재가 모두 섞여 있어 단정하지 않습니다.",
-  "productsTotal": 40,
+  "summary": "제품 44개(공개 36개). 허가 품목 99건, 포장 311건. 급여 등재 71건, 미등재 28건. 상병코드 매핑 19개 브랜드·완전코드 889개(모두 사람 검토 전). 급여 기준 확인 2개 브랜드. 문헌 69건 / 브랜드 21개, 검색식 20건.",
+  "productsTotal": 44,
   "productsPublished": 36,
   "changesPublished": 4,
-  "literaturePublished": 7,
+  "literaturePublished": 69,
   "failures": [
     {
       "product": "펙수클루",
@@ -631,5 +631,28 @@
       }
     ],
     "warnings": []
-  }
+  },
+  "literatureByReview": {
+    "unspecified": 7,
+    "ai-verified": 62
+  },
+  "literatureBrands": 21,
+  "indications": {
+    "brands": 19,
+    "blocks": 51,
+    "codes": 889,
+    "reviewed": 0,
+    "withReimbursement": 2
+  },
+  "searches": {
+    "count": 20,
+    "totalHits": 1063
+  },
+  "openItems": [
+    "상병코드 매핑 전체가 reviewStatus: candidate — 사람 검토 전",
+    "급여 기준은 글리아티린·큐시미아 2건만 확인. 나머지는 미확인이라 화면에 표시하지 않음",
+    "문헌 요약 62건은 AI 작성·AI 검증. 임상 해석은 전문가 검토 전",
+    "사이클로스포린·미코페놀레이트는 허가 적응증(장기이식) 문헌 미확보 — 검색식 재작성 필요",
+    "텔미누보에스 3품목은 전량 허가취소로 브랜드를 만들지 않음(경고 3건은 의도된 상태)"
+  ]
 }

@@ -5,7 +5,9 @@
 - 한글명: 종근당 의약품 근거 탐색 허브
 - 영문명: Chong Kun Dang Medicine Evidence Navigator
 - GitHub 저장소 제안명: `chongkundang-medicine-evidence-navigator`
-- 상태: MVP 구현 완료 · 브라우저 동작/자동 검증 통과 · 문헌 공개는 검토 게이트 대기
+- 상태: **설계 기록** (현재 상태는 [README.md](README.md))
+
+> **설계 기록 문서입니다.** 아래 내용은 MVP 당시의 계획이며 현재 구현 상태를 나타내지 않습니다. 이후 처방 코드·상병코드·급여기준·문헌 레이어가 추가되었고 구조가 3계층(브랜드→품목→청구단위)으로 바뀌었습니다.
 
 ## MVP 구현 결과
 
