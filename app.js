@@ -12,6 +12,7 @@ const state = {
   products: [],
   changes: [],
   literature: [],
+  searches: [],
   faqTemplates: [],
   core: {},
   run: null,
@@ -352,6 +353,47 @@ function buildFaqAnswer(answerKey, product, core, changes) {
   return '공식 근거 확인 필요';
 }
 
+/* ---------- 문헌 검색 경로 ----------
+   검토를 마친 근거(literature.json)와는 다른 것이다.
+   여기 있는 것은 '어떤 검색식으로 찾을 수 있는가'이며, 문헌 목록이 아니다.
+   검토 전 문헌은 공개 데이터에 넣지 않으므로 PubMed 원본으로 연결한다. */
+
+function searchesFor(product) {
+  return state.searches.filter((entry) => (entry.appliesToBrands || []).includes(product.id));
+}
+
+function searchStrategyHtml(product) {
+  const list = searchesFor(product);
+  if (!list.length) return '';
+  const cards = list.map((entry) => {
+    const design = (entry.filters?.designs || []).join(' · ');
+    const nameKo = entry.ingredientNameKo ? `${escapeHtml(entry.ingredientNameKo)} ` : '';
+    return `
+      <div class="search-card">
+        <div class="search-head">
+          <h4>${nameKo}<span class="search-en">${escapeHtml(entry.ingredientNameEn)}</span></h4>
+          <span class="search-count">PubMed 검색 결과 ${Number(entry.totalHits).toLocaleString('ko-KR')}건</span>
+        </div>
+        <p class="search-filters">최근 ${escapeHtml(String(entry.filters?.years ?? '-'))}년 · ${escapeHtml(design)} · 검색 실행일 ${escapeHtml(entry.runOn)}</p>
+        ${entry.ingredientNote ? `<p class="search-note">${escapeHtml(entry.ingredientNote)}</p>` : ''}
+        <div class="search-actions">
+          <a class="search-run" href="${escapeHtml(safeUrl(entry.pubmedUrl))}" target="_blank" rel="noreferrer">PubMed에서 이 검색 실행 ↗</a>
+          <button class="copy-btn search-copy" type="button" data-copy="${escapeHtml(entry.query)}" data-kind="검색식" aria-label="${escapeHtml(entry.ingredientNameEn)} 검색식 복사">검색식 복사</button>
+        </div>
+        <details class="search-query">
+          <summary>검색식 보기</summary>
+          <code>${escapeHtml(entry.query)}</code>
+        </details>
+      </div>`;
+  }).join('');
+  return `
+    <div class="search-strategy">
+      <h4 class="search-strategy-title">문헌 검색 경로 <span class="search-strategy-sub">성분 ${list.length}종</span></h4>
+      <p class="search-strategy-lead">검색 결과 수는 PubMed 검색 건수이며, 검토를 마친 근거의 수가 아닙니다. 논문 내용은 원문에서 확인하세요.</p>
+      ${cards}
+    </div>`;
+}
+
 /* ---------- 상병코드(KCD) · 급여 기준 ----------
    200KB가 넘어 초기 로드에 넣지 않는다. 상세를 처음 열 때 한 번만 받아 캐시한다. */
 
@@ -596,7 +638,8 @@ function renderDetail(product) {
         <h3>관련 최신 연구</h3>
         ${literature.length
           ? literature.map((item) => `<div class="record-item"><div class="record-head"><span>${escapeHtml(item.publicationDate)}</span><span>PMID ${escapeHtml(item.pmid)}</span></div><h4>${escapeHtml(item.title)}</h4><div class="tag-list">${[...(item.diseases || []), ...(item.hashtags || [])].map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div><p>${escapeHtml(item.hcpSummary)}</p><p class="record-limit">한계: ${escapeHtml(item.limitations || '원문 초록과 연구설계를 함께 확인하세요.')}</p><a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">PubMed 원문 보기 ↗</a></div>`).join('')
-          : `<p class="notice">검토를 마쳐 공개한 논문이 없습니다. <a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></p>`}
+          : '<p class="notice">검토를 마쳐 공개한 논문이 없습니다. 아래 검색 경로로 원문을 직접 확인하세요.</p>'}
+        ${searchStrategyHtml(product) || `<p class="notice">이 제품의 성분별 검색식이 아직 준비되지 않았습니다. <a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></p>`}
       </section>
 
       <section class="detail-section" id="sources">
@@ -829,7 +872,9 @@ function setupEvents() {
     const button = event.target.closest('.copy-btn');
     if (!button) return;
     const ok = await copyText(button.dataset.copy);
-    showToast(ok ? `${button.dataset.kind} ${button.dataset.copy} 복사됨` : '복사에 실패했습니다. 코드를 길게 눌러 직접 선택하세요.');
+    /* 검색식처럼 긴 값은 토스트에 그대로 찍지 않는다. */
+    const copied = button.dataset.copy.length > 40 ? '' : ` ${button.dataset.copy}`;
+    showToast(ok ? `${button.dataset.kind}${copied} 복사됨` : '복사에 실패했습니다. 값을 길게 눌러 직접 선택하세요.');
     button.classList.toggle('copied', ok);
     window.setTimeout(() => button.classList.remove('copied'), 1200);
   });
@@ -872,7 +917,7 @@ function isStale() {
 async function init() {
   setupEvents();
   try {
-    const [products, additions, changes, literature, core, additionalCore, faq, run] = await Promise.all([
+    const [products, additions, changes, literature, core, additionalCore, faq, run, searches] = await Promise.all([
       loadJson('./data/public/products.json'),
       loadJson('./data/public/additional-products.json'),
       loadJson('./data/public/changes.json'),
@@ -880,8 +925,11 @@ async function init() {
       loadJson('./data/public/official-core.json'),
       loadJson('./data/public/additional-core.json'),
       loadJson('./data/public/faq-templates.json'),
-      loadJson('./qa/runs/latest.json')
+      loadJson('./qa/runs/latest.json'),
+      /* 30KB 정도라 초기 로드에 둔다. 검토 전 문헌 목록은 들어 있지 않다. */
+      loadJson('./data/public/searches.json').catch(() => null)
     ]);
+    state.searches = searches?.searches || [];
     state.products = [...products.products, ...additions.products];
     state.changes = changes.changes;
     state.literature = literature.items;

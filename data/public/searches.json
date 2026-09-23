@@ -1,0 +1,556 @@
+{
+  "schemaVersion": "0.1.0",
+  "generatedOn": "2026-09-23",
+  "policy": "PubMed 검색식은 성분명(MeSH 우선) AND 질환/안전성 키워드로 구성하고, 검색식·실행일·결과 수를 searches.json 에 남겨 재현 가능하게 한다. 검색 결과는 candidate 상태이며 사람 검토 후에만 공개한다.",
+  "note": "이 화면은 문헌 목록이 아니라 검색 경로를 제공한다. 검토를 마친 문헌만 literature.json 에 실린다.",
+  "searches": [
+    {
+      "searchId": "carvedilol-2026-09-23",
+      "ingredientKey": "carvedilol",
+      "ingredientNameEn": "Carvedilol",
+      "ingredientNameKo": "카르베딜롤",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "dilatrend"
+      ],
+      "query": "(\"Carvedilol\"[MeSH Terms] OR \"Carvedilol\"[Title/Abstract]) AND (\"hypertension\"[Title/Abstract] OR \"heart failure\"[Title/Abstract] OR \"angina pectoris\"[Title/Abstract] OR \"atrial fibrillation\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 42,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Carvedilol%22%5BMeSH%20Terms%5D%20OR%20%22Carvedilol%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypertension%22%5BTitle%2FAbstract%5D%20OR%20%22heart%20failure%22%5BTitle%2FAbstract%5D%20OR%20%22angina%20pectoris%22%5BTitle%2FAbstract%5D%20OR%20%22atrial%20fibrillation%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "telmisartan-2026-09-23",
+      "ingredientKey": "telmisartan",
+      "ingredientNameEn": "Telmisartan",
+      "ingredientNameKo": "텔미사르탄",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "telminuvo",
+        "telminuvo-plus",
+        "telmitren",
+        "telmitren-plus",
+        "telmitren-s"
+      ],
+      "query": "(\"Telmisartan\"[MeSH Terms] OR \"Telmisartan\"[Title/Abstract]) AND (\"hypertension\"[Title/Abstract] OR \"cardiovascular risk reduction\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 44,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Telmisartan%22%5BMeSH%20Terms%5D%20OR%20%22Telmisartan%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypertension%22%5BTitle%2FAbstract%5D%20OR%20%22cardiovascular%20risk%20reduction%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "s-amlodipine-2026-09-23",
+      "ingredientKey": "s-amlodipine",
+      "ingredientNameEn": "S-Amlodipine",
+      "ingredientNameKo": "에스암로디핀",
+      "ingredientNote": "MeSH 는 라세미체 Amlodipine 만 존재한다. S-형 단독 연구는 별도 검색어로 확인한다.",
+      "appliesToBrands": [
+        "telminuvo",
+        "telminuvo-plus"
+      ],
+      "query": "(\"Amlodipine\"[MeSH Terms] OR \"S-Amlodipine\"[Title/Abstract]) AND (\"hypertension\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 112,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Amlodipine%22%5BMeSH%20Terms%5D%20OR%20%22S-Amlodipine%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypertension%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "chlorthalidone-2026-09-23",
+      "ingredientKey": "chlorthalidone",
+      "ingredientNameEn": "Chlorthalidone",
+      "ingredientNameKo": "클로르탈리돈",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "telminuvo-plus"
+      ],
+      "query": "(\"Chlorthalidone\"[MeSH Terms] OR \"Chlorthalidone\"[Title/Abstract]) AND (\"hypertension\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 34,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Chlorthalidone%22%5BMeSH%20Terms%5D%20OR%20%22Chlorthalidone%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypertension%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "hydrochlorothiazide-2026-09-23",
+      "ingredientKey": "hydrochlorothiazide",
+      "ingredientNameEn": "Hydrochlorothiazide",
+      "ingredientNameKo": "히드로클로로티아지드",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "telmitren-plus"
+      ],
+      "query": "(\"Hydrochlorothiazide\"[MeSH Terms] OR \"Hydrochlorothiazide\"[Title/Abstract]) AND (\"hypertension\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 51,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Hydrochlorothiazide%22%5BMeSH%20Terms%5D%20OR%20%22Hydrochlorothiazide%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypertension%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "atorvastatin-2026-09-23",
+      "ingredientKey": "atorvastatin",
+      "ingredientNameEn": "Atorvastatin",
+      "ingredientNameKo": "아토르바스타틴",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "atozet",
+        "lipilou",
+        "lipilouzet"
+      ],
+      "query": "(\"Atorvastatin\"[MeSH Terms] OR \"Atorvastatin\"[Title/Abstract]) AND (\"hypercholesterolemia\"[Title/Abstract] OR \"dyslipidemia\"[Title/Abstract] OR \"cardiovascular prevention\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 40,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Atorvastatin%22%5BMeSH%20Terms%5D%20OR%20%22Atorvastatin%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypercholesterolemia%22%5BTitle%2FAbstract%5D%20OR%20%22dyslipidemia%22%5BTitle%2FAbstract%5D%20OR%20%22cardiovascular%20prevention%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "rosuvastatin-2026-09-23",
+      "ingredientKey": "rosuvastatin",
+      "ingredientNameEn": "Rosuvastatin",
+      "ingredientNameKo": "로수바스타틴",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "telmitren-s"
+      ],
+      "query": "(\"Rosuvastatin Calcium\"[MeSH Terms] OR \"Rosuvastatin\"[Title/Abstract]) AND (\"hypercholesterolemia\"[Title/Abstract] OR \"dyslipidemia\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 43,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Rosuvastatin%20Calcium%22%5BMeSH%20Terms%5D%20OR%20%22Rosuvastatin%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypercholesterolemia%22%5BTitle%2FAbstract%5D%20OR%20%22dyslipidemia%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "ezetimibe-2026-09-23",
+      "ingredientKey": "ezetimibe",
+      "ingredientNameEn": "Ezetimibe",
+      "ingredientNameKo": "에제티미브",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "atozet",
+        "lipilouzet"
+      ],
+      "query": "(\"Ezetimibe\"[MeSH Terms] OR \"Ezetimibe\"[Title/Abstract]) AND (\"hypercholesterolemia\"[Title/Abstract] OR \"dyslipidemia\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 77,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Ezetimibe%22%5BMeSH%20Terms%5D%20OR%20%22Ezetimibe%22%5BTitle%2FAbstract%5D)%20AND%20(%22hypercholesterolemia%22%5BTitle%2FAbstract%5D%20OR%20%22dyslipidemia%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "sitagliptin-2026-09-23",
+      "ingredientKey": "sitagliptin",
+      "ingredientNameEn": "Sitagliptin",
+      "ingredientNameKo": "시타글립틴",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "januvia"
+      ],
+      "query": "(\"Sitagliptin Phosphate\"[MeSH Terms] OR \"Sitagliptin\"[Title/Abstract]) AND (\"type 2 diabetes mellitus\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 51,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Sitagliptin%20Phosphate%22%5BMeSH%20Terms%5D%20OR%20%22Sitagliptin%22%5BTitle%2FAbstract%5D)%20AND%20(%22type%202%20diabetes%20mellitus%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "phentermine-2026-09-23",
+      "ingredientKey": "phentermine",
+      "ingredientNameEn": "Phentermine",
+      "ingredientNameKo": "펜터민",
+      "ingredientNote": "향정신성의약품. 안전성 문헌을 반드시 함께 검토한다.",
+      "appliesToBrands": [
+        "qsymia"
+      ],
+      "query": "(\"Phentermine\"[MeSH Terms] OR \"Phentermine\"[Title/Abstract]) AND (\"obesity\"[Title/Abstract] OR \"weight management\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 43,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Phentermine%22%5BMeSH%20Terms%5D%20OR%20%22Phentermine%22%5BTitle%2FAbstract%5D)%20AND%20(%22obesity%22%5BTitle%2FAbstract%5D%20OR%20%22weight%20management%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "topiramate-2026-09-23",
+      "ingredientKey": "topiramate",
+      "ingredientNameEn": "Topiramate",
+      "ingredientNameKo": "토피라메이트",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "qsymia"
+      ],
+      "query": "(\"Topiramate\"[MeSH Terms] OR \"Topiramate\"[Title/Abstract]) AND (\"obesity\"[Title/Abstract] OR \"weight management\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 44,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Topiramate%22%5BMeSH%20Terms%5D%20OR%20%22Topiramate%22%5BTitle%2FAbstract%5D)%20AND%20(%22obesity%22%5BTitle%2FAbstract%5D%20OR%20%22weight%20management%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "choline-alfoscerate-2026-09-23",
+      "ingredientKey": "choline-alfoscerate",
+      "ingredientNameEn": "Choline Alfoscerate",
+      "ingredientNameKo": "콜린알포세레이트",
+      "ingredientNote": "국내 급여 축소 이력이 있는 성분이다. 효과 근거를 다룬 문헌이 특히 중요하다.",
+      "appliesToBrands": [
+        "gliatilin"
+      ],
+      "query": "(\"alpha-glycerylphosphorylcholine\"[MeSH Terms] OR \"Choline Alfoscerate\"[Title/Abstract]) AND (\"dementia\"[Title/Abstract] OR \"cognitive impairment\"[Title/Abstract] OR \"cerebrovascular disease\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 5,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22alpha-glycerylphosphorylcholine%22%5BMeSH%20Terms%5D%20OR%20%22Choline%20Alfoscerate%22%5BTitle%2FAbstract%5D)%20AND%20(%22dementia%22%5BTitle%2FAbstract%5D%20OR%20%22cognitive%20impairment%22%5BTitle%2FAbstract%5D%20OR%20%22cerebrovascular%20disease%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 5,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "denosumab-2026-09-23",
+      "ingredientKey": "denosumab",
+      "ingredientNameEn": "Denosumab",
+      "ingredientNameKo": "데노수맙",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "prolia"
+      ],
+      "query": "(\"Denosumab\"[MeSH Terms] OR \"Denosumab\"[Title/Abstract]) AND (\"osteoporosis\"[Title/Abstract] OR \"bone loss\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 190,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Denosumab%22%5BMeSH%20Terms%5D%20OR%20%22Denosumab%22%5BTitle%2FAbstract%5D)%20AND%20(%22osteoporosis%22%5BTitle%2FAbstract%5D%20OR%20%22bone%20loss%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "romosozumab-2026-09-23",
+      "ingredientKey": "romosozumab",
+      "ingredientNameEn": "Romosozumab",
+      "ingredientNameKo": "로모소주맙",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "evenity"
+      ],
+      "query": "(\"romosozumab\"[MeSH Terms] OR \"Romosozumab\"[Title/Abstract]) AND (\"osteoporosis\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 62,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22romosozumab%22%5BMeSH%20Terms%5D%20OR%20%22Romosozumab%22%5BTitle%2FAbstract%5D)%20AND%20(%22osteoporosis%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "tacrolimus-2026-09-23",
+      "ingredientKey": "tacrolimus",
+      "ingredientNameEn": "Tacrolimus",
+      "ingredientNameKo": "타크로리무스",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "tacrobell"
+      ],
+      "query": "(\"Tacrolimus\"[MeSH Terms] OR \"Tacrolimus\"[Title/Abstract]) AND (\"kidney transplantation\"[Title/Abstract] OR \"liver transplantation\"[Title/Abstract] OR \"graft rejection\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 113,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Tacrolimus%22%5BMeSH%20Terms%5D%20OR%20%22Tacrolimus%22%5BTitle%2FAbstract%5D)%20AND%20(%22kidney%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22liver%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22graft%20rejection%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "cyclosporine-2026-09-23",
+      "ingredientKey": "cyclosporine",
+      "ingredientNameEn": "Cyclosporine",
+      "ingredientNameKo": "사이클로스포린",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "cypol"
+      ],
+      "query": "(\"Cyclosporine\"[MeSH Terms] OR \"Cyclosporine\"[Title/Abstract]) AND (\"organ transplantation\"[Title/Abstract] OR \"nephrotic syndrome\"[Title/Abstract] OR \"psoriasis\"[Title/Abstract] OR \"rheumatoid arthritis\"[Title/Abstract] OR \"aplastic anemia\"[Title/Abstract] OR \"uveitis\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 59,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Cyclosporine%22%5BMeSH%20Terms%5D%20OR%20%22Cyclosporine%22%5BTitle%2FAbstract%5D)%20AND%20(%22organ%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22nephrotic%20syndrome%22%5BTitle%2FAbstract%5D%20OR%20%22psoriasis%22%5BTitle%2FAbstract%5D%20OR%20%22rheumatoid%20arthritis%22%5BTitle%2FAbstract%5D%20OR%20%22aplastic%20anemia%22%5BTitle%2FAbstract%5D%20OR%20%22uveitis%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "mycophenolate-mofetil-2026-09-23",
+      "ingredientKey": "mycophenolate-mofetil",
+      "ingredientNameEn": "Mycophenolate Mofetil",
+      "ingredientNameKo": "미코페놀레이트 모페틸",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "myrept"
+      ],
+      "query": "(\"Mycophenolic Acid\"[MeSH Terms] OR \"Mycophenolate Mofetil\"[Title/Abstract]) AND (\"kidney transplantation\"[Title/Abstract] OR \"heart transplantation\"[Title/Abstract] OR \"liver transplantation\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 43,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Mycophenolic%20Acid%22%5BMeSH%20Terms%5D%20OR%20%22Mycophenolate%20Mofetil%22%5BTitle%2FAbstract%5D)%20AND%20(%22kidney%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22heart%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22liver%20transplantation%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "fexuprazan-2026-09-23",
+      "ingredientKey": "fexuprazan",
+      "ingredientNameEn": "Fexuprazan",
+      "ingredientNameKo": "펙수프라잔",
+      "ingredientNote": "MeSH 미등재 신약이다. 자유어 검색으로만 수집되며 문헌 수가 적을 수 있다.",
+      "appliesToBrands": [
+        "pexuclue"
+      ],
+      "query": "\"Fexuprazan\"[Title/Abstract] AND (\"gastroesophageal reflux disease\"[Title/Abstract] OR \"erosive esophagitis\"[Title/Abstract] OR \"peptic ulcer\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 9,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fexuprazan%22%5BTitle%2FAbstract%5D%20AND%20(%22gastroesophageal%20reflux%20disease%22%5BTitle%2FAbstract%5D%20OR%20%22erosive%20esophagitis%22%5BTitle%2FAbstract%5D%20OR%20%22peptic%20ulcer%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 8,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "biphenyl-dimethyl-dicarboxylate-2026-09-23",
+      "ingredientKey": "biphenyl-dimethyl-dicarboxylate",
+      "ingredientNameEn": "Biphenyl Dimethyl Dicarboxylate",
+      "ingredientNameKo": "비페닐디메틸디카르복실레이트",
+      "ingredientNote": "고덱스 주성분. 2022년 급여적정성 재평가 대상이었으므로 유효성 근거 문헌 확인이 중요하다.",
+      "appliesToBrands": [
+        "godex"
+      ],
+      "query": "\"Biphenyl Dimethyl Dicarboxylate\"[Title/Abstract] AND (\"chronic hepatitis\"[Title/Abstract] OR \"elevated transaminase\"[Title/Abstract] OR \"liver disease\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 1,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Biphenyl%20Dimethyl%20Dicarboxylate%22%5BTitle%2FAbstract%5D%20AND%20(%22chronic%20hepatitis%22%5BTitle%2FAbstract%5D%20OR%20%22elevated%20transaminase%22%5BTitle%2FAbstract%5D%20OR%20%22liver%20disease%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 1,
+      "reviewedCount": 0
+    },
+    {
+      "searchId": "carnitine-orotate-2026-09-23",
+      "ingredientKey": "carnitine-orotate",
+      "ingredientNameEn": "Carnitine Orotate",
+      "ingredientNameKo": "카르니틴 오로트산염",
+      "ingredientNote": null,
+      "appliesToBrands": [
+        "godex"
+      ],
+      "query": "\"Carnitine Orotate\"[Title/Abstract] AND (\"nonalcoholic fatty liver disease\"[Title/Abstract] OR \"liver disease\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "filters": {
+        "years": 5,
+        "designs": [
+          "RCT",
+          "meta-analysis",
+          "systematic review",
+          "practice guideline"
+        ],
+        "retmax": 8,
+        "sort": "relevance"
+      },
+      "runOn": "2026-09-23",
+      "totalHits": 0,
+      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Carnitine%20Orotate%22%5BTitle%2FAbstract%5D%20AND%20(%22nonalcoholic%20fatty%20liver%20disease%22%5BTitle%2FAbstract%5D%20OR%20%22liver%20disease%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
+      "candidateCount": 0,
+      "reviewedCount": 0
+    }
+  ]
+}

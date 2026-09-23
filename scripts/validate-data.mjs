@@ -226,6 +226,41 @@ if (indications) {
   }
 }
 
+// ---------------------------------------------------------------- 검색식 층 (searches.json)
+// 공개본은 '검색 경로'만 담는다. 검토 전 문헌 목록이 들어가면 실패시킨다.
+
+const searches = readJson('data/public/searches.json', { required: false });
+if (searches) {
+  const searchIds = new Set();
+  for (const entry of searches.searches || []) {
+    const id = entry.searchId || '(unknown)';
+    if (searchIds.has(id)) errors.push(`searches:${id} searchId 중복`);
+    searchIds.add(id);
+    if (!entry.ingredientKey) errors.push(`searches:${id} ingredientKey 누락`);
+    if (!entry.query) errors.push(`searches:${id} query 누락 — 검색을 재현할 수 없습니다`);
+    if (!isDate(entry.runOn)) errors.push(`searches:${id} runOn 날짜 형식 오류`);
+    if (!Number.isInteger(entry.totalHits) || entry.totalHits < 0) errors.push(`searches:${id} totalHits 가 올바르지 않습니다`);
+    if (!isHttps(entry.pubmedUrl) || !/pubmed\.ncbi\.nlm\.nih\.gov/.test(entry.pubmedUrl || '')) {
+      errors.push(`searches:${id} pubmedUrl 이 PubMed https 주소가 아닙니다`);
+    }
+    for (const brand of entry.appliesToBrands || []) {
+      if (!productIds.has(brand)) errors.push(`searches:${id} 알 수 없는 brandId: ${brand}`);
+    }
+    // 검토 전 문헌은 공개 데이터에 넣지 않는다 (FINAL_WEB_PLAN 공개 조건).
+    if (entry.candidates) errors.push(`searches:${id} 공개본에 검토 전 문헌 목록(candidates)이 포함되어 있습니다`);
+  }
+}
+
+// 공개 문헌은 검토를 마친 것만 싣는다.
+for (const item of literature.items || []) {
+  if (item.status === 'published' && !item.reviewedOn) {
+    errors.push(`literature:${item.pmid} published 문헌에 검토일(reviewedOn)이 없습니다`);
+  }
+  if (item.status === 'candidate') {
+    errors.push(`literature:${item.pmid} candidate 문헌은 공개 데이터에 둘 수 없습니다`);
+  }
+}
+
 // ---------------------------------------------------------------- 최신성 (경고)
 
 const staleDays = (dateText) => Math.floor((Date.now() - Date.parse(`${dateText}T00:00:00Z`)) / 86400000);

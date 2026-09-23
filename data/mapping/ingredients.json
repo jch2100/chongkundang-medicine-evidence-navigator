@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "0.1.0",
+  "authoredOn": "2026-09-23",
+  "policy": "문헌은 브랜드가 아니라 성분 단위로 붙이고 브랜드가 상속한다. 같은 성분의 다른 브랜드가 근거를 공유하지 못하는 문제를 없애기 위한 구조다.",
+  "searchPolicy": "PubMed 검색식은 성분명(MeSH 우선) AND 질환/안전성 키워드로 구성하고, 검색식·실행일·결과 수를 searches.json 에 남겨 재현 가능하게 한다. 검색 결과는 candidate 상태이며 사람 검토 후에만 공개한다.",
+  "saltStripList": ["Granule", "Granules", "Micronized", "Hydrate", "Trihydrate", "Dihydrate", "Monohydrate", "Hydrochloride", "Besylate", "Phosphate", "Calcium", "Sodium", "Potassium", "Maleate", "Mesylate", "Mesilate", "Tartrate", "Succinate", "Fumarate", "Acetate", "Sulfate", "Citrate", "Nitrate", "Bromide", "Chloride", "Recombinant"],
+  "ingredients": [
+    {
+      "key": "carvedilol", "nameEn": "Carvedilol", "nameKo": "카르베딜롤",
+      "mesh": "Carvedilol", "searchable": true,
+      "diseaseTerms": ["hypertension", "heart failure", "angina pectoris", "atrial fibrillation"],
+      "safetyTerms": ["bradycardia", "bronchospasm"]
+    },
+    {
+      "key": "telmisartan", "nameEn": "Telmisartan", "nameKo": "텔미사르탄",
+      "mesh": "Telmisartan", "searchable": true,
+      "diseaseTerms": ["hypertension", "cardiovascular risk reduction"],
+      "safetyTerms": ["hyperkalemia", "renal impairment"]
+    },
+    {
+      "key": "s-amlodipine", "nameEn": "S-Amlodipine", "nameKo": "에스암로디핀",
+      "mesh": "Amlodipine", "searchable": true,
+      "diseaseTerms": ["hypertension"],
+      "safetyTerms": ["peripheral edema"],
+      "note": "MeSH 는 라세미체 Amlodipine 만 존재한다. S-형 단독 연구는 별도 검색어로 확인한다."
+    },
+    {
+      "key": "chlorthalidone", "nameEn": "Chlorthalidone", "nameKo": "클로르탈리돈",
+      "mesh": "Chlorthalidone", "searchable": true,
+      "diseaseTerms": ["hypertension"],
+      "safetyTerms": ["hypokalemia", "hyponatremia"]
+    },
+    {
+      "key": "hydrochlorothiazide", "nameEn": "Hydrochlorothiazide", "nameKo": "히드로클로로티아지드",
+      "mesh": "Hydrochlorothiazide", "searchable": true,
+      "diseaseTerms": ["hypertension"],
+      "safetyTerms": ["hyponatremia", "skin cancer"]
+    },
+    {
+      "key": "atorvastatin", "nameEn": "Atorvastatin", "nameKo": "아토르바스타틴",
+      "mesh": "Atorvastatin", "searchable": true,
+      "diseaseTerms": ["hypercholesterolemia", "dyslipidemia", "cardiovascular prevention"],
+      "safetyTerms": ["myopathy", "rhabdomyolysis", "new-onset diabetes"]
+    },
+    {
+      "key": "rosuvastatin", "nameEn": "Rosuvastatin", "nameKo": "로수바스타틴",
+      "mesh": "Rosuvastatin Calcium", "searchable": true,
+      "diseaseTerms": ["hypercholesterolemia", "dyslipidemia"],
+      "safetyTerms": ["myopathy", "proteinuria"]
+    },
+    {
+      "key": "ezetimibe", "nameEn": "Ezetimibe", "nameKo": "에제티미브",
+      "mesh": "Ezetimibe", "searchable": true,
+      "diseaseTerms": ["hypercholesterolemia", "dyslipidemia"],
+      "safetyTerms": ["hepatotoxicity"]
+    },
+    {
+      "key": "sitagliptin", "nameEn": "Sitagliptin", "nameKo": "시타글립틴",
+      "mesh": "Sitagliptin Phosphate", "searchable": true,
+      "diseaseTerms": ["type 2 diabetes mellitus"],
+      "safetyTerms": ["pancreatitis", "heart failure", "renal impairment"]
+    },
+    {
+      "key": "phentermine", "nameEn": "Phentermine", "nameKo": "펜터민",
+      "mesh": "Phentermine", "searchable": true,
+      "diseaseTerms": ["obesity", "weight management"],
+      "safetyTerms": ["cardiovascular safety", "dependence"],
+      "note": "향정신성의약품. 안전성 문헌을 반드시 함께 검토한다."
+    },
+    {
+      "key": "topiramate", "nameEn": "Topiramate", "nameKo": "토피라메이트",
+      "mesh": "Topiramate", "searchable": true,
+      "diseaseTerms": ["obesity", "weight management"],
+      "safetyTerms": ["teratogenicity", "cognitive adverse effects", "metabolic acidosis"]
+    },
+    {
+      "key": "choline-alfoscerate", "nameEn": "Choline Alfoscerate", "nameKo": "콜린알포세레이트",
+      "mesh": "alpha-glycerylphosphorylcholine", "searchable": true,
+      "diseaseTerms": ["dementia", "cognitive impairment", "cerebrovascular disease"],
+      "safetyTerms": ["stroke risk"],
+      "note": "국내 급여 축소 이력이 있는 성분이다. 효과 근거를 다룬 문헌이 특히 중요하다."
+    },
+    {
+      "key": "denosumab", "nameEn": "Denosumab", "nameKo": "데노수맙",
+      "mesh": "Denosumab", "searchable": true,
+      "diseaseTerms": ["osteoporosis", "bone loss"],
+      "safetyTerms": ["osteonecrosis of the jaw", "atypical femoral fracture", "rebound bone loss"]
+    },
+    {
+      "key": "romosozumab", "nameEn": "Romosozumab", "nameKo": "로모소주맙",
+      "mesh": "romosozumab", "searchable": true,
+      "diseaseTerms": ["osteoporosis"],
+      "safetyTerms": ["cardiovascular safety", "osteonecrosis of the jaw"]
+    },
+    {
+      "key": "tacrolimus", "nameEn": "Tacrolimus", "nameKo": "타크로리무스",
+      "mesh": "Tacrolimus", "searchable": true,
+      "diseaseTerms": ["kidney transplantation", "liver transplantation", "graft rejection"],
+      "safetyTerms": ["nephrotoxicity", "therapeutic drug monitoring", "drug interaction"]
+    },
+    {
+      "key": "cyclosporine", "nameEn": "Cyclosporine", "nameKo": "사이클로스포린",
+      "mesh": "Cyclosporine", "searchable": true,
+      "diseaseTerms": ["organ transplantation", "nephrotic syndrome", "psoriasis", "rheumatoid arthritis", "aplastic anemia", "uveitis"],
+      "safetyTerms": ["nephrotoxicity", "drug interaction"]
+    },
+    {
+      "key": "mycophenolate-mofetil", "nameEn": "Mycophenolate Mofetil", "nameKo": "미코페놀레이트 모페틸",
+      "mesh": "Mycophenolic Acid", "searchable": true,
+      "diseaseTerms": ["kidney transplantation", "heart transplantation", "liver transplantation"],
+      "safetyTerms": ["teratogenicity", "leukopenia", "gastrointestinal adverse effects"]
+    },
+    {
+      "key": "fexuprazan", "nameEn": "Fexuprazan", "nameKo": "펙수프라잔",
+      "mesh": null, "searchable": true,
+      "diseaseTerms": ["gastroesophageal reflux disease", "erosive esophagitis", "peptic ulcer"],
+      "safetyTerms": [],
+      "note": "MeSH 미등재 신약이다. 자유어 검색으로만 수집되며 문헌 수가 적을 수 있다."
+    },
+    {
+      "key": "biphenyl-dimethyl-dicarboxylate", "nameEn": "Biphenyl Dimethyl Dicarboxylate", "nameKo": "비페닐디메틸디카르복실레이트",
+      "mesh": null, "searchable": true,
+      "diseaseTerms": ["chronic hepatitis", "elevated transaminase", "liver disease"],
+      "safetyTerms": [],
+      "note": "고덱스 주성분. 2022년 급여적정성 재평가 대상이었으므로 유효성 근거 문헌 확인이 중요하다."
+    },
+    {
+      "key": "carnitine-orotate", "nameEn": "Carnitine Orotate", "nameKo": "카르니틴 오로트산염",
+      "mesh": null, "searchable": true,
+      "diseaseTerms": ["nonalcoholic fatty liver disease", "liver disease"],
+      "safetyTerms": []
+    },
+    {
+      "key": "adenine", "nameEn": "Adenine", "nameKo": "아데닌", "mesh": "Adenine", "searchable": false, "diseaseTerms": [], "safetyTerms": [], "note": "고덱스 복합 구성 성분. 단독 임상 근거 탐색 대상이 아니다." },
+    {
+      "key": "antitoxic-liver-extract", "nameEn": "Antitoxic Liver Extract", "nameKo": "항독성간장엑스", "mesh": null, "searchable": false, "diseaseTerms": [], "safetyTerms": [], "note": "고덱스 복합 구성 성분." },
+    {
+      "key": "cyanocobalamin", "nameEn": "Cyanocobalamin", "nameKo": "시아노코발라민", "mesh": "Vitamin B 12", "searchable": false, "diseaseTerms": [], "safetyTerms": [], "note": "고덱스 복합 구성 비타민." },
+    {
+      "key": "pyridoxine", "nameEn": "Pyridoxine", "nameKo": "피리독신", "mesh": "Pyridoxine", "searchable": false, "diseaseTerms": [], "safetyTerms": [], "note": "고덱스 복합 구성 비타민." },
+    {
+      "key": "riboflavin", "nameEn": "Riboflavin", "nameKo": "리보플라빈", "mesh": "Riboflavin", "searchable": false, "diseaseTerms": [], "safetyTerms": [], "note": "고덱스 복합 구성 비타민." }
+  ]
+}
