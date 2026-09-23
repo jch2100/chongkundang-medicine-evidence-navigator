@@ -1,16 +1,35 @@
 {
   "batch": "batch-02",
   "draftedOn": "2026-09-23",
-  "ingredients": ["atorvastatin", "rosuvastatin", "ezetimibe", "cyclosporine", "mycophenolate-mofetil", "fexuprazan"],
+  "ingredients": [
+    "atorvastatin",
+    "rosuvastatin",
+    "ezetimibe",
+    "cyclosporine",
+    "mycophenolate-mofetil",
+    "fexuprazan"
+  ],
   "notes": [
     "사이클로스포린 검색 결과가 건선·사구체질환에 쏠려 장기이식 문헌이 상위에 오르지 않았다. 적응증이 7개로 넓어 질환어를 OR로 묶은 검색식의 한계다. 이식 영역은 별도 검색식으로 재수집이 필요하다.",
     "미코페놀레이트 모페틸도 같은 이유로 허가 적응증(장기이식 거부반응 방지) 문헌이 상위에 없다. 자가면역간염 등 허가 외 영역이 주로 잡혔다."
   ],
   "excluded": [
-    { "pmid": "35039035", "reason": "PCSK9 억제제 recaticimab 평가 연구로 아토르바스타틴은 배경요법으로만 사용됨" },
-    { "pmid": "35988871", "reason": "건강기능식품 비교 연구로 에제티미브는 비교 맥락으로만 언급됨" },
-    { "pmid": "39080843", "reason": "물방울양 건선 치료 전반을 다룬 문헌으로 사이클로스포린 비중이 낮음" },
-    { "pmid": "39306468", "reason": "대장암 간전이 간이식 연구로 면역억제제를 평가한 연구가 아님" }
+    {
+      "pmid": "35039035",
+      "reason": "PCSK9 억제제 recaticimab 평가 연구로 아토르바스타틴은 배경요법으로만 사용됨"
+    },
+    {
+      "pmid": "35988871",
+      "reason": "건강기능식품 비교 연구로 에제티미브는 비교 맥락으로만 언급됨"
+    },
+    {
+      "pmid": "39080843",
+      "reason": "물방울양 건선 치료 전반을 다룬 문헌으로 사이클로스포린 비중이 낮음"
+    },
+    {
+      "pmid": "39306468",
+      "reason": "대장암 간전이 간이식 연구로 면역억제제를 평가한 연구가 아님"
+    }
   ],
   "drafts": [
     {
@@ -20,7 +39,12 @@
       "publicationDate": "2025",
       "url": "https://pubmed.ncbi.nlm.nih.gov/40529509/",
       "ingredientKey": "atorvastatin",
-      "appliesToBrands": ["atozet", "lipilou", "lipilouzet", "telmitren-s"],
+      "appliesToBrands": [
+        "atozet",
+        "lipilou",
+        "lipilouzet",
+        "telmitren-s"
+      ],
       "relationType": "safety",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "무작위배정 임상시험 기반 체계적 문헌고찰·메타분석",
@@ -32,7 +56,10 @@
       "limitations": "계열 전체를 대상으로 한 분석으로 개별 성분·용량별 차이를 구분하지 않는다. 이상반응 정의와 보고 방식이 연구마다 다르다.",
       "relationToLabel": "안전성 참고자료이며 각 품목의 사용상의 주의사항을 대체하지 않는다. 실제 주의사항은 최신 허가 원문으로 확인해야 한다.",
       "searchId": "atorvastatin-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "36018037",
@@ -41,7 +68,11 @@
       "publicationDate": "2022-09-15",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36018037/",
       "ingredientKey": "atorvastatin",
-      "appliesToBrands": ["atozet", "lipilou", "lipilouzet"],
+      "appliesToBrands": [
+        "atozet",
+        "lipilou",
+        "lipilouzet"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "rct",
       "studyDesign": "3상 무작위배정 대조시험",
@@ -53,7 +84,10 @@
       "limitations": "특정 폴리필 조합에 대한 연구로 국내 유통 품목과 구성이 다르다. 심근경색 기왕력이 있는 환자를 대상으로 해 일차예방에 적용할 수 없다.",
       "relationToLabel": "아토르바스타틴 함유 국내 품목의 허가된 효능·효과와 용법을 변경하지 않는다.",
       "searchId": "atorvastatin-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "33514449",
@@ -62,7 +96,10 @@
       "publicationDate": "2021-03",
       "url": "https://pubmed.ncbi.nlm.nih.gov/33514449/",
       "ingredientKey": "atorvastatin",
-      "appliesToBrands": ["atozet", "lipilouzet"],
+      "appliesToBrands": [
+        "atozet",
+        "lipilouzet"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "rct",
       "studyDesign": "2상 무작위배정 이중눈가림 위약대조 시험",
@@ -74,7 +111,10 @@
       "limitations": "2상 연구로 대상자 수와 관찰기간이 제한적이다. 벰페도익산은 국내 종근당 품목에 포함되지 않은 성분이다. LDL-C는 대리 지표로 심혈관 사건 감소를 직접 보여주지 않는다.",
       "relationToLabel": "국내 품목의 허가된 효능·효과나 용법을 변경하지 않는다.",
       "searchId": "atorvastatin-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "38043782",
@@ -83,7 +123,11 @@
       "publicationDate": "2023-11",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38043782/",
       "ingredientKey": "rosuvastatin",
-      "appliesToBrands": ["telmitren-s", "atozet", "lipilouzet"],
+      "appliesToBrands": [
+        "telmitren-s",
+        "atozet",
+        "lipilouzet"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "rct",
       "studyDesign": "국내 다기관 공개 평행군 4상 임상시험",
@@ -95,7 +139,10 @@
       "limitations": "공개 라벨 설계이며 관찰기간이 24주다. LDL-C 변화율은 대리 지표로 심혈관 사건 감소를 직접 보여주지 않는다.",
       "relationToLabel": "국내 허가사항의 용법·용량을 변경하지 않는다. 품목별 허가된 함량 조합을 함께 확인해야 한다.",
       "searchId": "rosuvastatin-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "36351465",
@@ -104,7 +151,9 @@
       "publicationDate": "2023-01-03",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36351465/",
       "ingredientKey": "rosuvastatin",
-      "appliesToBrands": ["telmitren-s"],
+      "appliesToBrands": [
+        "telmitren-s"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "rct",
       "studyDesign": "단일기관 전향적 무작위배정 단일눈가림 임상시험",
@@ -116,7 +165,10 @@
       "limitations": "단일기관·단일눈가림 설계이고 관찰기간이 짧다. 지질 지표 변화를 평가한 연구로 임상 사건을 직접 비교하지 않았다.",
       "relationToLabel": "허가된 효능·효과를 변경하지 않으며, 건강기능식품과의 비교 결과를 제품 홍보 근거로 사용하지 않는다.",
       "searchId": "rosuvastatin-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "36031461",
@@ -125,7 +177,10 @@
       "publicationDate": "2022-10-04",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36031461/",
       "ingredientKey": "ezetimibe",
-      "appliesToBrands": ["atozet", "lipilouzet"],
+      "appliesToBrands": [
+        "atozet",
+        "lipilouzet"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "guideline",
       "studyDesign": "미국심장학회 전문가 합의 결정경로(Expert Consensus Decision Pathway)",
@@ -137,7 +192,10 @@
       "limitations": "임상시험이 아니라 전문가 합의 문서이며, 미국 기준이라 국내 급여 기준·진료 환경과 다르다. PubMed에 초록이 제공되지 않아 원문 확인이 필요하다.",
       "relationToLabel": "해외 합의 문서이며 국내 허가사항이나 급여 인정 기준을 대체하지 않는다.",
       "searchId": "ezetimibe-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "35262430",
@@ -146,7 +204,10 @@
       "publicationDate": "2022-05",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35262430/",
       "ingredientKey": "ezetimibe",
-      "appliesToBrands": ["atozet", "lipilouzet"],
+      "appliesToBrands": [
+        "atozet",
+        "lipilouzet"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰 및 베이지안 네트워크 메타분석",
@@ -158,7 +219,10 @@
       "limitations": "간접 비교 기반이므로 약제 간 차이를 우열로 단정할 수 없다. LDL-C 변화율은 대리 지표이며 약제별 비용·투여경로·급여 조건이 다르다.",
       "relationToLabel": "국내 품목의 허가된 효능·효과를 변경하지 않는다.",
       "searchId": "ezetimibe-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "39373375",
@@ -167,7 +231,9 @@
       "publicationDate": "2024-09-27",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39373375/",
       "ingredientKey": "cyclosporine",
-      "appliesToBrands": ["cypol"],
+      "appliesToBrands": [
+        "cypol"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "guideline",
       "studyDesign": "피부과학회 진료지침",
@@ -179,16 +245,21 @@
       "limitations": "싱가포르 학회 지침으로 국내 진료 환경·급여 기준과 다르다. 사이클로스포린 단일 성분을 평가한 연구가 아니라 치료 전반을 다룬 지침이다.",
       "relationToLabel": "국내 허가상 건선은 연질캡슐·내복액 등 일부 제형에만 해당하고 주사제는 장기이식·골수이식만 해당한다. 품목별 허가 범위를 반드시 확인해야 한다.",
       "searchId": "cyclosporine-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "35224732",
       "title": "Interventions for focal segmental glomerulosclerosis in adults.",
-      "journal": "Cochrane Database of Systematic Reviews",
+      "journal": "The Cochrane database of systematic reviews",
       "publicationDate": "2022-02-28",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35224732/",
       "ingredientKey": "cyclosporine",
-      "appliesToBrands": ["cypol"],
+      "appliesToBrands": [
+        "cypol"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "코크란 체계적 문헌고찰",
@@ -200,7 +271,10 @@
       "limitations": "FSGS라는 특정 원인 질환에 한정된 리뷰로 신증후군 전체에 적용할 수 없다. 포함 연구의 수와 질이 제한적이라고 저자들이 기술했다.",
       "relationToLabel": "국내 허가 적응증 중 신증후군은 일부 제형에만 해당한다. 품목별 허가 범위를 확인해야 한다.",
       "searchId": "cyclosporine-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "42180768",
@@ -209,7 +283,9 @@
       "publicationDate": "2026",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42180768/",
       "ingredientKey": "fexuprazan",
-      "appliesToBrands": ["pexuclue"],
+      "appliesToBrands": [
+        "pexuclue"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰 및 메타분석",
@@ -221,7 +297,10 @@
       "limitations": "포함된 임상시험 수가 제한적일 수 있고, 관찰기간이 비교적 짧다. 비교 대상이 에소메프라졸 한 성분이므로 다른 PPI나 P-CAB과의 비교로 확대할 수 없다.",
       "relationToLabel": "국내 허가 적응증은 미란성 위식도역류질환의 치료 등이다. 비교 연구 결과가 허가된 효능·효과나 제품의 우월성을 의미하지 않는다.",
       "searchId": "fexuprazan-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "41821493",
@@ -230,7 +309,9 @@
       "publicationDate": "2026-04-30",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41821493/",
       "ingredientKey": "fexuprazan",
-      "appliesToBrands": ["pexuclue"],
+      "appliesToBrands": [
+        "pexuclue"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석",
@@ -242,7 +323,10 @@
       "limitations": "계열 수준 분석으로 개별 성분 간 차이를 구분하지 않으며, 간접 비교가 포함되어 우열 판단의 근거로 쓸 수 없다.",
       "relationToLabel": "계열 연구이며 개별 품목의 허가된 효능·효과를 변경하지 않는다.",
       "searchId": "fexuprazan-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "42504651",
@@ -251,7 +335,9 @@
       "publicationDate": "2026-07-30",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42504651/",
       "ingredientKey": "fexuprazan",
-      "appliesToBrands": ["pexuclue"],
+      "appliesToBrands": [
+        "pexuclue"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "review",
       "studyDesign": "메타분석을 포함한 국내 전문가 리뷰",
@@ -263,7 +349,10 @@
       "limitations": "서술형 리뷰에 자체 메타분석을 결합한 형태로, 문헌 선정 기준이 체계적 문헌고찰만큼 엄격하지 않을 수 있다. 기능성 소화불량은 품목별 허가 범위와 다를 수 있다.",
       "relationToLabel": "국내 허가 적응증과 다른 질환이 함께 다뤄지므로 품목별 허가 범위를 별도로 확인해야 한다.",
       "searchId": "fexuprazan-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "40348684",
@@ -272,7 +361,9 @@
       "publicationDate": "2025-08",
       "url": "https://pubmed.ncbi.nlm.nih.gov/40348684/",
       "ingredientKey": "mycophenolate-mofetil",
-      "appliesToBrands": ["myrept"],
+      "appliesToBrands": [
+        "myrept"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "guideline",
       "studyDesign": "유럽간학회 진료지침",
@@ -284,7 +375,10 @@
       "limitations": "국내 미코페놀레이트 모페틸 품목의 허가 적응증은 장기이식 거부반응 방지이며, 자가면역간염은 허가된 효능·효과가 아니다. 해외 학회 지침이라 국내 급여 기준과도 다르다.",
       "relationToLabel": "허가 외 질환 영역의 지침이다. 이 자료를 근거로 허가되지 않은 적응증의 사용을 안내해서는 안 된다. 질환 맥락 참고자료로만 사용한다.",
       "searchId": "mycophenolate-mofetil-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     }
   ]
 }

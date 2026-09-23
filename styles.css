@@ -413,3 +413,24 @@ h1, h2, h3, h4 { letter-spacing: -.02em; }
   .search-actions { flex-direction: column; align-items: stretch; }
   .search-run { justify-content: center; }
 }
+
+/* ---------- 문헌 카드 검토 표시 ----------
+   AI가 작성·검증한 요약을 전문가 검토 자료처럼 보이게 두지 않는다. */
+.lit-badge { font-weight: 700; }
+.lit-badge-ok { background: var(--teal-soft) !important; color: var(--teal) !important; }
+.lit-badge-ai { background: var(--amber-soft) !important; color: var(--amber) !important; }
+.lit-badge-warn { background: var(--line-soft) !important; color: var(--muted) !important; }
+.lit-detail { margin: .5rem 0; }
+.lit-detail summary { color: var(--muted); font-size: .74rem; cursor: pointer; }
+.lit-detail dl { display: grid; grid-template-columns: 5.2rem 1fr; gap: .25rem .6rem; margin: .45rem 0 0; }
+.lit-detail dt { color: var(--muted); font-size: .73rem; font-weight: 700; }
+.lit-detail dd { margin: 0; font-size: .76rem; line-height: 1.5; color: var(--ink); }
+.lit-label-rel { margin: .4rem 0 0; font-size: .75rem; line-height: 1.5; color: var(--navy); }
+.lit-ai-note {
+  margin: .5rem 0 0; padding: .45rem .6rem; border-radius: .4rem;
+  background: var(--amber-soft); color: var(--amber); font-size: .73rem; line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .lit-detail dl { grid-template-columns: 1fr; gap: .1rem; }
+  .lit-detail dd { margin-bottom: .35rem; }
+}

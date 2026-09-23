@@ -353,6 +353,58 @@ function buildFaqAnswer(answerKey, product, core, changes) {
   return '공식 근거 확인 필요';
 }
 
+/* ---------- 검토를 마친 문헌 ----------
+   검토 주체를 숨기지 않는다. AI가 작성·검증한 요약은 전문가 검토 자료와 다르므로
+   배지로 구분하고, 임상적 해석이 검증되지 않았음을 카드 안에서 밝힌다. */
+
+const REVIEW_BADGE = {
+  'human-reviewed': { label: '전문가 검토', cls: 'lit-badge-ok' },
+  'ai-verified': { label: 'AI 작성·AI 검증', cls: 'lit-badge-ai' },
+  unspecified: { label: '검토 주체 미기록', cls: 'lit-badge-warn' },
+};
+
+const EVIDENCE_LABEL = {
+  guideline: '진료지침', 'meta-analysis': '메타분석', rct: '무작위배정 시험',
+  observational: '관찰연구', review: '리뷰', preclinical: '전임상', registry: '레지스트리',
+};
+
+const RELATION_LABEL = {
+  'direct-product': '제품 직접 연구', 'same-ingredient': '동일 성분',
+  'disease-context': '질환 맥락', safety: '안전성', mechanism: '기전',
+};
+
+function litCardHtml(item) {
+  const badge = REVIEW_BADGE[item.reviewType] || REVIEW_BADGE.unspecified;
+  const tags = [
+    EVIDENCE_LABEL[item.evidenceLevel],
+    RELATION_LABEL[item.relationType] || item.relationType,
+    ...(item.diseases || []),
+    ...(item.hashtags || []),
+  ].filter(Boolean);
+  const detail = [
+    ['연구설계', item.studyDesign], ['대상', item.population],
+    ['중재', item.intervention], ['비교', item.comparator], ['주요 결과', item.keyOutcomes],
+  ].filter(([, v]) => v);
+  return `
+    <div class="record-item">
+      <div class="record-head">
+        <span>${escapeHtml(item.publicationDate)}${item.journal ? ` · ${escapeHtml(item.journal)}` : ''}</span>
+        <span>PMID ${escapeHtml(item.pmid)}</span>
+      </div>
+      <h4>${escapeHtml(item.title)}</h4>
+      <div class="tag-list">
+        <span class="lit-badge ${badge.cls}">${escapeHtml(badge.label)}</span>
+        ${tags.map((t) => `<span>${escapeHtml(t)}</span>`).join('')}
+      </div>
+      <p>${escapeHtml(item.hcpSummary)}</p>
+      ${detail.length ? `<details class="lit-detail"><summary>연구 내용 자세히</summary><dl>${detail.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('')}</dl></details>` : ''}
+      <p class="record-limit">한계: ${escapeHtml(item.limitations || '원문 초록과 연구설계를 함께 확인하세요.')}</p>
+      ${item.relationToLabel ? `<p class="lit-label-rel">허가사항과의 관계: ${escapeHtml(item.relationToLabel)}</p>` : ''}
+      ${item.reviewType === 'ai-verified' ? `<p class="lit-ai-note">이 요약은 AI가 초록을 읽고 작성했고, 서지정보·수치·표현을 원문과 대조해 검증했습니다. <strong>임상적 해석은 전문가 검토를 거치지 않았습니다.</strong> 판단 전에 원문을 확인하세요.</p>` : ''}
+      <a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">PubMed 원문 보기 ↗</a>
+    </div>`;
+}
+
 /* ---------- 문헌 검색 경로 ----------
    검토를 마친 근거(literature.json)와는 다른 것이다.
    여기 있는 것은 '어떤 검색식으로 찾을 수 있는가'이며, 문헌 목록이 아니다.
@@ -637,7 +689,7 @@ function renderDetail(product) {
       <section class="detail-section" id="lit">
         <h3>관련 최신 연구</h3>
         ${literature.length
-          ? literature.map((item) => `<div class="record-item"><div class="record-head"><span>${escapeHtml(item.publicationDate)}</span><span>PMID ${escapeHtml(item.pmid)}</span></div><h4>${escapeHtml(item.title)}</h4><div class="tag-list">${[...(item.diseases || []), ...(item.hashtags || [])].map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div><p>${escapeHtml(item.hcpSummary)}</p><p class="record-limit">한계: ${escapeHtml(item.limitations || '원문 초록과 연구설계를 함께 확인하세요.')}</p><a class="inline-link" href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noreferrer">PubMed 원문 보기 ↗</a></div>`).join('')
+          ? literature.map((item) => litCardHtml(item)).join('')
           : '<p class="notice">검토를 마쳐 공개한 논문이 없습니다. 아래 검색 경로로 원문을 직접 확인하세요.</p>'}
         ${searchStrategyHtml(product) || `<p class="notice">이 제품의 성분별 검색식이 아직 준비되지 않았습니다. <a class="inline-link" href="${escapeHtml(pubmedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(product.name)} PubMed 검색 열기 ↗</a></p>`}
       </section>

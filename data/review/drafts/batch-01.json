@@ -1,13 +1,35 @@
 {
   "batch": "batch-01",
   "draftedOn": "2026-09-23",
-  "ingredients": ["carvedilol", "telmisartan", "sitagliptin", "denosumab", "romosozumab", "tacrolimus"],
+  "ingredients": [
+    "carvedilol",
+    "telmisartan",
+    "sitagliptin",
+    "denosumab",
+    "romosozumab",
+    "tacrolimus"
+  ],
   "excluded": [
-    { "pmid": "40750720", "reason": "ATTR-CM에서 acoramidis를 다룬 연구로 카르베딜롤은 병용약 현황으로만 언급됨" },
-    { "pmid": "35623229", "reason": "세마글루타이드 평가 연구로 시타글립틴은 비교군 중 하나에 불과함" },
-    { "pmid": "41715123", "reason": "당뇨병 전단계 대상으로 국내 허가 적응증(제2형 당뇨병)과 대상이 다름" },
-    { "pmid": "39306468", "reason": "대장암 간전이 간이식 연구로 타크로리무스 자체를 평가한 연구가 아님" },
-    { "pmid": "38867175", "reason": "점안 타크로리무스 각막이식 연구로 경구 제형과 투여경로가 다름" }
+    {
+      "pmid": "40750720",
+      "reason": "ATTR-CM에서 acoramidis를 다룬 연구로 카르베딜롤은 병용약 현황으로만 언급됨"
+    },
+    {
+      "pmid": "35623229",
+      "reason": "세마글루타이드 평가 연구로 시타글립틴은 비교군 중 하나에 불과함"
+    },
+    {
+      "pmid": "41715123",
+      "reason": "당뇨병 전단계 대상으로 국내 허가 적응증(제2형 당뇨병)과 대상이 다름"
+    },
+    {
+      "pmid": "39306468",
+      "reason": "대장암 간전이 간이식 연구로 타크로리무스 자체를 평가한 연구가 아님"
+    },
+    {
+      "pmid": "38867175",
+      "reason": "점안 타크로리무스 각막이식 연구로 경구 제형과 투여경로가 다름"
+    }
   ],
   "drafts": [
     {
@@ -17,7 +39,9 @@
       "publicationDate": "2022-10",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35661713/",
       "ingredientKey": "carvedilol",
-      "appliesToBrands": ["dilatrend"],
+      "appliesToBrands": [
+        "dilatrend"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "무작위배정 임상시험을 대상으로 한 경쟁위험 메타분석",
@@ -29,7 +53,10 @@
       "limitations": "포함된 임상시험의 대상자 기준과 추적기간이 이질적이며, 국내 허가 적응증과는 다른 질환 영역의 연구다.",
       "relationToLabel": "국내 허가 적응증은 본태고혈압·만성 안정협심증·울혈심부전이며, 간경변의 문맥압항진증은 허가된 효능·효과가 아니다. 이 연구는 질환 맥락 참고자료이며 허가 범위를 변경하지 않는다.",
       "searchId": "carvedilol-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "38184132",
@@ -38,7 +65,9 @@
       "publicationDate": "2024-03",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38184132/",
       "ingredientKey": "carvedilol",
-      "appliesToBrands": ["dilatrend"],
+      "appliesToBrands": [
+        "dilatrend"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "무작위배정 및 관찰 코호트 연구를 포함한 체계적 문헌고찰·메타분석",
@@ -50,7 +79,10 @@
       "limitations": "관찰연구가 포함되어 있고, 카르베딜롤 단일 성분이 아니라 베타차단제 계열 전체를 다뤘다. 개별 성분이나 용량에 대한 결론으로 확대할 수 없다.",
       "relationToLabel": "국내 허가상 울혈심부전이 적응증에 포함되나, 박출률 보존 심부전에서의 계열 효과를 다룬 이 연구가 개별 품목의 허가사항을 변경하지 않는다.",
       "searchId": "carvedilol-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "36174643",
@@ -59,7 +91,9 @@
       "publicationDate": "2022-11",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36174643/",
       "ingredientKey": "carvedilol",
-      "appliesToBrands": ["dilatrend"],
+      "appliesToBrands": [
+        "dilatrend"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "guideline",
       "studyDesign": "유럽소화기내시경학회 진료지침",
@@ -71,7 +105,10 @@
       "limitations": "유럽 학회 지침으로 국내 진료 환경·급여 기준과 다를 수 있다. 권고의 근거 수준은 중등도로 명시되어 있다.",
       "relationToLabel": "국내 허가 적응증에 정맥류 출혈 예방은 포함되어 있지 않다. 해외 지침의 권고를 국내 허가사항이나 급여 범위로 읽지 않아야 한다.",
       "searchId": "carvedilol-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "37432701",
@@ -80,7 +117,13 @@
       "publicationDate": "2023-08",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37432701/",
       "ingredientKey": "telmisartan",
-      "appliesToBrands": ["telminuvo", "telminuvo-plus", "telmitren", "telmitren-plus", "telmitren-s"],
+      "appliesToBrands": [
+        "telminuvo",
+        "telminuvo-plus",
+        "telmitren",
+        "telmitren-plus",
+        "telmitren-s"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석(무작위배정 임상시험만 포함)",
@@ -92,7 +135,10 @@
       "limitations": "네트워크 메타분석은 직접 비교가 아닌 간접 비교를 포함하므로 조합 간 차이를 우열로 단정할 수 없다. 포함 연구의 관찰기간과 대상자 특성이 이질적이다.",
       "relationToLabel": "국내 허가 적응증은 단독요법으로 혈압이 적절히 조절되지 않는 본태성 고혈압이다. 이 연구는 그 사용 맥락에 대한 참고자료이며 허가사항을 변경하지 않는다.",
       "searchId": "telmisartan-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "38861046",
@@ -101,7 +147,13 @@
       "publicationDate": "2024-10",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38861046/",
       "ingredientKey": "telmisartan",
-      "appliesToBrands": ["telminuvo", "telminuvo-plus", "telmitren", "telmitren-plus", "telmitren-s"],
+      "appliesToBrands": [
+        "telminuvo",
+        "telminuvo-plus",
+        "telmitren",
+        "telmitren-plus",
+        "telmitren-s"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "네트워크 메타분석",
@@ -113,16 +165,22 @@
       "limitations": "간접 비교 기반이며 포함 연구의 용량·관찰기간·대상자가 이질적이다. 이 결과를 특정 성분이 다른 성분보다 우수하다는 판단의 근거로 사용할 수 없다.",
       "relationToLabel": "성분 간 비교 연구이며 국내 각 품목의 허가된 효능·효과와 용법을 변경하지 않는다.",
       "searchId": "telmisartan-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "39426836",
       "title": "Efficacy and safety of a novel low-dose triple single-pill combination of telmisartan, amlodipine and indapamide, compared with dual combinations.",
-      "journal": "The Lancet",
+      "journal": "Lancet (London, England)",
       "publicationDate": "2024-10-19",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39426836/",
       "ingredientKey": "telmisartan",
-      "appliesToBrands": ["telminuvo-plus", "telmitren-plus"],
+      "appliesToBrands": [
+        "telminuvo-plus",
+        "telmitren-plus"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "rct",
       "studyDesign": "국제 다기관 무작위배정 이중눈가림 활성대조 시험",
@@ -134,7 +192,10 @@
       "limitations": "연구에 사용된 조합은 텔미사르탄·암로디핀·인다파미드로, 국내 텔미누보플러스(텔미사르탄·에스암로디핀·클로르탈리돈)와 세 번째 성분과 암로디핀 이성질체가 다르다. 동일 제품에 대한 연구가 아니다.",
       "relationToLabel": "구성 성분이 다른 복합제 연구이므로 국내 품목의 허가사항이나 용법을 대체하지 않는다.",
       "searchId": "telmisartan-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "34721294",
@@ -143,7 +204,9 @@
       "publicationDate": "2021",
       "url": "https://pubmed.ncbi.nlm.nih.gov/34721294/",
       "ingredientKey": "sitagliptin",
-      "appliesToBrands": ["januvia"],
+      "appliesToBrands": [
+        "januvia"
+      ],
       "relationType": "safety",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석",
@@ -155,7 +218,10 @@
       "limitations": "포함 연구의 추적기간과 골절 정의가 이질적이며, 개별 환자의 골절 위험도를 예측하지 않는다.",
       "relationToLabel": "안전성 참고자료이며 국내 허가사항의 사용상 주의사항을 대체하지 않는다. 실제 주의사항은 최신 허가 원문으로 확인해야 한다.",
       "searchId": "sitagliptin-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "37845798",
@@ -164,7 +230,9 @@
       "publicationDate": "2023-12",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37845798/",
       "ingredientKey": "denosumab",
-      "appliesToBrands": ["prolia"],
+      "appliesToBrands": [
+        "prolia"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "guideline",
       "studyDesign": "GRADE 방법론 기반 진료지침(미국류마티스학회)",
@@ -176,16 +244,22 @@
       "limitations": "미국 학회 지침으로 국내 급여 기준·진료 환경과 다를 수 있다. 권고는 환자의 골절 위험도와 동반질환에 따라 개별화해야 한다.",
       "relationToLabel": "해외 지침 권고이며 국내 허가사항이나 급여 인정 기준을 대체하지 않는다.",
       "searchId": "denosumab-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "37130601",
       "title": "Fracture risk reduction and safety by osteoporosis treatment compared with placebo or active comparator in postmenopausal women: systematic review and network meta-analysis.",
-      "journal": "BMJ",
+      "journal": "BMJ (Clinical research ed.)",
       "publicationDate": "2023-05-02",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37130601/",
       "ingredientKey": "denosumab",
-      "appliesToBrands": ["prolia", "evenity"],
+      "appliesToBrands": [
+        "prolia",
+        "evenity"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰·네트워크 메타분석·메타회귀",
@@ -197,7 +271,10 @@
       "limitations": "간접 비교가 포함된 네트워크 메타분석이므로 약제 간 차이를 우열로 단정할 수 없다. 대상이 폐경 후 여성에 한정되어 남성 환자에게 그대로 적용할 수 없다.",
       "relationToLabel": "허가된 효능·효과의 범위를 변경하지 않는다. 국내 골다공증 치료제의 급여 인정 기준은 별도 고시로 정해지므로 함께 확인해야 한다.",
       "searchId": "denosumab-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "36592456",
@@ -206,7 +283,10 @@
       "publicationDate": "2023-02",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36592456/",
       "ingredientKey": "denosumab",
-      "appliesToBrands": ["prolia", "evenity"],
+      "appliesToBrands": [
+        "prolia",
+        "evenity"
+      ],
       "relationType": "disease-context",
       "evidenceLevel": "guideline",
       "studyDesign": "GRADE 기반 리빙 진료지침(미국내과학회)",
@@ -218,7 +298,10 @@
       "limitations": "미국 내과학회 지침으로 국내 급여 기준과 다르다. 권고 대상이 일차성 골다공증과 저골량으로, 이차성 골다공증은 별도 지침을 확인해야 한다.",
       "relationToLabel": "해외 지침이며 국내 허가사항과 급여 인정 기준을 대체하지 않는다.",
       "searchId": "denosumab-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "34432115",
@@ -227,7 +310,9 @@
       "publicationDate": "2022-01",
       "url": "https://pubmed.ncbi.nlm.nih.gov/34432115/",
       "ingredientKey": "romosozumab",
-      "appliesToBrands": ["evenity"],
+      "appliesToBrands": [
+        "evenity"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "meta-analysis",
       "studyDesign": "체계적 문헌고찰 및 메타분석",
@@ -239,7 +324,10 @@
       "limitations": "대상이 폐경 후 여성에 한정되어 남성 골다공증 환자에게 그대로 적용할 수 없다. 로모소주맙은 심혈관 안전성이 주요 검토 사항이므로 해당 정보를 허가사항과 함께 확인해야 한다.",
       "relationToLabel": "국내 허가 적응증은 골절 위험이 높은 폐경 후 여성 골다공증의 치료와 남성 골다공증 환자의 골밀도 증가다. 투여 기간 제한 등 사용 조건은 허가 원문으로 확인해야 한다.",
       "searchId": "romosozumab-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "41201871",
@@ -248,7 +336,9 @@
       "publicationDate": "2026-04-01",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41201871/",
       "ingredientKey": "tacrolimus",
-      "appliesToBrands": ["tacrobell"],
+      "appliesToBrands": [
+        "tacrobell"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "rct",
       "studyDesign": "무작위배정 대조시험(OPTIMIZE)",
@@ -260,7 +350,10 @@
       "limitations": "고령 신장이식 환자로 대상이 한정되며 간이식 환자에게 적용할 수 없다. 특정 병용 조합에 대한 결과이므로 타크로리무스 단독 용량 조절로 일반화할 수 없다.",
       "relationToLabel": "국내 허가 적응증은 신이식·간이식 환자의 거부반응 방지다. 용법·용량과 혈중농도 관리는 허가사항과 의료진 판단을 따른다.",
       "searchId": "tacrolimus-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     },
     {
       "pmid": "37391040",
@@ -269,7 +362,9 @@
       "publicationDate": "2023-10",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37391040/",
       "ingredientKey": "tacrolimus",
-      "appliesToBrands": ["tacrobell"],
+      "appliesToBrands": [
+        "tacrobell"
+      ],
       "relationType": "same-ingredient",
       "evidenceLevel": "rct",
       "studyDesign": "전향적 무작위배정 2군 임상시험",
@@ -281,7 +376,10 @@
       "limitations": "단일 연구이며 신장이식 환자를 대상으로 했다. 유전형 검사 접근성과 국내 진료 환경에서의 적용 가능성은 별도 검토가 필요하다.",
       "relationToLabel": "허가된 용법·용량을 대체하지 않는다. 실제 용량 조절은 허가사항과 혈중농도 모니터링에 따른 의료진 판단을 따른다.",
       "searchId": "tacrolimus-2026-09-23",
-      "status": "draft", "draftedBy": "claude-opus-5", "reviewer": null, "reviewedOn": null
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
     }
   ]
 }

@@ -251,13 +251,28 @@ if (searches) {
   }
 }
 
-// 공개 문헌은 검토를 마친 것만 싣는다.
+// 공개 문헌은 검토를 마친 것만 싣고, 검토 주체를 반드시 밝힌다.
+// AI가 작성·검증한 요약을 전문가 검토 자료처럼 보이게 두지 않는 것이 이 규칙의 목적이다.
+const REVIEW_TYPES = new Set(['human-reviewed', 'ai-verified', 'unspecified']);
 for (const item of literature.items || []) {
   if (item.status === 'published' && !item.reviewedOn) {
     errors.push(`literature:${item.pmid} published 문헌에 검토일(reviewedOn)이 없습니다`);
   }
   if (item.status === 'candidate') {
     errors.push(`literature:${item.pmid} candidate 문헌은 공개 데이터에 둘 수 없습니다`);
+  }
+  if (item.status === 'published' && !REVIEW_TYPES.has(item.reviewType)) {
+    errors.push(`literature:${item.pmid} reviewType 이 없거나 값이 잘못되었습니다`);
+  }
+  if (item.reviewType === 'ai-verified') {
+    if (!item.verification) errors.push(`literature:${item.pmid} ai-verified 항목에는 검증 내역(verification)이 필요합니다`);
+    if (!item.draftedBy) errors.push(`literature:${item.pmid} ai-verified 항목에는 작성 주체(draftedBy)가 필요합니다`);
+    if (item.reviewer && !/claude|ai/i.test(item.reviewer)) {
+      errors.push(`literature:${item.pmid} ai-verified 인데 reviewer 가 사람으로 기재되어 있습니다`);
+    }
+  }
+  if (item.reviewType === 'human-reviewed' && !item.reviewer) {
+    errors.push(`literature:${item.pmid} human-reviewed 항목에는 검토자(reviewer)가 필요합니다`);
   }
 }
 

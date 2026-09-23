@@ -379,7 +379,7 @@
     {
       "pmid": "39426836",
       "title": "Efficacy and safety of a novel low-dose triple single-pill combination of telmisartan, amlodipine and indapamide, compared with dual combinations.",
-      "journal": "The Lancet",
+      "journal": "Lancet (London, England)",
       "publicationDate": "2024-10-19",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39426836/",
       "ingredientKey": "telmisartan",
@@ -458,7 +458,7 @@
     {
       "pmid": "37130601",
       "title": "Fracture risk reduction and safety by osteoporosis treatment compared with placebo or active comparator in postmenopausal women: systematic review and network meta-analysis.",
-      "journal": "BMJ",
+      "journal": "BMJ (Clinical research ed.)",
       "publicationDate": "2023-05-02",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37130601/",
       "ingredientKey": "denosumab",
@@ -808,7 +808,7 @@
     {
       "pmid": "35224732",
       "title": "Interventions for focal segmental glomerulosclerosis in adults.",
-      "journal": "Cochrane Database of Systematic Reviews",
+      "journal": "The Cochrane database of systematic reviews",
       "publicationDate": "2022-02-28",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35224732/",
       "ingredientKey": "cyclosporine",
@@ -1071,7 +1071,7 @@
     {
       "pmid": "42419792",
       "title": "Comparative effects of drugs for adults with overweight or obesity: systematic review and network meta-analysis.",
-      "journal": "BMJ",
+      "journal": "BMJ (Clinical research ed.)",
       "publicationDate": "2026-07-08",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42419792/",
       "ingredientKey": "phentermine",
@@ -1123,7 +1123,7 @@
     {
       "pmid": "38582569",
       "title": "Pharmacotherapy for adults with overweight and obesity: a systematic review and network meta-analysis of randomised controlled trials.",
-      "journal": "The Lancet",
+      "journal": "Lancet (London, England)",
       "publicationDate": "2024-04-06",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38582569/",
       "ingredientKey": "topiramate",
