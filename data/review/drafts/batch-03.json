@@ -1,0 +1,247 @@
+{
+  "batch": "batch-03",
+  "draftedOn": "2026-09-23",
+  "ingredients": [
+    "chlorthalidone",
+    "hydrochlorothiazide",
+    "s-amlodipine",
+    "phentermine",
+    "topiramate"
+  ],
+  "notes": [
+    "PMID 41717679은 텔미사르탄·암로디핀·클로르탈리돈 3제 복합제를 다룬 3상 시험으로, 텔미누보플러스의 구성 성분과 일치한다. 이번 수집에서 제품 조성에 가장 근접한 근거다.",
+    "비만 영역 문헌 4건은 펜터민·토피라메이트 복합제를 포함한 비만 치료제 전반을 비교한 자료다. 성분 단위로 중복 등록하지 않고 한 건씩만 배정했다.",
+    "에스암로디핀은 단일 성분 문헌이 상위에 오르지 않았다. 복합제 문헌(PMID 37432701)이 텔미사르탄 항목에 등록되어 있고 두 성분 모두에 해당하므로 중복 등록하지 않았다."
+  ],
+  "excluded": [
+    {
+      "pmid": "40434761",
+      "reason": "연구용 RNA 간섭 치료제 zilebesiran 평가 연구로 암로디핀은 배경요법으로만 사용됨"
+    },
+    {
+      "pmid": "41469882",
+      "reason": "다파글리플로진의 대사체 연구로 히드로클로로티아지드와 직접 관련이 없음"
+    },
+    {
+      "pmid": "35305140",
+      "reason": "임신 중 고혈압 대상 연구로 국내 허가 적응증·금기 범위와 대상이 다름"
+    },
+    {
+      "pmid": "37432701",
+      "reason": "텔미사르탄 항목(batch-01)에 이미 등록됨. 같은 문헌을 성분별로 중복 등록하지 않는다"
+    }
+  ],
+  "drafts": [
+    {
+      "pmid": "41717679",
+      "title": "Low-Dose TEL/AML/CHTD Single-Pill Combination Versus Standard-Dose Telmisartan in Hypertension: Phase III Randomized Controlled Trial.",
+      "journal": "Hypertension",
+      "publicationDate": "2026-04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41717679/",
+      "ingredientKey": "chlorthalidone",
+      "appliesToBrands": [
+        "telminuvo-plus",
+        "telminuvo"
+      ],
+      "relationType": "same-ingredient",
+      "evidenceLevel": "rct",
+      "studyDesign": "3상 무작위배정 이중눈가림 임상시험",
+      "population": "4주 위약 도입기를 거친 본태성 고혈압 환자 314명",
+      "intervention": "텔미사르탄·암로디핀·클로르탈리돈 저용량 3제 단일정 복합제",
+      "comparator": "표준용량 텔미사르탄 단독요법",
+      "keyOutcomes": "저용량 3제 복합제와 표준용량 단독요법의 혈압강하 효과와 안전성을 비교했다.",
+      "hcpSummary": "저용량 3제 복합제를 표준용량 단독요법과 직접 비교한 3상 연구다. 구성 성분이 텔미사르탄·암로디핀·클로르탈리돈으로 텔미누보플러스와 동일 계열이어서, 이번에 수집된 자료 중 제품 조성에 가장 근접한 근거다.",
+      "limitations": "대상자 314명 규모이며 관찰기간이 제한적이다. 암로디핀 이성질체(에스암로디핀 여부)와 각 성분의 함량이 국내 품목과 같은지는 원문에서 확인해야 한다. 혈압강하는 대리 지표로 심혈관 사건 감소를 직접 보여주지 않는다.",
+      "relationToLabel": "국내 허가 적응증은 텔미사르탄과 에스암로디핀 복합요법으로 혈압이 적절히 조절되지 않는 본태성 고혈압이다. 이 연구가 허가된 용법·용량을 변경하지 않는다.",
+      "searchId": "chlorthalidone-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "36516076",
+      "title": "Chlorthalidone vs. Hydrochlorothiazide for Hypertension-Cardiovascular Events.",
+      "journal": "The New England Journal of Medicine",
+      "publicationDate": "2022-12-29",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36516076/",
+      "ingredientKey": "chlorthalidone",
+      "appliesToBrands": [
+        "telminuvo-plus",
+        "telmitren-plus"
+      ],
+      "relationType": "same-ingredient",
+      "evidenceLevel": "rct",
+      "studyDesign": "실용적 무작위배정 임상시험(pragmatic trial)",
+      "population": "히드로클로로티아지드 25 또는 50mg을 복용 중인 65세 이상 미국 보훈부 환자",
+      "intervention": "클로르탈리돈 12.5 또는 25mg으로 전환",
+      "comparator": "히드로클로로티아지드 유지",
+      "keyOutcomes": "주요 심혈관 사건 복합 지표를 일차 결과로 평가했다. 연구진은 클로르탈리돈이 히드로클로로티아지드보다 우수한지가 불분명했다는 점을 배경으로 기술했다.",
+      "hcpSummary": "두 티아지드계 이뇨제를 실제 진료 환경에서 직접 비교한 대규모 실용적 임상시험이다. 복합제의 이뇨제 구성 성분이 다를 때 그 차이를 어떻게 볼지 확인하는 데 참고할 수 있다.",
+      "limitations": "65세 이상 보훈부 환자를 대상으로 해 국내 일반 환자군과 특성이 다르다. 기존 히드로클로로티아지드 복용자를 전환한 설계이므로 신규 투여 환자에게 그대로 적용할 수 없다.",
+      "relationToLabel": "성분 간 비교 연구이며 국내 복합제 품목의 허가된 효능·효과를 변경하지 않는다. 이 결과를 특정 성분의 우월성 근거로 사용하지 않는다.",
+      "searchId": "chlorthalidone-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "34739197",
+      "title": "Chlorthalidone for Hypertension in Advanced Chronic Kidney Disease.",
+      "journal": "The New England Journal of Medicine",
+      "publicationDate": "2021-12-30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34739197/",
+      "ingredientKey": "chlorthalidone",
+      "appliesToBrands": [
+        "telminuvo-plus"
+      ],
+      "relationType": "disease-context",
+      "evidenceLevel": "rct",
+      "studyDesign": "다기관 무작위배정 위약대조 시험",
+      "population": "24시간 활동혈압으로 확인된 조절되지 않는 고혈압을 동반한 4기 만성콩팥병 환자",
+      "intervention": "클로르탈리돈 12.5mg/일로 시작해 4주 간격으로 최대 50mg/일까지 증량",
+      "comparator": "위약",
+      "keyOutcomes": "진행성 만성콩팥병 환자에서 티아지드계 이뇨제의 혈압 조절 효과를 평가했다.",
+      "hcpSummary": "신기능이 크게 저하된 환자에서 티아지드계 이뇨제를 쓸 수 있는지에 대한 근거를 제공한 연구다. 이뇨제 포함 복합제를 신기능 저하 환자에게 검토할 때 참고할 수 있다.",
+      "limitations": "4기 만성콩팥병이라는 특정 환자군을 대상으로 했고, 클로르탈리돈 단일 성분 연구다. 복합제 형태의 사용을 직접 평가하지 않았다.",
+      "relationToLabel": "국내 복합제 품목의 허가사항에는 신장애 환자에 대한 별도 주의사항이 있으므로 허가 원문을 함께 확인해야 한다.",
+      "searchId": "chlorthalidone-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "32909966",
+      "title": "Network meta-analysis of efficacy and safety of chlorthalidone and hydrochlorothiazide in hypertensive patients.",
+      "journal": "Blood Pressure Monitoring",
+      "publicationDate": "2021-04-01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32909966/",
+      "ingredientKey": "hydrochlorothiazide",
+      "appliesToBrands": [
+        "telmitren-plus",
+        "telminuvo-plus"
+      ],
+      "relationType": "same-ingredient",
+      "evidenceLevel": "meta-analysis",
+      "studyDesign": "네트워크 메타분석",
+      "population": "고혈압 환자",
+      "intervention": "클로르탈리돈",
+      "comparator": "히드로클로로티아지드",
+      "keyOutcomes": "두 일차선택 티아지드계 이뇨제의 유효성과 안전성을 비교했다.",
+      "hcpSummary": "복합제에 포함되는 두 이뇨제 성분을 같은 틀에서 비교한 메타분석이다. 텔미트렌플러스(히드로클로로티아지드)와 텔미누보플러스(클로르탈리돈)의 구성 차이를 이해할 때 참고할 수 있다.",
+      "limitations": "간접 비교가 포함되어 우열 판단의 근거로 쓸 수 없다. 포함 연구의 용량과 관찰기간이 이질적이다.",
+      "relationToLabel": "성분 비교 연구이며 각 품목의 허가된 효능·효과를 변경하지 않는다.",
+      "searchId": "hydrochlorothiazide-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "36273831",
+      "title": "AGA Clinical Practice Guideline on Pharmacological Interventions for Adults With Obesity.",
+      "journal": "Gastroenterology",
+      "publicationDate": "2022-11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36273831/",
+      "ingredientKey": "phentermine",
+      "appliesToBrands": [
+        "qsymia"
+      ],
+      "relationType": "disease-context",
+      "evidenceLevel": "guideline",
+      "studyDesign": "GRADE 기반 진료지침(미국소화기학회)",
+      "population": "과체중 및 비만 성인",
+      "intervention": "비만 약물치료",
+      "comparator": "약물 간 비교 및 비약물요법",
+      "keyOutcomes": "비만 약물치료의 선택에 대한 권고를 제시했다. 다학제 패널이 GRADE 방법론으로 임상질문과 환자 중심 결과를 정리했다.",
+      "hcpSummary": "비만 약물치료의 위치를 정리한 지침으로, 펜터민·토피라메이트 복합제를 포함한 약제 선택 맥락을 확인할 때 참고할 수 있다.",
+      "limitations": "미국 학회 지침으로 국내 허가 범위·급여 조건과 다르다. 국내에서 큐시미아는 약제급여목록에 등재되어 있지 않다.",
+      "relationToLabel": "국내 허가 적응증은 초기 BMI 기준을 충족하는 성인의 만성 체중 관리 보조요법이다. 해외 지침 권고가 국내 허가사항이나 급여 범위를 대체하지 않는다.",
+      "searchId": "phentermine-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "42419792",
+      "title": "Comparative effects of drugs for adults with overweight or obesity: systematic review and network meta-analysis.",
+      "journal": "BMJ",
+      "publicationDate": "2026-07-08",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42419792/",
+      "ingredientKey": "phentermine",
+      "appliesToBrands": [
+        "qsymia"
+      ],
+      "relationType": "same-ingredient",
+      "evidenceLevel": "meta-analysis",
+      "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석(24개 결과지표, GRADE 적용)",
+      "population": "과체중 또는 비만 성인",
+      "intervention": "비만 치료 약물",
+      "comparator": "상호 비교 및 위약",
+      "keyOutcomes": "24개 결과지표에 대해 약물별 이득과 위해를 빈도주의 변량효과 모형과 베이지안 용량반응 모형으로 비교하고 GRADE로 근거 확실성을 평가했다.",
+      "hcpSummary": "비만 약물치료의 최신 비교 근거를 정리한 대규모 네트워크 메타분석이다. 펜터민·토피라메이트 복합제를 포함한 약제들의 체중 감소 정도와 이상반응을 같은 틀에서 확인할 수 있다.",
+      "limitations": "간접 비교가 포함되어 약제 간 차이를 우열로 단정할 수 없다. 포함 연구의 관찰기간이 대부분 단기이며 장기 결과는 제한적이다.",
+      "relationToLabel": "국내 허가된 효능·효과와 용법을 변경하지 않는다. 다른 식욕억제제와의 병용은 국내 허가사항에서 금지되어 있으므로 비교 연구 결과를 병용 근거로 읽지 않아야 한다.",
+      "searchId": "phentermine-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "41039116",
+      "title": "A systematic review and meta-analysis of the efficacy and safety of pharmacological treatments for obesity in adults.",
+      "journal": "Nature Medicine",
+      "publicationDate": "2025-10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41039116/",
+      "ingredientKey": "topiramate",
+      "appliesToBrands": [
+        "qsymia"
+      ],
+      "relationType": "same-ingredient",
+      "evidenceLevel": "meta-analysis",
+      "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석",
+      "population": "비만 치료 대상 성인",
+      "intervention": "비만 치료 약물",
+      "comparator": "위약 또는 활성 대조",
+      "keyOutcomes": "일차 지표는 연구 종료 시점의 총 체중감소율이었고, 1년·2년·3년 이상 시점의 체중감소율과 지질·혈압 등 비만 관련 합병증 지표를 이차 지표로 평가했다.",
+      "hcpSummary": "비만 치료제의 체중 감소 효과를 장기 시점까지 나눠 정리한 메타분석이다. 토피라메이트를 포함한 복합제의 위치를 장기 관점에서 확인할 때 참고할 수 있다.",
+      "limitations": "간접 비교 기반이며, 3년 이상 장기 자료가 있는 약제와 없는 약제가 섞여 있어 시점별 비교에 주의가 필요하다.",
+      "relationToLabel": "국내 허가된 효능·효과를 변경하지 않는다. 토피라메이트는 기형 유발 위험이 알려진 성분이므로 가임기 여성 관련 주의사항을 허가 원문에서 반드시 확인해야 한다.",
+      "searchId": "topiramate-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    },
+    {
+      "pmid": "38582569",
+      "title": "Pharmacotherapy for adults with overweight and obesity: a systematic review and network meta-analysis of randomised controlled trials.",
+      "journal": "The Lancet",
+      "publicationDate": "2024-04-06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38582569/",
+      "ingredientKey": "topiramate",
+      "appliesToBrands": [
+        "qsymia"
+      ],
+      "relationType": "same-ingredient",
+      "evidenceLevel": "meta-analysis",
+      "studyDesign": "체계적 문헌고찰 및 빈도주의 변량효과 네트워크 메타분석",
+      "population": "과체중 및 비만 성인",
+      "intervention": "체중 감소 약물",
+      "comparator": "상호 비교 및 위약",
+      "keyOutcomes": "체중 감소 약물의 이득과 위해를 정리했다.",
+      "hcpSummary": "생활습관 교정으로 체중 조절에 실패한 성인에서 약물요법의 근거를 정리한 네트워크 메타분석이다. 이상반응을 함께 다뤄 안전성 관점에서도 참고할 수 있다.",
+      "limitations": "2021년 3월까지의 문헌을 대상으로 해 이후 등장한 약제나 최신 자료가 반영되지 않았다. 간접 비교가 포함되어 우열 판단의 근거로 쓸 수 없다.",
+      "relationToLabel": "국내 허가된 효능·효과와 용법을 변경하지 않는다.",
+      "searchId": "topiramate-2026-09-23",
+      "status": "draft",
+      "draftedBy": "claude-opus-5",
+      "reviewer": null,
+      "reviewedOn": null
+    }
+  ]
+}
