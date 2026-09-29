@@ -102,6 +102,8 @@ for (const item of literature.items || []) {
 
 const itemKeys = new Set();
 const kdCodes = new Map();
+const splitItemEdi = new Map();   // 보험코드로 나눈 품목 → 키에 붙은 보험코드
+const itemKeysByBase = new Map();
 
 if (!Array.isArray(items.items)) errors.push('items.json: items 배열이 없습니다');
 if (!isDate(items.generatedOn)) errors.push('items.json: generatedOn 은 YYYY-MM-DD 여야 합니다');
@@ -116,7 +118,18 @@ for (const item of items.items || []) {
   itemKeys.add(item.itemKey);
 
   if (!/^\d{9}$/.test(item.itemSeq || '')) errors.push(`${label} itemSeq must be 9 digits`);
-  if (item.itemKey !== `${item.itemSeq}::${item.company}`) errors.push(`${label} itemKey must be '품목기준코드::업체명'`);
+  // DATA_DICTIONARY §1 — 기본은 '품목기준코드::업체명'. 같은 허가에 보험코드가 여럿이면 제품별로 나눈다.
+  // 꼬리는 보험코드(9자리), 그 허가 안의 보험코드 없는 제품이면 대표코드(13자리).
+  const baseKey = `${item.itemSeq}::${item.company}`;
+  const splitTail = item.itemKey.startsWith(`${baseKey}::`) ? item.itemKey.slice(baseKey.length + 2) : null;
+  if (item.itemKey !== baseKey && !/^(\d{9}|\d{13})$/.test(splitTail || '')) errors.push(`${label} itemKey must be '품목기준코드::업체명' or '품목기준코드::업체명::보험코드|대표코드'`);
+  if (/^\d{9}$/.test(splitTail || '')) splitItemEdi.set(item.itemKey, splitTail);
+  if (/^\d{13}$/.test(splitTail || '')) {
+    if (splitTail !== item.representativeCode) errors.push(`${label} 키의 대표코드(${splitTail})가 representativeCode(${item.representativeCode})와 다릅니다`);
+    splitItemEdi.set(item.itemKey, null);
+  }
+  if (!itemKeysByBase.has(baseKey)) itemKeysByBase.set(baseKey, []);
+  itemKeysByBase.get(baseKey).push(item.itemKey);
   if (!item.itemName) errors.push(`${label} missing itemName`);
   if (!item.company) errors.push(`${label} missing company`);
   if (item.isCkd !== item.company?.includes('종근당')) errors.push(`${label} isCkd must match company`);
@@ -172,6 +185,16 @@ for (const entry of billing.items || []) {
   } else {
     if (entry.maxPrice !== null) errors.push(`${label} not-listed item must have maxPrice null, got ${entry.maxPrice}`);
   }
+}
+
+// 한 허가를 보험코드로 나눴다면 전부 나눠야 한다. 기본 키가 섞이면 그 품목에 다른 제품의 포장이 섞인 것이다.
+for (const [baseKey, keys] of itemKeysByBase) {
+  if (keys.length > 1 && keys.includes(baseKey)) errors.push(`item:${baseKey} 보험코드 분리 품목과 기본 키 품목이 섞여 있습니다 — 제품 분리 불가 행 확인`);
+}
+for (const entry of billing.items || []) {
+  if (!splitItemEdi.has(entry.itemKey)) continue;
+  const edi = splitItemEdi.get(entry.itemKey);   // null = 보험코드 없는 제품
+  if (entry.ediCode !== edi) errors.push(`billing:${entry.itemKey} ediCode(${entry.ediCode})가 품목 키의 보험코드와 다릅니다`);
 }
 
 for (const key of itemKeys) {

@@ -449,6 +449,52 @@
       ]
     },
     {
+      "itemKey": "201802451::(주)종근당",
+      "itemSeq": "201802451",
+      "brandId": "diquabell",
+      "brandNameRaw": "디쿠아벨",
+      "itemName": "디쿠아벨점안액(디쿠아포솔나트륨)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.4밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-06-14",
+      "cancelDate": null,
+      "atcCode": "S01XA33",
+      "ingredientCode": "617332COS",
+      "ingredientNameEn": "diquafosol sodium",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433081201",
+      "packages": [
+        {
+          "kdCode": "8806433081201",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433081218",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433081232",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433081225",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
       "itemKey": "202002674::(주)종근당",
       "itemSeq": "202002674",
       "brandId": "dilatrend",
@@ -1063,6 +1109,74 @@
           "quantity": 100,
           "dosageForm": "정",
           "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202203870::(주)종근당",
+      "itemSeq": "202203870",
+      "brandId": "lucenbs",
+      "brandNameRaw": "루센비에스",
+      "itemName": "루센비에스주10밀리그램/밀리리터(라니비주맙)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.3밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2022-10-20",
+      "cancelDate": null,
+      "atcCode": "S01LA04",
+      "ingredientCode": "503630BIJ",
+      "ingredientNameEn": "ranibizumab",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "439",
+      "representativeCode": "8806433092108",
+      "packages": [
+        {
+          "kdCode": "8806433092108",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433092115",
+          "quantity": 1,
+          "dosageForm": "바이알",
+          "packageType": "Vial"
+        }
+      ]
+    },
+    {
+      "itemKey": "202301618::(주)종근당",
+      "itemSeq": "202301618",
+      "brandId": "lucenbs",
+      "brandNameRaw": "루센비에스",
+      "itemName": "루센비에스프리필드시린지(라니비주맙)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.165밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2023-05-19",
+      "cancelDate": null,
+      "atcCode": "S01LA04",
+      "ingredientCode": "503632BIJ",
+      "ingredientNameEn": "ranibizumab",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "439",
+      "representativeCode": "8806433093709",
+      "packages": [
+        {
+          "kdCode": "8806433093709",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433093716",
+          "quantity": 1,
+          "dosageForm": "주사",
+          "packageType": "프리필드시린지"
         }
       ]
     },
@@ -2191,6 +2305,604 @@
       ]
     },
     {
+      "itemKey": "199906940::(주)한국로슈",
+      "itemSeq": "199906940",
+      "brandId": "cymevene",
+      "brandNameRaw": "싸이메빈",
+      "itemName": "싸이메빈정주",
+      "company": "(주)한국로슈",
+      "isCkd": false,
+      "strengthLabel": "500밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1999-11-04",
+      "cancelDate": "2002-10-07",
+      "atcCode": null,
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806450011700",
+      "packages": [
+        {
+          "kdCode": "8806450011700",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "200209709::(주)종근당",
+      "itemSeq": "200209709",
+      "brandId": "cymevene",
+      "brandNameRaw": "싸이메빈",
+      "itemName": "싸이메빈정주(간시클로버)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "500밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2002-10-07",
+      "cancelDate": null,
+      "atcCode": "J05AB06",
+      "ingredientCode": "164602BIJ",
+      "ingredientNameEn": "ganciclovir",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "629",
+      "representativeCode": "8806433082802",
+      "packages": [
+        {
+          "kdCode": "8806433082802",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433082819",
+          "quantity": 1,
+          "dosageForm": "바이알",
+          "packageType": "Vial"
+        }
+      ]
+    },
+    {
+      "itemKey": "200209709::(주)한국로슈",
+      "itemSeq": "200209709",
+      "brandId": "cymevene",
+      "brandNameRaw": "싸이메빈",
+      "itemName": "싸이메빈정주(간시클로버)",
+      "company": "(주)한국로슈",
+      "isCkd": false,
+      "strengthLabel": "500밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2002-10-07",
+      "cancelDate": null,
+      "atcCode": "J05AB06",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806450003408",
+      "packages": [
+        {
+          "kdCode": "8806450003408",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806450003415",
+          "quantity": 1,
+          "dosageForm": "바이알",
+          "packageType": "Vial"
+        }
+      ]
+    },
+    {
+      "itemKey": "201904234::(주)종근당",
+      "itemSeq": "201904234",
+      "brandId": "certirobell",
+      "brandNameRaw": "써티로벨",
+      "itemName": "써티로벨정0.25밀리그램(에베로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-06-18",
+      "cancelDate": null,
+      "atcCode": "L04AH02",
+      "ingredientCode": "485601ATB",
+      "ingredientNameEn": "everolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433083304",
+      "packages": [
+        {
+          "kdCode": "8806433083304",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433083311",
+          "quantity": 60,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433083328",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201804621::(주)종근당",
+      "itemSeq": "201804621",
+      "brandId": "certirobell",
+      "brandNameRaw": "써티로벨",
+      "itemName": "써티로벨정0.5밀리그램(에베로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-11-21",
+      "cancelDate": null,
+      "atcCode": "L04AH02",
+      "ingredientCode": "485602ATB",
+      "ingredientNameEn": "everolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433082109",
+      "packages": [
+        {
+          "kdCode": "8806433082109",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433082116",
+          "quantity": 60,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        },
+        {
+          "kdCode": "8806433082123",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201804620::(주)종근당",
+      "itemSeq": "201804620",
+      "brandId": "certirobell",
+      "brandNameRaw": "써티로벨",
+      "itemName": "써티로벨정0.75밀리그램(에베로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.75밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-11-21",
+      "cancelDate": null,
+      "atcCode": "L04AH02",
+      "ingredientCode": "485603ATB",
+      "ingredientNameEn": "everolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433082000",
+      "packages": [
+        {
+          "kdCode": "8806433082000",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433082017",
+          "quantity": 60,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201804562::(주)종근당",
+      "itemSeq": "201804562",
+      "brandId": "certirobell",
+      "brandNameRaw": "써티로벨",
+      "itemName": "써티로벨정1.0밀리그램(에베로리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "1밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-11-16",
+      "cancelDate": null,
+      "atcCode": "L04AH02",
+      "ingredientCode": "485604ATB",
+      "ingredientNameEn": "everolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433082208",
+      "packages": [
+        {
+          "kdCode": "8806433082208",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433082215",
+          "quantity": 60,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "202006646::(주)종근당",
+      "itemSeq": "202006646",
+      "brandId": "alphabella",
+      "brandNameRaw": "알파벨라",
+      "itemName": "알파벨라점안액(브리모니딘타르타르산염)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.3밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-09-25",
+      "cancelDate": null,
+      "atcCode": "S01EA05",
+      "ingredientCode": "118434COS",
+      "ingredientNameEn": "brimonidine tartrate",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433086206",
+      "packages": [
+        {
+          "kdCode": "8806433086206",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433086213",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433086220",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433086237",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "199300209::(주)종근당",
+      "itemSeq": "199300209",
+      "brandId": "ofbella",
+      "brandNameRaw": "오프벨라",
+      "itemName": "오프벨라점안액(오플록사신)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "1993-08-24",
+      "cancelDate": null,
+      "atcCode": "S01AE01",
+      "ingredientCode": "203903COS",
+      "ingredientNameEn": "ofloxacin",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433021009",
+      "packages": [
+        {
+          "kdCode": "8806433021009",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433021016",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201707093::(주)종근당",
+      "itemSeq": "201707093",
+      "brandId": "olobella",
+      "brandNameRaw": "올로벨라",
+      "itemName": "올로벨라0.2에스디점안액(올로파타딘염산염)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.3밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2017-09-15",
+      "cancelDate": null,
+      "atcCode": "S01GX09",
+      "ingredientCode": "391733COS",
+      "ingredientNameEn": "olopatadine hydrochloride (as olopatadine)",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433079000",
+      "packages": [
+        {
+          "kdCode": "8806433079000",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079017",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079031",
+          "quantity": 10,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079024",
+          "quantity": 30,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "202600865::(주)종근당",
+      "itemSeq": "202600865",
+      "brandId": "olobella",
+      "brandNameRaw": "올로벨라",
+      "itemName": "올로벨라0.7에스디점안액(올로파타딘염산염)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.3밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2026-03-27",
+      "cancelDate": null,
+      "atcCode": "S01GX09",
+      "ingredientCode": "391751COS",
+      "ingredientNameEn": "olopatadine hydrochloride (as olopatadine)",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433103200",
+      "packages": [
+        {
+          "kdCode": "8806433103200",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433103217",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433103224",
+          "quantity": 10,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201406185::(주)종근당",
+      "itemSeq": "201406185",
+      "brandId": "olobella",
+      "brandNameRaw": "올로벨라",
+      "itemName": "올로벨라점안액0.1%(올로파타딘염산염)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-12-31",
+      "cancelDate": null,
+      "atcCode": "S01GX09",
+      "ingredientCode": "391736COS",
+      "ingredientNameEn": "olopatadine hydrochloride (as olopatadine)",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433068400",
+      "packages": [
+        {
+          "kdCode": "8806433068400",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433068417",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201800529::(주)종근당::643308001",
+      "itemSeq": "201800529",
+      "brandId": "optabella",
+      "brandNameRaw": "옵타벨라",
+      "itemName": "옵타벨라점안액(플루오로메톨론)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-01-29",
+      "cancelDate": null,
+      "atcCode": "S01BA07",
+      "ingredientCode": "161237COS",
+      "ingredientNameEn": "fluorometholone",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433080006",
+      "packages": [
+        {
+          "kdCode": "8806433080006",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433080013",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201800529::(주)종근당::643307981",
+      "itemSeq": "201800529",
+      "brandId": "optabella",
+      "brandNameRaw": "옵타벨라",
+      "itemName": "옵타벨라점안액(플루오로메톨론)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.4밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-01-29",
+      "cancelDate": null,
+      "atcCode": "S01BA07",
+      "ingredientCode": "161242COS",
+      "ingredientNameEn": "fluorometholone",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433079802",
+      "packages": [
+        {
+          "kdCode": "8806433079802",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079819",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079826",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079833",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201800529::(주)종근당::8806433079901",
+      "itemSeq": "201800529",
+      "brandId": "optabella",
+      "brandNameRaw": "옵타벨라",
+      "itemName": "옵타벨라점안액(플루오로메톨론)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.6밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-01-29",
+      "cancelDate": null,
+      "atcCode": "S01BA07",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806433079901",
+      "packages": [
+        {
+          "kdCode": "8806433079901",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079918",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079925",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201405927::(주)종근당",
+      "itemSeq": "201405927",
+      "brandId": "optabella",
+      "brandNameRaw": "옵타벨라",
+      "itemName": "옵타벨라점안액(플루오로메톨론)&nbsp;",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-12-17",
+      "cancelDate": "2018-01-29",
+      "atcCode": "S01BA07",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806433068509",
+      "packages": [
+        {
+          "kdCode": "8806433068509",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433068516",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
       "itemKey": "201903599::암젠코리아 유한회사",
       "itemSeq": "201903599",
       "brandId": "evenity",
@@ -2443,6 +3155,594 @@
           "quantity": 28,
           "dosageForm": "정",
           "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200209402::비아트리스코리아(주)",
+      "itemSeq": "200209402",
+      "brandId": "xalacom",
+      "brandNameRaw": "잘라콤",
+      "itemName": "잘라콤점안액",
+      "company": "비아트리스코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "2.5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2006-09-11",
+      "cancelDate": null,
+      "atcCode": "S01ED51",
+      "ingredientCode": "540600COS",
+      "ingredientNameEn": "timolol maleate (as timolol)",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8800734000206",
+      "packages": [
+        {
+          "kdCode": "8800734000206",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800734000213",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200209402::한국화이자제약(주)",
+      "itemSeq": "200209402",
+      "brandId": "xalacom",
+      "brandNameRaw": "잘라콤",
+      "itemName": "잘라콤점안액",
+      "company": "한국화이자제약(주)",
+      "isCkd": false,
+      "strengthLabel": "2.5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2006-09-11",
+      "cancelDate": null,
+      "atcCode": "S01ED51",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806489007309",
+      "packages": [
+        {
+          "kdCode": "8806489007309",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806489007316",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200008565::비아트리스코리아(주)::073400141",
+      "itemSeq": "200008565",
+      "brandId": "xalatan",
+      "brandNameRaw": "잘라탄",
+      "itemName": "잘라탄점안액50㎍/㎖(라타노프로스트)",
+      "company": "비아트리스코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "2.5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2006-09-11",
+      "cancelDate": null,
+      "atcCode": "S01EE01",
+      "ingredientCode": "181531COS",
+      "ingredientNameEn": "latanoprost",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8800734001401",
+      "packages": [
+        {
+          "kdCode": "8800734001401",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800734001418",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200008565::한국화이자제약(주)",
+      "itemSeq": "200008565",
+      "brandId": "xalatan",
+      "brandNameRaw": "잘라탄",
+      "itemName": "잘라탄점안액50㎍/㎖(라타노프로스트)",
+      "company": "한국화이자제약(주)",
+      "isCkd": false,
+      "strengthLabel": "2.5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2006-09-11",
+      "cancelDate": null,
+      "atcCode": "S01EE01",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806489007408",
+      "packages": [
+        {
+          "kdCode": "8806489007408",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806489028601",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806489007415",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "병"
+        },
+        {
+          "kdCode": "8806489028618",
+          "quantity": 1,
+          "dosageForm": "개",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806489028625",
+          "quantity": 30,
+          "dosageForm": "개",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "200008565::비아트리스코리아(주)::073400131",
+      "itemSeq": "200008565",
+      "brandId": "xalatan",
+      "brandNameRaw": "잘라탄",
+      "itemName": "잘라탄점안액50㎍/㎖(라타노프로스트)(1회용)",
+      "company": "비아트리스코리아(주)",
+      "isCkd": false,
+      "strengthLabel": "0.2밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2006-09-11",
+      "cancelDate": null,
+      "atcCode": "S01EE01",
+      "ingredientCode": "181502COS",
+      "ingredientNameEn": "latanoprost",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8800734001302",
+      "packages": [
+        {
+          "kdCode": "8800734001302",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8800734001319",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8800734001326",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201606012::(주)종근당",
+      "itemSeq": "201606012",
+      "brandId": "xenobella",
+      "brandNameRaw": "제노벨라",
+      "itemName": "제노벨라0.18에스디점안액(히알루론산나트륨)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.7밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2016-10-12",
+      "cancelDate": null,
+      "atcCode": "S01XA20",
+      "ingredientCode": "530048COS",
+      "ingredientNameEn": "sodium hyaluronate",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433075903",
+      "packages": [
+        {
+          "kdCode": "8806433075903",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078706",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078805",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078904",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079604",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433080709",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433075910",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "기타"
+        },
+        {
+          "kdCode": "8806433078713",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078812",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078911",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079611",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433080716",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433075927",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "기타"
+        },
+        {
+          "kdCode": "8806433078928",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433080723",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201605170::(주)종근당",
+      "itemSeq": "201605170",
+      "brandId": "xenobella",
+      "brandNameRaw": "제노벨라",
+      "itemName": "제노벨라0.1에스디점안액(히알루론산나트륨)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.7밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2016-08-30",
+      "cancelDate": null,
+      "atcCode": "S01XA20",
+      "ingredientCode": "530002COS",
+      "ingredientNameEn": "sodium hyaluronate",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433075705",
+      "packages": [
+        {
+          "kdCode": "8806433075705",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079109",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079208",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079307",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079406",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433080600",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433075712",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "기타"
+        },
+        {
+          "kdCode": "8806433079116",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079215",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079314",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079413",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433080617",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433075729",
+          "quantity": 30,
+          "dosageForm": "점안액",
+          "packageType": "기타"
+        },
+        {
+          "kdCode": "8806433079321",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433080624",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201506239::(주)종근당",
+      "itemSeq": "201506239",
+      "brandId": "xenobella",
+      "brandNameRaw": "제노벨라",
+      "itemName": "제노벨라0.3에스디점안액(히알루론산나트륨)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.6밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2015-08-31",
+      "cancelDate": null,
+      "atcCode": "S01XA20",
+      "ingredientCode": "530064COS",
+      "ingredientNameEn": "sodium hyaluronate",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433071509",
+      "packages": [
+        {
+          "kdCode": "8806433071509",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433071608",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078409",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078508",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433078607",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433079505",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433080501",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433071516",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433071615",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078416",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078515",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078614",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433079512",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433080518",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433071523",
+          "quantity": 5,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433071530",
+          "quantity": 30,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078522",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433078621",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433080525",
+          "quantity": 60,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201406316::(주)종근당",
+      "itemSeq": "201406316",
+      "brandId": "xenobella",
+      "brandNameRaw": "제노벨라",
+      "itemName": "제노벨라점안액0.1%(히알루론산나트륨)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-12-31",
+      "cancelDate": null,
+      "atcCode": "S01XA20",
+      "ingredientCode": "530020COS",
+      "ingredientNameEn": "sodium hyaluronate",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433068707",
+      "packages": [
+        {
+          "kdCode": "8806433068707",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433068714",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "병"
         }
       ]
     },
@@ -3821,6 +5121,46 @@
           "quantity": 30,
           "dosageForm": "정",
           "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201802749::(주)종근당",
+      "itemSeq": "201802749",
+      "brandId": "predbell",
+      "brandNameRaw": "프레드벨",
+      "itemName": "프레드벨1%점안액(프레드니솔론아세테이트)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.4밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-06-29",
+      "cancelDate": null,
+      "atcCode": "S01BA04",
+      "ingredientCode": "217135COS",
+      "ingredientNameEn": "prednisolone acetate",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433081300",
+      "packages": [
+        {
+          "kdCode": "8806433081300",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433081317",
+          "quantity": 1,
+          "dosageForm": "관",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433081324",
+          "quantity": 30,
+          "dosageForm": "관",
+          "packageType": "튜브"
         }
       ]
     },

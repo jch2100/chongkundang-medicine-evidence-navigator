@@ -37,10 +37,20 @@ const CORE_BRANDS = [
   { brandId: 'bredinin', name: '브레디닌' },
   { brandId: 'myreptic-n', name: '마이렙틱엔' },
   { brandId: 'valcyte', name: '발싸이트' },
-  // 안과
+  { brandId: 'certirobell', name: '써티로벨' },
+  { brandId: 'cymevene', name: '싸이메빈' },
+  // 안과 — 잘라탄·잘라콤은 공동판매라 종근당 명의 코드가 없다(비아트리스·화이자 명의만 존재)
   { brandId: 'gravella', name: '그라벨라' },
-  // 'xalatan'(잘라탄)은 보류. 품목기준코드 200008565 하나에 1회용(073400131)과 2.5mL 병(073400141)이
-  // 별개 제품으로 묶여 있어, itemKey(품목기준코드::업체명) 단위로는 보험코드 하나가 사라진다.
+  { brandId: 'xalatan', name: '잘라탄' },
+  { brandId: 'xalacom', name: '잘라콤' },
+  { brandId: 'olobella', name: '올로벨라' },
+  { brandId: 'xenobella', name: '제노벨라' },
+  { brandId: 'alphabella', name: '알파벨라' },
+  { brandId: 'ofbella', name: '오프벨라' },
+  { brandId: 'diquabell', name: '디쿠아벨' },
+  { brandId: 'predbell', name: '프레드벨' },
+  { brandId: 'optabella', name: '옵타벨라' },
+  { brandId: 'lucenbs', name: '루센비에스' },
   // 'tacrolimus'(타크로리무스)는 넣지 않는다. 제품명이 아니라 성분명이라 타사 품목과
   // 타크로벨 품목(품목명에 '(타크로리무스' 포함)을 모두 끌어온다. DART 집계 단위로만 존재.
 ];
@@ -310,6 +320,36 @@ function resolveBrand(itemName) {
   return brandMatchers.find((brand) => itemName.includes(brand.name)) ?? null;
 }
 
+// DATA_DICTIONARY §1 — 보험코드 하나 = 제품 하나. 허가(품목기준코드) 하나에 보험코드가 여럿이면
+// (예: 잘라탄 1회용 073400131 / 2.5mL 병 073400141) 보험코드별로 품목을 나눈다.
+// 보험코드는 대표행에만 있거나 포장행에만 있으므로 대표코드 단위로 먼저 모은다.
+const baseKeyOf = (row) => `${row['품목기준코드']}::${row['업체명']}`;
+const ediByRepresentative = new Map();
+for (const row of stdRows) {
+  const edi = normalizeEdiCode(row['제품코드(개정후)']);
+  if (edi && row['대표코드']) ediByRepresentative.set(row['대표코드'], edi);
+}
+const rowEdi = (row) => normalizeEdiCode(row['제품코드(개정후)']) ?? ediByRepresentative.get(row['대표코드']) ?? null;
+const edisByBaseKey = new Map();
+for (const row of stdRows) {
+  const edi = rowEdi(row);
+  if (!edi) continue;
+  const key = baseKeyOf(row);
+  if (!edisByBaseKey.has(key)) edisByBaseKey.set(key, new Set());
+  edisByBaseKey.get(key).add(edi);
+}
+function itemKeyOf(row) {
+  const base = baseKeyOf(row);
+  if ((edisByBaseKey.get(base)?.size ?? 0) < 2) return base;
+  const edi = rowEdi(row);
+  if (edi) return `${base}::${edi}`;
+  // 같은 허가 안의 보험코드 없는 제품(예: 옵타벨라 1회용 0.6mL)은 대표코드로 구분한다.
+  if (row['대표코드']) return `${base}::${row['대표코드']}`;
+  // 어느 쪽도 없으면 기본 키로 남긴다. 검증기가 기본 키와 분리 키의 혼재를 실패로 잡는다.
+  warnings.push(`보험코드·대표코드 미확인 행 — 제품 분리 불가: ${base} ${row['표준코드']}`);
+  return base;
+}
+
 const items = new Map();
 for (const row of stdRows) {
   const itemName = row['한글상품명'];
@@ -325,7 +365,7 @@ for (const row of stdRows) {
     continue;
   }
 
-  const itemKey = `${itemSeq}::${company}`;
+  const itemKey = itemKeyOf(row);
   if (!items.has(itemKey)) {
     items.set(itemKey, {
       itemKey,

@@ -2,9 +2,9 @@
   "runId": "RUN-2026-09-29-status-001",
   "runDate": "2026-09-29",
   "status": "partial-success",
-  "summary": "제품 41개(공개 34개). 허가 품목 97건, 포장 291건. 급여 등재 75건, 미등재 22건. 상병코드 매핑 16개 브랜드·완전코드 839개(모두 사람 검토 전). 급여 기준 확인 1개 브랜드. 문헌 56건 / 브랜드 18개, 검색식 17건.",
-  "productsTotal": 41,
-  "productsPublished": 34,
+  "summary": "제품 52개(공개 45개). 허가 품목 126건, 포장 408건. 급여 등재 98건, 미등재 28건. 상병코드 매핑 16개 브랜드·완전코드 839개(모두 사람 검토 전). 급여 기준 확인 1개 브랜드. 문헌 56건 / 브랜드 18개, 검색식 17건.",
+  "productsTotal": 52,
+  "productsPublished": 45,
   "changesPublished": 4,
   "literaturePublished": 56,
   "failures": [
@@ -44,17 +44,17 @@
       "notice": "약제급여목록및급여상한금액표_(2026.9.1.)_공개용(비인가자) 1부.xlsx",
       "noticeEffectiveDate": "2026-09-01"
     },
-    "brandsRequested": 17,
+    "brandsRequested": 29,
     "brandsSplit": 5,
     "brandsWithoutProductId": [
       "텔미누보에스"
     ],
-    "itemsTotal": 97,
-    "itemsActive": 87,
-    "itemsCancelled": 10,
-    "packagesTotal": 291,
-    "benefitListed": 75,
-    "benefitNotListed": 22,
+    "itemsTotal": 126,
+    "itemsActive": 114,
+    "itemsCancelled": 12,
+    "packagesTotal": 408,
+    "benefitListed": 98,
+    "benefitNotListed": 28,
     "byBrand": [
       {
         "brandId": "godex",
@@ -100,6 +100,20 @@
         ]
       },
       {
+        "brandId": "diquabell",
+        "brandNameRaw": "디쿠아벨",
+        "splitFrom": null,
+        "items": 1,
+        "active": 1,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 0,
+        "packages": 4,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
         "brandId": "dilatrend",
         "brandNameRaw": "딜라트렌",
         "splitFrom": null,
@@ -123,6 +137,20 @@
         "listed": 3,
         "notListed": 0,
         "packages": 6,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "lucenbs",
+        "brandNameRaw": "루센비에스",
+        "splitFrom": null,
+        "items": 2,
+        "active": 2,
+        "cancelled": 0,
+        "listed": 2,
+        "notListed": 0,
+        "packages": 4,
         "companies": [
           "(주)종근당"
         ]
@@ -227,6 +255,91 @@
         ]
       },
       {
+        "brandId": "cymevene",
+        "brandNameRaw": "싸이메빈",
+        "splitFrom": null,
+        "items": 3,
+        "active": 2,
+        "cancelled": 1,
+        "listed": 1,
+        "notListed": 2,
+        "packages": 5,
+        "companies": [
+          "(주)종근당",
+          "(주)한국로슈"
+        ]
+      },
+      {
+        "brandId": "certirobell",
+        "brandNameRaw": "써티로벨",
+        "splitFrom": null,
+        "items": 4,
+        "active": 4,
+        "cancelled": 0,
+        "listed": 4,
+        "notListed": 0,
+        "packages": 10,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "alphabella",
+        "brandNameRaw": "알파벨라",
+        "splitFrom": null,
+        "items": 1,
+        "active": 1,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 0,
+        "packages": 4,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "ofbella",
+        "brandNameRaw": "오프벨라",
+        "splitFrom": null,
+        "items": 1,
+        "active": 1,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 0,
+        "packages": 2,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "olobella",
+        "brandNameRaw": "올로벨라",
+        "splitFrom": null,
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 9,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "optabella",
+        "brandNameRaw": "옵타벨라",
+        "splitFrom": null,
+        "items": 4,
+        "active": 3,
+        "cancelled": 1,
+        "listed": 2,
+        "notListed": 2,
+        "packages": 11,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
         "brandId": "evenity",
         "brandNameRaw": "이베니티",
         "splitFrom": null,
@@ -253,6 +366,50 @@
         "companies": [
           "(주)종근당",
           "한국엠에스디(주)"
+        ]
+      },
+      {
+        "brandId": "xalacom",
+        "brandNameRaw": "잘라콤",
+        "splitFrom": null,
+        "items": 2,
+        "active": 2,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 1,
+        "packages": 4,
+        "companies": [
+          "비아트리스코리아(주)",
+          "한국화이자제약(주)"
+        ]
+      },
+      {
+        "brandId": "xalatan",
+        "brandNameRaw": "잘라탄",
+        "splitFrom": null,
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 2,
+        "notListed": 1,
+        "packages": 10,
+        "companies": [
+          "비아트리스코리아(주)",
+          "한국화이자제약(주)"
+        ]
+      },
+      {
+        "brandId": "xenobella",
+        "brandNameRaw": "제노벨라",
+        "splitFrom": null,
+        "items": 4,
+        "active": 4,
+        "cancelled": 0,
+        "listed": 4,
+        "notListed": 0,
+        "packages": 51,
+        "companies": [
+          "(주)종근당"
         ]
       },
       {
@@ -354,6 +511,20 @@
         ]
       },
       {
+        "brandId": "predbell",
+        "brandNameRaw": "프레드벨",
+        "splitFrom": null,
+        "items": 1,
+        "active": 1,
+        "cancelled": 0,
+        "listed": 1,
+        "notListed": 0,
+        "packages": 3,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
         "brandId": "prolia",
         "brandNameRaw": "프롤리아",
         "splitFrom": null,
@@ -435,6 +606,14 @@
         "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
       },
       {
+        "itemKey": "201405927::(주)종근당",
+        "itemName": "옵타벨라점안액(플루오로메톨론)&nbsp;",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": "2018-01-29",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
         "itemKey": "201406176::(주)종근당",
         "itemName": "종근당글리아티린정(콜린알포세레이트)",
         "company": "(주)종근당",
@@ -448,6 +627,14 @@
         "company": "(주)종근당",
         "masterEdiCode": null,
         "cancelDate": "2026-06-05",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "201800529::(주)종근당::8806433079901",
+        "itemName": "옵타벨라점안액(플루오로메톨론)(1회용)",
+        "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
         "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
       },
       {
@@ -499,6 +686,22 @@
         "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
       },
       {
+        "itemKey": "200209709::(주)한국로슈",
+        "itemName": "싸이메빈정주(간시클로버)",
+        "company": "(주)한국로슈",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "199906940::(주)한국로슈",
+        "itemName": "싸이메빈정주",
+        "company": "(주)한국로슈",
+        "masterEdiCode": null,
+        "cancelDate": "2002-10-07",
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
         "itemKey": "200810221::(주)한국로슈",
         "itemName": "발싸이트액제용분말(발간시클로비르염산염)",
         "company": "(주)한국로슈",
@@ -526,6 +729,22 @@
         "itemKey": "200710759::한국엠에스디(주)",
         "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
         "company": "한국엠에스디(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200209402::한국화이자제약(주)",
+        "itemName": "잘라콤점안액",
+        "company": "한국화이자제약(주)",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200008565::한국화이자제약(주)",
+        "itemName": "잘라탄점안액50㎍/㎖(라타노프로스트)",
+        "company": "한국화이자제약(주)",
         "masterEdiCode": null,
         "cancelDate": null,
         "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
