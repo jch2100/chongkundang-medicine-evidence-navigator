@@ -61,19 +61,6 @@
       "safetyTerms": ["pancreatitis", "heart failure", "renal impairment"]
     },
     {
-      "key": "phentermine", "nameEn": "Phentermine", "nameKo": "펜터민",
-      "mesh": "Phentermine", "searchable": true,
-      "diseaseTerms": ["obesity", "weight management"],
-      "safetyTerms": ["cardiovascular safety", "dependence"],
-      "note": "향정신성의약품. 안전성 문헌을 반드시 함께 검토한다."
-    },
-    {
-      "key": "topiramate", "nameEn": "Topiramate", "nameKo": "토피라메이트",
-      "mesh": "Topiramate", "searchable": true,
-      "diseaseTerms": ["obesity", "weight management"],
-      "safetyTerms": ["teratogenicity", "cognitive adverse effects", "metabolic acidosis"]
-    },
-    {
       "key": "choline-alfoscerate", "nameEn": "Choline Alfoscerate", "nameKo": "콜린알포세레이트",
       "mesh": "alpha-glycerylphosphorylcholine", "searchable": true,
       "diseaseTerms": ["dementia", "cognitive impairment", "cerebrovascular disease"],
@@ -109,13 +96,6 @@
       "mesh": "Mycophenolic Acid", "searchable": true,
       "diseaseTerms": ["kidney transplantation", "heart transplantation", "liver transplantation"],
       "safetyTerms": ["teratogenicity", "leukopenia", "gastrointestinal adverse effects"]
-    },
-    {
-      "key": "fexuprazan", "nameEn": "Fexuprazan", "nameKo": "펙수프라잔",
-      "mesh": null, "searchable": true,
-      "diseaseTerms": ["gastroesophageal reflux disease", "erosive esophagitis", "peptic ulcer"],
-      "safetyTerms": [],
-      "note": "MeSH 미등재 신약이다. 자유어 검색으로만 수집되며 문헌 수가 적을 수 있다."
     },
     {
       "key": "biphenyl-dimethyl-dicarboxylate", "nameEn": "Biphenyl Dimethyl Dicarboxylate", "nameKo": "비페닐디메틸디카르복실레이트",

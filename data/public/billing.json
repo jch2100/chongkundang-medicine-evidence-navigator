@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.2.0",
-  "generatedOn": "2026-09-22",
+  "generatedOn": "2026-09-29",
   "source": {
     "noticeName": "약제 급여 목록 및 급여 상한금액표",
     "effectiveDate": "2026-09-01",
@@ -570,94 +570,6 @@
       "rxClass": null
     },
     {
-      "itemKey": "201500364::한국엠에스디(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201500364::한국오가논 주식회사",
-      "ediCode": "073100380",
-      "benefitStatus": "listed",
-      "maxPrice": 1168,
-      "priceUnit": "1정",
-      "noticeProductName": "아토젯정10/20밀리그램_(1정)",
-      "mainIngredientCode": "633900ATB",
-      "classNo": "218",
-      "rxClass": "전문"
-    },
-    {
-      "itemKey": "201500365::한국엠에스디(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201500365::한국오가논 주식회사",
-      "ediCode": "073100390",
-      "benefitStatus": "listed",
-      "maxPrice": 1255,
-      "priceUnit": "1정",
-      "noticeProductName": "아토젯정10/40밀리그램_(1정)",
-      "mainIngredientCode": "634800ATB",
-      "classNo": "218",
-      "rxClass": "전문"
-    },
-    {
-      "itemKey": "201500366::한국엠에스디(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201500366::한국오가논 주식회사",
-      "ediCode": "073100400",
-      "benefitStatus": "listed",
-      "maxPrice": 1340,
-      "priceUnit": "1정",
-      "noticeProductName": "아토젯정10/80밀리그램_(1정)",
-      "mainIngredientCode": "634600ATB",
-      "classNo": "218",
-      "rxClass": "전문"
-    },
-    {
-      "itemKey": "201500367::한국엠에스디(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201500367::한국오가논 주식회사",
-      "ediCode": "073100410",
-      "benefitStatus": "listed",
-      "maxPrice": 918,
-      "priceUnit": "1정",
-      "noticeProductName": "아토젯정10/10밀리그램_(1정)",
-      "mainIngredientCode": "633800ATB",
-      "classNo": "218",
-      "rxClass": "전문"
-    },
-    {
       "itemKey": "201506873::(주)종근당",
       "ediCode": "643307240",
       "benefitStatus": "listed",
@@ -801,50 +713,6 @@
       "rxClass": "전문"
     },
     {
-      "itemKey": "201905405::알보젠코리아(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201905406::알보젠코리아(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201905407::알보젠코리아(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
-      "itemKey": "201905408::알보젠코리아(주)",
-      "ediCode": null,
-      "benefitStatus": "not-listed",
-      "maxPrice": null,
-      "priceUnit": null,
-      "noticeProductName": null,
-      "mainIngredientCode": null,
-      "classNo": null,
-      "rxClass": null
-    },
-    {
       "itemKey": "201905694::(주)종근당",
       "ediCode": null,
       "benefitStatus": "not-listed",
@@ -966,17 +834,6 @@
       "rxClass": "전문"
     },
     {
-      "itemKey": "202108192::(주)대웅제약",
-      "ediCode": "641607630",
-      "benefitStatus": "listed",
-      "maxPrice": 1860,
-      "priceUnit": "1정",
-      "noticeProductName": "펙수클루정40밀리그램(펙수프라잔염산염)_(40mg/1정)",
-      "mainIngredientCode": "704701ATB",
-      "classNo": "232",
-      "rxClass": "전문"
-    },
-    {
       "itemKey": "202202661::(주)종근당",
       "ediCode": "643309010",
       "benefitStatus": "listed",
@@ -996,17 +853,6 @@
       "noticeProductName": "딜라트렌에스알정32밀리그램(카르베딜롤)_(32mg/1정)",
       "mainIngredientCode": "125006ATR",
       "classNo": "214",
-      "rxClass": "전문"
-    },
-    {
-      "itemKey": "202203319::(주)대웅제약",
-      "ediCode": "641607740",
-      "benefitStatus": "listed",
-      "maxPrice": 277,
-      "priceUnit": "1정",
-      "noticeProductName": "펙수클루정10밀리그램(펙수프라잔염산염)_(10mg/1정)",
-      "mainIngredientCode": "704702ATB",
-      "classNo": "232",
       "rxClass": "전문"
     },
     {
@@ -1040,17 +886,6 @@
       "noticeProductName": "리피로우젯정10/5밀리그램(에제티미브,아토르바스타틴)_(1정)",
       "mainIngredientCode": "721300ATB",
       "classNo": "218",
-      "rxClass": "전문"
-    },
-    {
-      "itemKey": "202501159::(주)대웅제약",
-      "ediCode": "641608340",
-      "benefitStatus": "listed",
-      "maxPrice": 586,
-      "priceUnit": "1정",
-      "noticeProductName": "펙수클루정20밀리그램(펙수프라잔염산염)_(20mg/1정)",
-      "mainIngredientCode": "704703ATB",
-      "classNo": "232",
       "rxClass": "전문"
     },
     {

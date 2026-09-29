@@ -1,6 +1,6 @@
 // 심평원 약가마스터(허가·유통) + 약제급여목록표(급여)를 조인해 코드 백본을 만든다.
 // 사용법: node scripts/build-items.mjs [브랜드명 ...] [--write]
-//   인자 없으면 CORE_BRANDS(핵심 15개)를 처리한다.
+//   인자 없으면 CORE_BRANDS 전체를 처리한다.
 //
 // 입력: data/source/건강보험심사평가원_약가마스터_의약품표준코드_*.csv  (CP949)
 //       data/source/건강보험심사평가원_약가마스터_의약품주성분_*.csv    (CP949)
@@ -21,16 +21,13 @@ import zlib from 'node:zlib';
 // products.json / additional-products.json 의 id 와 1:1 로 맞춘다.
 const CORE_BRANDS = [
   { brandId: 'prolia', name: '프롤리아' },
-  { brandId: 'atozet', name: '아토젯' },
   { brandId: 'gliatilin', name: '글리아티린' },
-  { brandId: 'pexuclue', name: '펙수클루' },
   { brandId: 'januvia', name: '자누비아' },
   { brandId: 'godex', name: '고덱스' },
   { brandId: 'dilatrend', name: '딜라트렌' },
   { brandId: 'telminuvo', name: '텔미누보' },
   { brandId: 'tacrobell', name: '타크로벨' },
   { brandId: 'lipilou', name: '리피로우' },
-  { brandId: 'qsymia', name: '큐시미아' },
   { brandId: 'cypol', name: '사이폴' },
   { brandId: 'evenity', name: '이베니티' },
   { brandId: 'telmitren', name: '텔미트렌' },

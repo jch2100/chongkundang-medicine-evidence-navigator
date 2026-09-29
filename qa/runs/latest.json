@@ -1,17 +1,13 @@
 {
-  "runId": "RUN-2026-09-23-status-001",
-  "runDate": "2026-09-23",
+  "runId": "RUN-2026-09-29-status-001",
+  "runDate": "2026-09-29",
   "status": "partial-success",
-  "summary": "제품 44개(공개 36개). 허가 품목 99건, 포장 311건. 급여 등재 71건, 미등재 28건. 상병코드 매핑 19개 브랜드·완전코드 889개(모두 사람 검토 전). 급여 기준 확인 2개 브랜드. 문헌 69건 / 브랜드 21개, 검색식 20건.",
-  "productsTotal": 44,
-  "productsPublished": 36,
+  "summary": "제품 41개(공개 34개). 허가 품목 84건, 포장 265건. 급여 등재 64건, 미등재 20건. 상병코드 매핑 16개 브랜드·완전코드 839개(모두 사람 검토 전). 급여 기준 확인 1개 브랜드. 문헌 56건 / 브랜드 18개, 검색식 17건.",
+  "productsTotal": 41,
+  "productsPublished": 34,
   "changesPublished": 4,
-  "literaturePublished": 69,
+  "literaturePublished": 56,
   "failures": [
-    {
-      "product": "펙수클루",
-      "reason": "종근당 현재 제품 페이지 1:1 매핑 미확인"
-    },
     {
       "product": "고덱스",
       "reason": "종근당 현재 제품 페이지 1:1 매핑 미확인"
@@ -41,24 +37,24 @@
     "고시 시행일 90일 stale 경고"
   ],
   "codeBackbone": {
-    "generatedOn": "2026-09-22",
+    "generatedOn": "2026-09-29",
     "sources": {
       "standardCode": "건강보험심사평가원_약가마스터_의약품표준코드_20260831.csv",
       "ingredient": "건강보험심사평가원_약가마스터_의약품주성분_20251031.csv",
       "notice": "약제급여목록및급여상한금액표_(2026.9.1.)_공개용(비인가자) 1부.xlsx",
       "noticeEffectiveDate": "2026-09-01"
     },
-    "brandsRequested": 15,
+    "brandsRequested": 12,
     "brandsSplit": 5,
     "brandsWithoutProductId": [
       "텔미누보에스"
     ],
-    "itemsTotal": 99,
-    "itemsActive": 89,
+    "itemsTotal": 84,
+    "itemsActive": 74,
     "itemsCancelled": 10,
-    "packagesTotal": 311,
-    "benefitListed": 71,
-    "benefitNotListed": 28,
+    "packagesTotal": 265,
+    "benefitListed": 64,
+    "benefitNotListed": 20,
     "byBrand": [
       {
         "brandId": "godex",
@@ -160,21 +156,6 @@
         ]
       },
       {
-        "brandId": "atozet",
-        "brandNameRaw": "아토젯",
-        "splitFrom": null,
-        "items": 8,
-        "active": 8,
-        "cancelled": 0,
-        "listed": 4,
-        "notListed": 4,
-        "packages": 16,
-        "companies": [
-          "한국엠에스디(주)",
-          "한국오가논 주식회사"
-        ]
-      },
-      {
         "brandId": "evenity",
         "brandNameRaw": "이베니티",
         "splitFrom": null,
@@ -201,20 +182,6 @@
         "companies": [
           "(주)종근당",
           "한국엠에스디(주)"
-        ]
-      },
-      {
-        "brandId": "qsymia",
-        "brandNameRaw": "큐시미아",
-        "splitFrom": null,
-        "items": 4,
-        "active": 4,
-        "cancelled": 0,
-        "listed": 0,
-        "notListed": 4,
-        "packages": 12,
-        "companies": [
-          "알보젠코리아(주)"
         ]
       },
       {
@@ -313,20 +280,6 @@
         "packages": 12,
         "companies": [
           "(주)종근당"
-        ]
-      },
-      {
-        "brandId": "pexuclue",
-        "brandNameRaw": "펙수클루",
-        "splitFrom": null,
-        "items": 3,
-        "active": 3,
-        "cancelled": 0,
-        "listed": 3,
-        "notListed": 0,
-        "packages": 18,
-        "companies": [
-          "(주)대웅제약"
         ]
       },
       {
@@ -467,38 +420,6 @@
         "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
       },
       {
-        "itemKey": "201905407::알보젠코리아(주)",
-        "itemName": "큐시미아캡슐15mg/92mg",
-        "company": "알보젠코리아(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201905408::알보젠코리아(주)",
-        "itemName": "큐시미아캡슐11.25mg/69mg",
-        "company": "알보젠코리아(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201905406::알보젠코리아(주)",
-        "itemName": "큐시미아캡슐3.75mg/23mg",
-        "company": "알보젠코리아(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201905405::알보젠코리아(주)",
-        "itemName": "큐시미아캡슐7.5mg/46mg",
-        "company": "알보젠코리아(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
         "itemKey": "200710760::한국엠에스디(주)",
         "itemName": "자누비아정25밀리그램(시타글립틴인산염수화물)",
         "company": "한국엠에스디(주)",
@@ -517,38 +438,6 @@
       {
         "itemKey": "200710759::한국엠에스디(주)",
         "itemName": "자누비아정100밀리그램(시타글립틴인산염수화물)",
-        "company": "한국엠에스디(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201500364::한국엠에스디(주)",
-        "itemName": "아토젯정10/20밀리그램",
-        "company": "한국엠에스디(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201500365::한국엠에스디(주)",
-        "itemName": "아토젯정10/40밀리그램",
-        "company": "한국엠에스디(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201500366::한국엠에스디(주)",
-        "itemName": "아토젯정10/80밀리그램",
-        "company": "한국엠에스디(주)",
-        "masterEdiCode": null,
-        "cancelDate": null,
-        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
-      },
-      {
-        "itemKey": "201500367::한국엠에스디(주)",
-        "itemName": "아토젯정10/10밀리그램",
         "company": "한국엠에스디(주)",
         "masterEdiCode": null,
         "cancelDate": null,
@@ -634,24 +523,24 @@
   },
   "literatureByReview": {
     "unspecified": 7,
-    "ai-verified": 62
+    "ai-verified": 49
   },
-  "literatureBrands": 21,
+  "literatureBrands": 18,
   "indications": {
-    "brands": 19,
-    "blocks": 51,
-    "codes": 889,
+    "brands": 16,
+    "blocks": 45,
+    "codes": 839,
     "reviewed": 0,
-    "withReimbursement": 2
+    "withReimbursement": 1
   },
   "searches": {
-    "count": 20,
-    "totalHits": 1063
+    "count": 17,
+    "totalHits": 967
   },
   "openItems": [
     "상병코드 매핑 전체가 reviewStatus: candidate — 사람 검토 전",
-    "급여 기준은 글리아티린·큐시미아 2건만 확인. 나머지는 미확인이라 화면에 표시하지 않음",
-    "문헌 요약 62건은 AI 작성·AI 검증. 임상 해석은 전문가 검토 전",
+    "급여 기준은 글리아티린 1건만 확인. 나머지는 미확인이라 화면에 표시하지 않음",
+    "문헌 요약 49건은 AI 작성·AI 검증. 임상 해석은 전문가 검토 전",
     "사이클로스포린·미코페놀레이트는 허가 적응증(장기이식) 문헌 미확보 — 검색식 재작성 필요",
     "텔미누보에스 3품목은 전량 허가취소로 브랜드를 만들지 않음(경고 3건은 의도된 상태)"
   ]

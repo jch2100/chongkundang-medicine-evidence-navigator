@@ -97,25 +97,26 @@
       ]
     },
     {
-      "itemKey": "201905405::알보젠코리아(주)",
-      "itemSeq": "201905405",
-      "brandId": "qsymia",
-      "itemName": "큐시미아캡슐7.5mg/46mg",
-      "company": "알보젠코리아(주)",
+      "itemKey": "201404452::(주)글락소스미스클라인",
+      "itemSeq": "201404452",
+      "brandId": "prolia",
+      "brandNameRaw": "프롤리아",
+      "itemName": "프롤리아프리필드시린지(데노수맙)",
+      "company": "(주)글락소스미스클라인",
       "isCkd": false,
-      "strengthLabel": "46밀리그램",
+      "strengthLabel": "60밀리그램",
       "rxClass": "전문의약품",
-      "approvalDate": "2019-07-19",
+      "approvalDate": "2014-09-29",
       "cancelDate": null,
-      "atcCode": "A08AA51",
-      "ingredientCode": null,
-      "ingredientNameEn": null,
-      "dosageForm": "캡슐제",
-      "route": "내복",
-      "classNo": null,
-      "representativeCode": "8806526066108",
+      "atcCode": "M05BX04",
+      "ingredientCode": "629001BIJ",
+      "ingredientNameEn": "denosumab",
+      "dosageForm": "주사제",
+      "route": "주사",
+      "classNo": "399",
+      "representativeCode": "8806500029907",
       "packages": [
-        { "kdCode": "8806526066108", "quantity": 0, "dosageForm": null, "packageType": null }
+        { "kdCode": "8806500029907", "quantity": 0, "dosageForm": null, "packageType": null }
       ]
     }
   ]

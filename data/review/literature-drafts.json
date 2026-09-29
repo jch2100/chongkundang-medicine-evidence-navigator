@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "status": "draft",
-  "generatedOn": "2026-09-23",
+  "generatedOn": "2026-09-29",
   "policy": "AI가 초록을 읽고 작성한 초안이다. 사람 검토를 거쳐야 data/public/literature.json 으로 승격된다. 승격 전에는 공개 화면에 노출하지 않는다.",
   "reviewChecklist": [
     "연구대상·용량·기간·비교군을 초록에서 확인했는가",
@@ -12,9 +12,8 @@
     "PMID·링크가 정상인가"
   ],
   "counts": {
-    "drafts": 38,
+    "drafts": 31,
     "byBrand": {
-      "atozet": 6,
       "cypol": 2,
       "dilatrend": 3,
       "evenity": 3,
@@ -24,9 +23,7 @@
       "lipilou": 2,
       "lipilouzet": 6,
       "myrept": 1,
-      "pexuclue": 3,
       "prolia": 3,
-      "qsymia": 4,
       "tacrobell": 2,
       "telminuvo": 3,
       "telminuvo-plus": 7,
@@ -51,10 +48,6 @@
     {
       "batch": "batch-03",
       "note": "PMID 41717679은 텔미사르탄·암로디핀·클로르탈리돈 3제 복합제를 다룬 3상 시험으로, 텔미누보플러스의 구성 성분과 일치한다. 이번 수집에서 제품 조성에 가장 근접한 근거다."
-    },
-    {
-      "batch": "batch-03",
-      "note": "비만 영역 문헌 4건은 펜터민·토피라메이트 복합제를 포함한 비만 치료제 전반을 비교한 자료다. 성분 단위로 중복 등록하지 않고 한 건씩만 배정했다."
     },
     {
       "batch": "batch-03",
@@ -595,7 +588,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40529509/",
       "ingredientKey": "atorvastatin",
       "appliesToBrands": [
-        "atozet",
         "lipilou",
         "lipilouzet",
         "telmitren-s"
@@ -624,7 +616,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36018037/",
       "ingredientKey": "atorvastatin",
       "appliesToBrands": [
-        "atozet",
         "lipilou",
         "lipilouzet"
       ],
@@ -652,7 +643,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33514449/",
       "ingredientKey": "atorvastatin",
       "appliesToBrands": [
-        "atozet",
         "lipilouzet"
       ],
       "relationType": "same-ingredient",
@@ -680,7 +670,6 @@
       "ingredientKey": "rosuvastatin",
       "appliesToBrands": [
         "telmitren-s",
-        "atozet",
         "lipilouzet"
       ],
       "relationType": "same-ingredient",
@@ -733,7 +722,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36031461/",
       "ingredientKey": "ezetimibe",
       "appliesToBrands": [
-        "atozet",
         "lipilouzet"
       ],
       "relationType": "disease-context",
@@ -760,7 +748,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35262430/",
       "ingredientKey": "ezetimibe",
       "appliesToBrands": [
-        "atozet",
         "lipilouzet"
       ],
       "relationType": "same-ingredient",
@@ -826,84 +813,6 @@
       "limitations": "FSGS라는 특정 원인 질환에 한정된 리뷰로 신증후군 전체에 적용할 수 없다. 포함 연구의 수와 질이 제한적이라고 저자들이 기술했다.",
       "relationToLabel": "국내 허가 적응증 중 신증후군은 일부 제형에만 해당한다. 품목별 허가 범위를 확인해야 한다.",
       "searchId": "cyclosporine-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "42180768",
-      "title": "Comparative efficacy and safety of fexuprazan versus esomeprazole in gastroesophageal reflux disease: a systematic review and meta-analysis.",
-      "journal": "Frontiers in Medicine",
-      "publicationDate": "2026",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42180768/",
-      "ingredientKey": "fexuprazan",
-      "appliesToBrands": [
-        "pexuclue"
-      ],
-      "relationType": "same-ingredient",
-      "evidenceLevel": "meta-analysis",
-      "studyDesign": "체계적 문헌고찰 및 메타분석",
-      "population": "위식도역류질환 환자",
-      "intervention": "펙수프라잔",
-      "comparator": "에소메프라졸",
-      "keyOutcomes": "펙수프라잔과 에소메프라졸의 유효성·안전성을 비교했다.",
-      "hcpSummary": "펙수프라잔을 기존 PPI인 에소메프라졸과 직접 비교한 체계적 문헌고찰·메타분석이다. 펙수클루의 주성분을 직접 다룬 근거로, 이 성분에서 가장 관련도가 높은 자료에 해당한다.",
-      "limitations": "포함된 임상시험 수가 제한적일 수 있고, 관찰기간이 비교적 짧다. 비교 대상이 에소메프라졸 한 성분이므로 다른 PPI나 P-CAB과의 비교로 확대할 수 없다.",
-      "relationToLabel": "국내 허가 적응증은 미란성 위식도역류질환의 치료 등이다. 비교 연구 결과가 허가된 효능·효과나 제품의 우월성을 의미하지 않는다.",
-      "searchId": "fexuprazan-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "41821493",
-      "title": "Potassium-competitive Acid Blockers Versus Proton Pump Inhibitors for Erosive Esophagitis: A Systematic Review and Network Meta-analysis.",
-      "journal": "Journal of Neurogastroenterology and Motility",
-      "publicationDate": "2026-04-30",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41821493/",
-      "ingredientKey": "fexuprazan",
-      "appliesToBrands": [
-        "pexuclue"
-      ],
-      "relationType": "same-ingredient",
-      "evidenceLevel": "meta-analysis",
-      "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석",
-      "population": "경증에서 중증의 미란성 식도염 환자",
-      "intervention": "칼륨경쟁적 위산분비억제제(P-CAB) 계열",
-      "comparator": "프로톤펌프억제제(PPI)",
-      "keyOutcomes": "치료 단계별로 층화해 P-CAB과 PPI의 유효성·안전성을 통합 위험비로 비교했다.",
-      "hcpSummary": "미란성 식도염에서 P-CAB 계열과 PPI를 비교한 네트워크 메타분석이다. 펙수프라잔이 속한 계열의 위치를 확인할 때 참고할 수 있다.",
-      "limitations": "계열 수준 분석으로 개별 성분 간 차이를 구분하지 않으며, 간접 비교가 포함되어 우열 판단의 근거로 쓸 수 없다.",
-      "relationToLabel": "계열 연구이며 개별 품목의 허가된 효능·효과를 변경하지 않는다.",
-      "searchId": "fexuprazan-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "42504651",
-      "title": "Potassium-competitive Acid Blockers in Gastroesophageal Reflux Disease and Functional Dyspepsia: A Korean Expert Review With Original Meta-analyses.",
-      "journal": "Journal of Neurogastroenterology and Motility",
-      "publicationDate": "2026-07-30",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42504651/",
-      "ingredientKey": "fexuprazan",
-      "appliesToBrands": [
-        "pexuclue"
-      ],
-      "relationType": "same-ingredient",
-      "evidenceLevel": "review",
-      "studyDesign": "메타분석을 포함한 국내 전문가 리뷰",
-      "population": "위식도역류질환 및 기능성 소화불량 환자",
-      "intervention": "보노프라잔·테고프라잔·펙수프라잔·케버프라잔·자스타프라잔 등 P-CAB",
-      "comparator": "프로톤펌프억제제",
-      "keyOutcomes": "P-CAB의 유효성·안전성과 임상 적용을 무작위배정 임상시험과 메타분석 근거로 정리했다. 빠른 작용 발현과 지속적인 위산 억제를 특징으로 기술했다.",
-      "hcpSummary": "국내 전문가가 P-CAB 계열 전반을 정리한 리뷰로, 펙수프라잔을 포함한 국내 유통 성분들이 함께 다뤄져 국내 진료 맥락을 파악하기에 적합하다.",
-      "limitations": "서술형 리뷰에 자체 메타분석을 결합한 형태로, 문헌 선정 기준이 체계적 문헌고찰만큼 엄격하지 않을 수 있다. 기능성 소화불량은 품목별 허가 범위와 다를 수 있다.",
-      "relationToLabel": "국내 허가 적응증과 다른 질환이 함께 다뤄지므로 품목별 허가 범위를 별도로 확인해야 한다.",
-      "searchId": "fexuprazan-2026-09-23",
       "status": "draft",
       "draftedBy": "claude-opus-5",
       "reviewer": null,
@@ -1037,110 +946,6 @@
       "limitations": "간접 비교가 포함되어 우열 판단의 근거로 쓸 수 없다. 포함 연구의 용량과 관찰기간이 이질적이다.",
       "relationToLabel": "성분 비교 연구이며 각 품목의 허가된 효능·효과를 변경하지 않는다.",
       "searchId": "hydrochlorothiazide-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "36273831",
-      "title": "AGA Clinical Practice Guideline on Pharmacological Interventions for Adults With Obesity.",
-      "journal": "Gastroenterology",
-      "publicationDate": "2022-11",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/36273831/",
-      "ingredientKey": "phentermine",
-      "appliesToBrands": [
-        "qsymia"
-      ],
-      "relationType": "disease-context",
-      "evidenceLevel": "guideline",
-      "studyDesign": "GRADE 기반 진료지침(미국소화기학회)",
-      "population": "과체중 및 비만 성인",
-      "intervention": "비만 약물치료",
-      "comparator": "약물 간 비교 및 비약물요법",
-      "keyOutcomes": "비만 약물치료의 선택에 대한 권고를 제시했다. 다학제 패널이 GRADE 방법론으로 임상질문과 환자 중심 결과를 정리했다.",
-      "hcpSummary": "비만 약물치료의 위치를 정리한 지침으로, 펜터민·토피라메이트 복합제를 포함한 약제 선택 맥락을 확인할 때 참고할 수 있다.",
-      "limitations": "미국 학회 지침으로 국내 허가 범위·급여 조건과 다르다. 국내에서 큐시미아는 약제급여목록에 등재되어 있지 않다.",
-      "relationToLabel": "국내 허가 적응증은 초기 BMI 기준을 충족하는 성인의 만성 체중 관리 보조요법이다. 해외 지침 권고가 국내 허가사항이나 급여 범위를 대체하지 않는다.",
-      "searchId": "phentermine-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "42419792",
-      "title": "Comparative effects of drugs for adults with overweight or obesity: systematic review and network meta-analysis.",
-      "journal": "BMJ (Clinical research ed.)",
-      "publicationDate": "2026-07-08",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42419792/",
-      "ingredientKey": "phentermine",
-      "appliesToBrands": [
-        "qsymia"
-      ],
-      "relationType": "same-ingredient",
-      "evidenceLevel": "meta-analysis",
-      "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석(24개 결과지표, GRADE 적용)",
-      "population": "과체중 또는 비만 성인",
-      "intervention": "비만 치료 약물",
-      "comparator": "상호 비교 및 위약",
-      "keyOutcomes": "24개 결과지표에 대해 약물별 이득과 위해를 빈도주의 변량효과 모형과 베이지안 용량반응 모형으로 비교하고 GRADE로 근거 확실성을 평가했다.",
-      "hcpSummary": "비만 약물치료의 최신 비교 근거를 정리한 대규모 네트워크 메타분석이다. 펜터민·토피라메이트 복합제를 포함한 약제들의 체중 감소 정도와 이상반응을 같은 틀에서 확인할 수 있다.",
-      "limitations": "간접 비교가 포함되어 약제 간 차이를 우열로 단정할 수 없다. 포함 연구의 관찰기간이 대부분 단기이며 장기 결과는 제한적이다.",
-      "relationToLabel": "국내 허가된 효능·효과와 용법을 변경하지 않는다. 다른 식욕억제제와의 병용은 국내 허가사항에서 금지되어 있으므로 비교 연구 결과를 병용 근거로 읽지 않아야 한다.",
-      "searchId": "phentermine-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "41039116",
-      "title": "A systematic review and meta-analysis of the efficacy and safety of pharmacological treatments for obesity in adults.",
-      "journal": "Nature Medicine",
-      "publicationDate": "2025-10",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41039116/",
-      "ingredientKey": "topiramate",
-      "appliesToBrands": [
-        "qsymia"
-      ],
-      "relationType": "same-ingredient",
-      "evidenceLevel": "meta-analysis",
-      "studyDesign": "체계적 문헌고찰 및 네트워크 메타분석",
-      "population": "비만 치료 대상 성인",
-      "intervention": "비만 치료 약물",
-      "comparator": "위약 또는 활성 대조",
-      "keyOutcomes": "일차 지표는 연구 종료 시점의 총 체중감소율이었고, 1년·2년·3년 이상 시점의 체중감소율과 지질·혈압 등 비만 관련 합병증 지표를 이차 지표로 평가했다.",
-      "hcpSummary": "비만 치료제의 체중 감소 효과를 장기 시점까지 나눠 정리한 메타분석이다. 토피라메이트를 포함한 복합제의 위치를 장기 관점에서 확인할 때 참고할 수 있다.",
-      "limitations": "간접 비교 기반이며, 3년 이상 장기 자료가 있는 약제와 없는 약제가 섞여 있어 시점별 비교에 주의가 필요하다.",
-      "relationToLabel": "국내 허가된 효능·효과를 변경하지 않는다. 토피라메이트는 기형 유발 위험이 알려진 성분이므로 가임기 여성 관련 주의사항을 허가 원문에서 반드시 확인해야 한다.",
-      "searchId": "topiramate-2026-09-23",
-      "status": "draft",
-      "draftedBy": "claude-opus-5",
-      "reviewer": null,
-      "reviewedOn": null
-    },
-    {
-      "pmid": "38582569",
-      "title": "Pharmacotherapy for adults with overweight and obesity: a systematic review and network meta-analysis of randomised controlled trials.",
-      "journal": "Lancet (London, England)",
-      "publicationDate": "2024-04-06",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38582569/",
-      "ingredientKey": "topiramate",
-      "appliesToBrands": [
-        "qsymia"
-      ],
-      "relationType": "same-ingredient",
-      "evidenceLevel": "meta-analysis",
-      "studyDesign": "체계적 문헌고찰 및 빈도주의 변량효과 네트워크 메타분석",
-      "population": "과체중 및 비만 성인",
-      "intervention": "체중 감소 약물",
-      "comparator": "상호 비교 및 위약",
-      "keyOutcomes": "체중 감소 약물의 이득과 위해를 정리했다.",
-      "hcpSummary": "생활습관 교정으로 체중 조절에 실패한 성인에서 약물요법의 근거를 정리한 네트워크 메타분석이다. 이상반응을 함께 다뤄 안전성 관점에서도 참고할 수 있다.",
-      "limitations": "2021년 3월까지의 문헌을 대상으로 해 이후 등장한 약제나 최신 자료가 반영되지 않았다. 간접 비교가 포함되어 우열 판단의 근거로 쓸 수 없다.",
-      "relationToLabel": "국내 허가된 효능·효과와 용법을 변경하지 않는다.",
-      "searchId": "topiramate-2026-09-23",
       "status": "draft",
       "draftedBy": "claude-opus-5",
       "reviewer": null,

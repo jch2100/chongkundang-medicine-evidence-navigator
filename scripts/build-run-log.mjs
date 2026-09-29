@@ -30,6 +30,8 @@ const byReview = literature.reduce((acc, i) => (acc[i.reviewType || 'unspecified
 const litBrands = new Set(literature.map((i) => i.productId));
 const kcdCodes = indications.reduce((n, e) => n + e.blocks.reduce((m, b) => m + b.codes.length, 0), 0);
 const withReimbursement = count(indications, (e) => e.reimbursementScope);
+const productName = new Map(products.map((p) => [p.id, p.name]));
+const reimbursedNames = indications.filter((e) => e.reimbursementScope).map((e) => productName.get(e.brandId) || e.brandId);
 
 const today = new Date().toISOString().slice(0, 10);
 const run = {
@@ -55,8 +57,8 @@ const run = {
   searches: { count: searches.length, totalHits: searches.reduce((n, s) => n + (s.totalHits || 0), 0) },
   openItems: [
     '상병코드 매핑 전체가 reviewStatus: candidate — 사람 검토 전',
-    '급여 기준은 글리아티린·큐시미아 2건만 확인. 나머지는 미확인이라 화면에 표시하지 않음',
-    '문헌 요약 62건은 AI 작성·AI 검증. 임상 해석은 전문가 검토 전',
+    `급여 기준은 ${reimbursedNames.join('·') || '없음'} ${reimbursedNames.length}건만 확인. 나머지는 미확인이라 화면에 표시하지 않음`,
+    `문헌 요약 ${byReview['ai-verified'] || 0}건은 AI 작성·AI 검증. 임상 해석은 전문가 검토 전`,
     '사이클로스포린·미코페놀레이트는 허가 적응증(장기이식) 문헌 미확보 — 검색식 재작성 필요',
     '텔미누보에스 3품목은 전량 허가취소로 브랜드를 만들지 않음(경고 3건은 의도된 상태)',
   ],

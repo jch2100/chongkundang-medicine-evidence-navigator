@@ -151,7 +151,6 @@
       "ingredientNameKo": "아토르바스타틴",
       "ingredientNote": null,
       "appliesToBrands": [
-        "atozet",
         "lipilou",
         "lipilouzet"
       ],
@@ -207,7 +206,6 @@
       "ingredientNameKo": "에제티미브",
       "ingredientNote": null,
       "appliesToBrands": [
-        "atozet",
         "lipilouzet"
       ],
       "query": "(\"Ezetimibe\"[MeSH Terms] OR \"Ezetimibe\"[Title/Abstract]) AND (\"hypercholesterolemia\"[Title/Abstract] OR \"dyslipidemia\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
@@ -252,60 +250,6 @@
       "runOn": "2026-09-23",
       "totalHits": 51,
       "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Sitagliptin%20Phosphate%22%5BMeSH%20Terms%5D%20OR%20%22Sitagliptin%22%5BTitle%2FAbstract%5D)%20AND%20(%22type%202%20diabetes%20mellitus%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
-      "candidateCount": 8,
-      "reviewedCount": 0
-    },
-    {
-      "searchId": "phentermine-2026-09-23",
-      "ingredientKey": "phentermine",
-      "ingredientNameEn": "Phentermine",
-      "ingredientNameKo": "펜터민",
-      "ingredientNote": "향정신성의약품. 안전성 문헌을 반드시 함께 검토한다.",
-      "appliesToBrands": [
-        "qsymia"
-      ],
-      "query": "(\"Phentermine\"[MeSH Terms] OR \"Phentermine\"[Title/Abstract]) AND (\"obesity\"[Title/Abstract] OR \"weight management\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
-      "filters": {
-        "years": 5,
-        "designs": [
-          "RCT",
-          "meta-analysis",
-          "systematic review",
-          "practice guideline"
-        ],
-        "retmax": 8,
-        "sort": "relevance"
-      },
-      "runOn": "2026-09-23",
-      "totalHits": 43,
-      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Phentermine%22%5BMeSH%20Terms%5D%20OR%20%22Phentermine%22%5BTitle%2FAbstract%5D)%20AND%20(%22obesity%22%5BTitle%2FAbstract%5D%20OR%20%22weight%20management%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
-      "candidateCount": 8,
-      "reviewedCount": 0
-    },
-    {
-      "searchId": "topiramate-2026-09-23",
-      "ingredientKey": "topiramate",
-      "ingredientNameEn": "Topiramate",
-      "ingredientNameKo": "토피라메이트",
-      "ingredientNote": null,
-      "appliesToBrands": [
-        "qsymia"
-      ],
-      "query": "(\"Topiramate\"[MeSH Terms] OR \"Topiramate\"[Title/Abstract]) AND (\"obesity\"[Title/Abstract] OR \"weight management\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
-      "filters": {
-        "years": 5,
-        "designs": [
-          "RCT",
-          "meta-analysis",
-          "systematic review",
-          "practice guideline"
-        ],
-        "retmax": 8,
-        "sort": "relevance"
-      },
-      "runOn": "2026-09-23",
-      "totalHits": 44,
-      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Topiramate%22%5BMeSH%20Terms%5D%20OR%20%22Topiramate%22%5BTitle%2FAbstract%5D)%20AND%20(%22obesity%22%5BTitle%2FAbstract%5D%20OR%20%22weight%20management%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
       "candidateCount": 8,
       "reviewedCount": 0
     },
@@ -468,33 +412,6 @@
       "runOn": "2026-09-23",
       "totalHits": 43,
       "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22Mycophenolic%20Acid%22%5BMeSH%20Terms%5D%20OR%20%22Mycophenolate%20Mofetil%22%5BTitle%2FAbstract%5D)%20AND%20(%22kidney%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22heart%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22liver%20transplantation%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
-      "candidateCount": 8,
-      "reviewedCount": 0
-    },
-    {
-      "searchId": "fexuprazan-2026-09-23",
-      "ingredientKey": "fexuprazan",
-      "ingredientNameEn": "Fexuprazan",
-      "ingredientNameKo": "펙수프라잔",
-      "ingredientNote": "MeSH 미등재 신약이다. 자유어 검색으로만 수집되며 문헌 수가 적을 수 있다.",
-      "appliesToBrands": [
-        "pexuclue"
-      ],
-      "query": "\"Fexuprazan\"[Title/Abstract] AND (\"gastroesophageal reflux disease\"[Title/Abstract] OR \"erosive esophagitis\"[Title/Abstract] OR \"peptic ulcer\"[Title/Abstract]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt]) AND (\"2021\"[Date - Publication] : \"3000\"[Date - Publication])",
-      "filters": {
-        "years": 5,
-        "designs": [
-          "RCT",
-          "meta-analysis",
-          "systematic review",
-          "practice guideline"
-        ],
-        "retmax": 8,
-        "sort": "relevance"
-      },
-      "runOn": "2026-09-23",
-      "totalHits": 9,
-      "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fexuprazan%22%5BTitle%2FAbstract%5D%20AND%20(%22gastroesophageal%20reflux%20disease%22%5BTitle%2FAbstract%5D%20OR%20%22erosive%20esophagitis%22%5BTitle%2FAbstract%5D%20OR%20%22peptic%20ulcer%22%5BTitle%2FAbstract%5D)%20AND%20(randomized%20controlled%20trial%5Bpt%5D%20OR%20meta-analysis%5Bpt%5D%20OR%20systematic%20review%5Bpt%5D%20OR%20practice%20guideline%5Bpt%5D)%20AND%20(%222021%22%5BDate%20-%20Publication%5D%20%3A%20%223000%22%5BDate%20-%20Publication%5D)",
       "candidateCount": 8,
       "reviewedCount": 0
     },
