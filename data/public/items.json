@@ -185,6 +185,80 @@
       ]
     },
     {
+      "itemKey": "202600847::(주)종근당",
+      "itemSeq": "202600847",
+      "brandId": "gravella",
+      "brandNameRaw": "그라벨라",
+      "itemName": "그라벨라1.5%에스디점안액(레보플록사신수화물)(1회용)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.4밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2026-03-26",
+      "cancelDate": null,
+      "atcCode": "S01AE05",
+      "ingredientCode": "183245COS",
+      "ingredientNameEn": "levofloxacin",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433103101",
+      "packages": [
+        {
+          "kdCode": "8806433103101",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433103118",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        },
+        {
+          "kdCode": "8806433103125",
+          "quantity": 30,
+          "dosageForm": "점안액",
+          "packageType": "튜브"
+        }
+      ]
+    },
+    {
+      "itemKey": "201406317::(주)종근당",
+      "itemSeq": "201406317",
+      "brandId": "gravella",
+      "brandNameRaw": "그라벨라",
+      "itemName": "그라벨라점안액(레보플록사신수화물)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "5밀리리터",
+      "rxClass": "전문의약품",
+      "approvalDate": "2014-12-31",
+      "cancelDate": null,
+      "atcCode": "S01AE05",
+      "ingredientCode": "183230COS",
+      "ingredientNameEn": "levofloxacin",
+      "dosageForm": "점안제(점안액)",
+      "route": "외용",
+      "classNo": "131",
+      "representativeCode": "8806433068202",
+      "packages": [
+        {
+          "kdCode": "8806433068202",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433068219",
+          "quantity": 1,
+          "dosageForm": "점안액",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
       "itemKey": "201905694::(주)종근당",
       "itemSeq": "201905694",
       "brandId": "gliatilin",
@@ -891,6 +965,108 @@
       ]
     },
     {
+      "itemKey": "202000918::(주)종근당",
+      "itemSeq": "202000918",
+      "brandId": "raparobell",
+      "brandNameRaw": "라파로벨",
+      "itemName": "라파로벨정0.5밀리그램(시롤리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "0.5밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2020-02-13",
+      "cancelDate": null,
+      "atcCode": "L04AH01",
+      "ingredientCode": "485503ATB",
+      "ingredientNameEn": "sirolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433084905",
+      "packages": [
+        {
+          "kdCode": "8806433084905",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433084912",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201904571::(주)종근당",
+      "itemSeq": "201904571",
+      "brandId": "raparobell",
+      "brandNameRaw": "라파로벨",
+      "itemName": "라파로벨정1밀리그램(시롤리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "1밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2019-07-05",
+      "cancelDate": null,
+      "atcCode": "L04AH01",
+      "ingredientCode": "485501ATB",
+      "ingredientNameEn": "sirolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433083403",
+      "packages": [
+        {
+          "kdCode": "8806433083403",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433083410",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201803186::(주)종근당",
+      "itemSeq": "201803186",
+      "brandId": "raparobell",
+      "brandNameRaw": "라파로벨",
+      "itemName": "라파로벨정2밀리그램(시롤리무스)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "2밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2018-08-02",
+      "cancelDate": null,
+      "atcCode": "L04AH01",
+      "ingredientCode": "485502ATB",
+      "ingredientNameEn": "sirolimus",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433083106",
+      "packages": [
+        {
+          "kdCode": "8806433083106",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433083113",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
       "itemKey": "200709391::(주)종근당",
       "itemSeq": "200709391",
       "brandId": "lipilou",
@@ -1467,6 +1643,272 @@
           "quantity": 1,
           "dosageForm": "산제",
           "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "201606254::(주)종근당",
+      "itemSeq": "201606254",
+      "brandId": "myreptic-n",
+      "brandNameRaw": "마이렙틱엔",
+      "itemName": "마이렙틱엔장용정180밀리그램(미코페놀레이트나트륨)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "180밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2016-10-24",
+      "cancelDate": null,
+      "atcCode": "L04AA06",
+      "ingredientCode": "451401ATE",
+      "ingredientNameEn": "mycophenolate sodium (as mycophenolic acid)",
+      "dosageForm": "장용정제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433076009",
+      "packages": [
+        {
+          "kdCode": "8806433076009",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433076016",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "201606255::(주)종근당",
+      "itemSeq": "201606255",
+      "brandId": "myreptic-n",
+      "brandNameRaw": "마이렙틱엔",
+      "itemName": "마이렙틱엔장용정360밀리그램(미코페놀레이트나트륨)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "360밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2016-10-24",
+      "cancelDate": null,
+      "atcCode": "L04AA06",
+      "ingredientCode": "451402ATE",
+      "ingredientNameEn": "mycophenolate sodium (as mycophenolic acid)",
+      "dosageForm": "장용정제",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433076108",
+      "packages": [
+        {
+          "kdCode": "8806433076108",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433076115",
+          "quantity": 50,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "200810221::(주)종근당",
+      "itemSeq": "200810221",
+      "brandId": "valcyte",
+      "brandNameRaw": "발싸이트",
+      "itemName": "발싸이트액제용분말(발간시클로비르염산염)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "12그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2008-10-06",
+      "cancelDate": null,
+      "atcCode": "J05AB14",
+      "ingredientCode": "459503ASY",
+      "ingredientNameEn": "valganciclovir hydrochloride (as valganciclovir)",
+      "dosageForm": "시럽제,건조시럽",
+      "route": "내복",
+      "classNo": "629",
+      "representativeCode": "8806433091309",
+      "packages": [
+        {
+          "kdCode": "8806433091309",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433091316",
+          "quantity": 1,
+          "dosageForm": "산제",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200810221::(주)한국로슈",
+      "itemSeq": "200810221",
+      "brandId": "valcyte",
+      "brandNameRaw": "발싸이트",
+      "itemName": "발싸이트액제용분말(발간시클로비르염산염)",
+      "company": "(주)한국로슈",
+      "isCkd": false,
+      "strengthLabel": null,
+      "rxClass": "전문의약품",
+      "approvalDate": "2008-10-06",
+      "cancelDate": null,
+      "atcCode": "J05AB14",
+      "ingredientCode": "459502AGN",
+      "ingredientNameEn": "valganciclovir hydrochloride",
+      "dosageForm": "과립제,세립",
+      "route": "내복",
+      "classNo": "629",
+      "representativeCode": "8806450012608",
+      "packages": [
+        {
+          "kdCode": "8806450012608",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        }
+      ]
+    },
+    {
+      "itemKey": "200410074::(주)종근당",
+      "itemSeq": "200410074",
+      "brandId": "valcyte",
+      "brandNameRaw": "발싸이트",
+      "itemName": "발싸이트정450밀리그램(발간시클로비르염산염)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "450밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2004-04-17",
+      "cancelDate": null,
+      "atcCode": "J05AB14",
+      "ingredientCode": "459501ATB",
+      "ingredientNameEn": "valganciclovir hydrochloride (as valganciclovir)",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "629",
+      "representativeCode": "8806433091200",
+      "packages": [
+        {
+          "kdCode": "8806433091200",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433091217",
+          "quantity": 60,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "200410074::(주)한국로슈",
+      "itemSeq": "200410074",
+      "brandId": "valcyte",
+      "brandNameRaw": "발싸이트",
+      "itemName": "발싸이트정450밀리그램(발간시클로비르염산염)",
+      "company": "(주)한국로슈",
+      "isCkd": false,
+      "strengthLabel": "450밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "2004-04-17",
+      "cancelDate": null,
+      "atcCode": "J05AB14",
+      "ingredientCode": null,
+      "ingredientNameEn": null,
+      "dosageForm": null,
+      "route": null,
+      "classNo": null,
+      "representativeCode": "8806450002609",
+      "packages": [
+        {
+          "kdCode": "8806450002609",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806450002616",
+          "quantity": 60,
+          "dosageForm": "정",
+          "packageType": "병"
+        }
+      ]
+    },
+    {
+      "itemKey": "199504100::(주)종근당",
+      "itemSeq": "199504100",
+      "brandId": "bredinin",
+      "brandNameRaw": "브레디닌",
+      "itemName": "브레디닌정25밀리그램(미조리빈)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "25밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1995-05-03",
+      "cancelDate": null,
+      "atcCode": "L04AX",
+      "ingredientCode": "196601ATB",
+      "ingredientNameEn": "mizoribine",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433010201",
+      "packages": [
+        {
+          "kdCode": "8806433010201",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433010218",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
+        }
+      ]
+    },
+    {
+      "itemKey": "199504101::(주)종근당",
+      "itemSeq": "199504101",
+      "brandId": "bredinin",
+      "brandNameRaw": "브레디닌",
+      "itemName": "브레디닌정50밀리그램(미조리빈)",
+      "company": "(주)종근당",
+      "isCkd": true,
+      "strengthLabel": "50밀리그램",
+      "rxClass": "전문의약품",
+      "approvalDate": "1995-05-03",
+      "cancelDate": null,
+      "atcCode": "L04AX",
+      "ingredientCode": "196602ATB",
+      "ingredientNameEn": "mizoribine",
+      "dosageForm": "정제,저작정",
+      "route": "내복",
+      "classNo": "142",
+      "representativeCode": "8806433010300",
+      "packages": [
+        {
+          "kdCode": "8806433010300",
+          "quantity": 0,
+          "dosageForm": null,
+          "packageType": null
+        },
+        {
+          "kdCode": "8806433010317",
+          "quantity": 100,
+          "dosageForm": "정",
+          "packageType": "PTP"
         }
       ]
     },

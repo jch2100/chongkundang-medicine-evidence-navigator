@@ -2,7 +2,7 @@
   "runId": "RUN-2026-09-29-status-001",
   "runDate": "2026-09-29",
   "status": "partial-success",
-  "summary": "제품 41개(공개 34개). 허가 품목 84건, 포장 265건. 급여 등재 64건, 미등재 20건. 상병코드 매핑 16개 브랜드·완전코드 839개(모두 사람 검토 전). 급여 기준 확인 1개 브랜드. 문헌 56건 / 브랜드 18개, 검색식 17건.",
+  "summary": "제품 41개(공개 34개). 허가 품목 97건, 포장 291건. 급여 등재 75건, 미등재 22건. 상병코드 매핑 16개 브랜드·완전코드 839개(모두 사람 검토 전). 급여 기준 확인 1개 브랜드. 문헌 56건 / 브랜드 18개, 검색식 17건.",
   "productsTotal": 41,
   "productsPublished": 34,
   "changesPublished": 4,
@@ -44,17 +44,17 @@
       "notice": "약제급여목록및급여상한금액표_(2026.9.1.)_공개용(비인가자) 1부.xlsx",
       "noticeEffectiveDate": "2026-09-01"
     },
-    "brandsRequested": 12,
+    "brandsRequested": 17,
     "brandsSplit": 5,
     "brandsWithoutProductId": [
       "텔미누보에스"
     ],
-    "itemsTotal": 84,
-    "itemsActive": 74,
+    "itemsTotal": 97,
+    "itemsActive": 87,
     "itemsCancelled": 10,
-    "packagesTotal": 265,
-    "benefitListed": 64,
-    "benefitNotListed": 20,
+    "packagesTotal": 291,
+    "benefitListed": 75,
+    "benefitNotListed": 22,
     "byBrand": [
       {
         "brandId": "godex",
@@ -69,6 +69,20 @@
         "companies": [
           "(주)셀트리온제약",
           "한서제약(주)"
+        ]
+      },
+      {
+        "brandId": "gravella",
+        "brandNameRaw": "그라벨라",
+        "splitFrom": null,
+        "items": 2,
+        "active": 2,
+        "cancelled": 0,
+        "listed": 2,
+        "notListed": 0,
+        "packages": 5,
+        "companies": [
+          "(주)종근당"
         ]
       },
       {
@@ -95,6 +109,20 @@
         "listed": 12,
         "notListed": 0,
         "packages": 42,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "raparobell",
+        "brandNameRaw": "라파로벨",
+        "splitFrom": null,
+        "items": 3,
+        "active": 3,
+        "cancelled": 0,
+        "listed": 3,
+        "notListed": 0,
+        "packages": 6,
         "companies": [
           "(주)종근당"
         ]
@@ -137,6 +165,49 @@
         "listed": 3,
         "notListed": 0,
         "packages": 10,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "myreptic-n",
+        "brandNameRaw": "마이렙틱엔",
+        "splitFrom": null,
+        "items": 2,
+        "active": 2,
+        "cancelled": 0,
+        "listed": 2,
+        "notListed": 0,
+        "packages": 4,
+        "companies": [
+          "(주)종근당"
+        ]
+      },
+      {
+        "brandId": "valcyte",
+        "brandNameRaw": "발싸이트",
+        "splitFrom": null,
+        "items": 4,
+        "active": 4,
+        "cancelled": 0,
+        "listed": 2,
+        "notListed": 2,
+        "packages": 7,
+        "companies": [
+          "(주)종근당",
+          "(주)한국로슈"
+        ]
+      },
+      {
+        "brandId": "bredinin",
+        "brandNameRaw": "브레디닌",
+        "splitFrom": null,
+        "items": 2,
+        "active": 2,
+        "cancelled": 0,
+        "listed": 2,
+        "notListed": 0,
+        "packages": 4,
         "companies": [
           "(주)종근당"
         ]
@@ -415,6 +486,22 @@
         "itemKey": "202101795::(주)종근당",
         "itemName": "텔미트렌에스정80/20밀리그램",
         "company": "(주)종근당",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200410074::(주)한국로슈",
+        "itemName": "발싸이트정450밀리그램(발간시클로비르염산염)",
+        "company": "(주)한국로슈",
+        "masterEdiCode": null,
+        "cancelDate": null,
+        "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"
+      },
+      {
+        "itemKey": "200810221::(주)한국로슈",
+        "itemName": "발싸이트액제용분말(발간시클로비르염산염)",
+        "company": "(주)한국로슈",
         "masterEdiCode": null,
         "cancelDate": null,
         "reason": "약가마스터에 제품코드(개정후) 없음 — 보험코드 미부여"

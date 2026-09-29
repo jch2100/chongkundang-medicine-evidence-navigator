@@ -32,6 +32,17 @@ const CORE_BRANDS = [
   { brandId: 'evenity', name: '이베니티' },
   { brandId: 'telmitren', name: '텔미트렌' },
   { brandId: 'myrept', name: '마이렙트' },
+  // 이식
+  { brandId: 'raparobell', name: '라파로벨' },
+  { brandId: 'bredinin', name: '브레디닌' },
+  { brandId: 'myreptic-n', name: '마이렙틱엔' },
+  { brandId: 'valcyte', name: '발싸이트' },
+  // 안과
+  { brandId: 'gravella', name: '그라벨라' },
+  // 'xalatan'(잘라탄)은 보류. 품목기준코드 200008565 하나에 1회용(073400131)과 2.5mL 병(073400141)이
+  // 별개 제품으로 묶여 있어, itemKey(품목기준코드::업체명) 단위로는 보험코드 하나가 사라진다.
+  // 'tacrolimus'(타크로리무스)는 넣지 않는다. 제품명이 아니라 성분명이라 타사 품목과
+  // 타크로벨 품목(품목명에 '(타크로리무스' 포함)을 모두 끌어온다. DART 집계 단위로만 존재.
 ];
 
 // DATA_DICTIONARY §4 — 브랜드명이 포함관계인 품목은 별도 브랜드로 분리한다.

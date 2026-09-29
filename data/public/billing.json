@@ -64,6 +64,28 @@
       "rxClass": null
     },
     {
+      "itemKey": "199504100::(주)종근당",
+      "ediCode": "643301020",
+      "benefitStatus": "listed",
+      "maxPrice": 993,
+      "priceUnit": "1정",
+      "noticeProductName": "브레디닌정25밀리그램(미조리빈)_(25mg/1정)",
+      "mainIngredientCode": "196601ATB",
+      "classNo": "142",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "199504101::(주)종근당",
+      "ediCode": "643301030",
+      "benefitStatus": "listed",
+      "maxPrice": 1816,
+      "priceUnit": "1정",
+      "noticeProductName": "브레디닌정50밀리그람(미조리빈)_(50mg/1정)",
+      "mainIngredientCode": "196602ATB",
+      "classNo": "142",
+      "rxClass": "전문"
+    },
+    {
       "itemKey": "199600151::(주)종근당",
       "ediCode": "643301110",
       "benefitStatus": "listed",
@@ -172,6 +194,28 @@
       "mainIngredientCode": "234203ACH",
       "classNo": "142",
       "rxClass": "전문"
+    },
+    {
+      "itemKey": "200410074::(주)종근당",
+      "ediCode": "643309120",
+      "benefitStatus": "listed",
+      "maxPrice": 24000,
+      "priceUnit": "1정",
+      "noticeProductName": "발싸이트정450밀리그램(발간시클로비르염산염)_(0.4963g/1정)",
+      "mainIngredientCode": "459501ATB",
+      "classNo": "629",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "200410074::(주)한국로슈",
+      "ediCode": null,
+      "benefitStatus": "not-listed",
+      "maxPrice": null,
+      "priceUnit": null,
+      "noticeProductName": null,
+      "mainIngredientCode": null,
+      "classNo": null,
+      "rxClass": null
     },
     {
       "itemKey": "200500131::(주)종근당",
@@ -359,6 +403,28 @@
       "mainIngredientCode": "197801ACH",
       "classNo": "142",
       "rxClass": "전문"
+    },
+    {
+      "itemKey": "200810221::(주)종근당",
+      "ediCode": "643309130",
+      "benefitStatus": "listed",
+      "maxPrice": 53333,
+      "priceUnit": "5(1)g/병",
+      "noticeProductName": "발싸이트액제용분말(발간시클로비르염산염)_(5.51g/1병)",
+      "mainIngredientCode": "459503ASY",
+      "classNo": "629",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "200810221::(주)한국로슈",
+      "ediCode": null,
+      "benefitStatus": "not-listed",
+      "maxPrice": null,
+      "priceUnit": null,
+      "noticeProductName": null,
+      "mainIngredientCode": null,
+      "classNo": null,
+      "rxClass": null
     },
     {
       "itemKey": "201000861::(주)종근당",
@@ -570,6 +636,17 @@
       "rxClass": null
     },
     {
+      "itemKey": "201406317::(주)종근당",
+      "ediCode": "643306821",
+      "benefitStatus": "listed",
+      "maxPrice": 3370,
+      "priceUnit": "5mL/병",
+      "noticeProductName": "그라벨라점안액(레보플록사신수화물)_(25mg/5mL)",
+      "mainIngredientCode": "183230COS",
+      "classNo": "131",
+      "rxClass": "전문"
+    },
+    {
       "itemKey": "201506873::(주)종근당",
       "ediCode": "643307240",
       "benefitStatus": "listed",
@@ -634,6 +711,28 @@
       "mainIngredientCode": null,
       "classNo": null,
       "rxClass": null
+    },
+    {
+      "itemKey": "201606254::(주)종근당",
+      "ediCode": "643307600",
+      "benefitStatus": "listed",
+      "maxPrice": 684,
+      "priceUnit": "1정",
+      "noticeProductName": "마이렙틱엔장용정180밀리그램(미코페놀레이트나트륨)_(0.1924g/1정)",
+      "mainIngredientCode": "451401ATE",
+      "classNo": "142",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "201606255::(주)종근당",
+      "ediCode": "643307610",
+      "benefitStatus": "listed",
+      "maxPrice": 1295,
+      "priceUnit": "1정",
+      "noticeProductName": "마이렙틱엔장용정360밀리그램(미코페놀레이트나트륨)_(0.3848g/1정)",
+      "mainIngredientCode": "451402ATE",
+      "classNo": "142",
+      "rxClass": "전문"
     },
     {
       "itemKey": "201700873::(주)종근당",
@@ -702,6 +801,17 @@
       "rxClass": null
     },
     {
+      "itemKey": "201803186::(주)종근당",
+      "ediCode": "643308310",
+      "benefitStatus": "listed",
+      "maxPrice": 3260,
+      "priceUnit": "1정",
+      "noticeProductName": "라파로벨정2밀리그램(시롤리무스)_(2mg/1정)",
+      "mainIngredientCode": "485502ATB",
+      "classNo": "142",
+      "rxClass": "전문"
+    },
+    {
       "itemKey": "201903599::암젠코리아 유한회사",
       "ediCode": "052300111",
       "benefitStatus": "listed",
@@ -710,6 +820,17 @@
       "noticeProductName": "이베니티주프리필드시린지(로모소주맙, 유전자재조합)_(105mg/1관)",
       "mainIngredientCode": "680701BIJ",
       "classNo": "399",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "201904571::(주)종근당",
+      "ediCode": "643308340",
+      "benefitStatus": "listed",
+      "maxPrice": 2050,
+      "priceUnit": "1정",
+      "noticeProductName": "라파로벨정1밀리그램(시롤리무스)_(1mg/1정)",
+      "mainIngredientCode": "485501ATB",
+      "classNo": "142",
       "rxClass": "전문"
     },
     {
@@ -722,6 +843,17 @@
       "mainIngredientCode": null,
       "classNo": null,
       "rxClass": null
+    },
+    {
+      "itemKey": "202000918::(주)종근당",
+      "ediCode": "643308490",
+      "benefitStatus": "listed",
+      "maxPrice": 1377,
+      "priceUnit": "1정",
+      "noticeProductName": "라파로벨정0.5밀리그램(시롤리무스)_(0.5mg/1정)",
+      "mainIngredientCode": "485503ATB",
+      "classNo": "142",
+      "rxClass": "전문"
     },
     {
       "itemKey": "202002673::(주)종근당",
@@ -930,6 +1062,17 @@
       "noticeProductName": "텔미누보플러스정40/2.5/12.5밀리그램(텔미사르탄,에스암로디핀,클로르탈리돈)_(1정)",
       "mainIngredientCode": "756100ATB",
       "classNo": "214",
+      "rxClass": "전문"
+    },
+    {
+      "itemKey": "202600847::(주)종근당",
+      "ediCode": "643310311",
+      "benefitStatus": "listed",
+      "maxPrice": 670,
+      "priceUnit": "0.4mL/관",
+      "noticeProductName": "그라벨라1.5%에스디점안액(레보플록사신수화물)(1회용)_(6mg/0.4mL)",
+      "mainIngredientCode": "183245COS",
+      "classNo": "131",
       "rxClass": "전문"
     }
   ]
